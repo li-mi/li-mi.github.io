@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="题意：891C. Envytime limit per test: 2 secondsmemory limit per test: 256 megabytesinput: standard inputoutput: standard output For a connected undirected weighted graph $$G$$, MST (minimum spanning tree)">
+<meta name="description" content="题意：891C. Envytime limit per test: 2 secondsmemory limit per test: 256 megabytesinput: standard inputoutput: standard output For a connected undirected weighted graph $G$, MST (minimum spanning tree) i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="codeforces 891C">
 <meta property="og:url" content="http://yoursite.com/2017/11/19/codeforces 891C/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="题意：891C. Envytime limit per test: 2 secondsmemory limit per test: 256 megabytesinput: standard inputoutput: standard output For a connected undirected weighted graph $$G$$, MST (minimum spanning tree)">
-<meta property="og:updated_time" content="2017-11-19T08:26:59.887Z">
+<meta property="og:description" content="题意：891C. Envytime limit per test: 2 secondsmemory limit per test: 256 megabytesinput: standard inputoutput: standard output For a connected undirected weighted graph $G$, MST (minimum spanning tree) i">
+<meta property="og:updated_time" content="2017-11-19T08:41:45.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="codeforces 891C">
-<meta name="twitter:description" content="题意：891C. Envytime limit per test: 2 secondsmemory limit per test: 256 megabytesinput: standard inputoutput: standard output For a connected undirected weighted graph $$G$$, MST (minimum spanning tree)">
+<meta name="twitter:description" content="题意：891C. Envytime limit per test: 2 secondsmemory limit per test: 256 megabytesinput: standard inputoutput: standard output For a connected undirected weighted graph $G$, MST (minimum spanning tree) i">
 
 
 
@@ -308,12 +308,12 @@
 
       
         <h1 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h1><p>891C. Envy<br>time limit per test: 2 seconds<br>memory limit per test: 256 megabytes<br>input: standard input<br>output: standard output</p>
-<p>For a connected undirected weighted graph $$G$$, MST (minimum spanning tree) is a subgraph of $G$ that contains all of $G$’s vertices, is a tree, and sum of its edges is minimum possible.</p>
-<p>You are given a graph $G$. If you run a MST algorithm on graph it would give you only one MST and it causes other edges to become jealous. You are given some queries, each query contains a set of edges of graph $G$, and you should determine whether there is a MST containing all these edges or not.<br>&lt;!–more&gt;</p>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line contains two integers $n$, $m$ (2??≤?$n$,?$m$??≤?5·10$^5$, $n$?-?1?≤?$m$) — the number of vertices and edges in the graph and the number of queries.</p>
-<p>The $i$-th of the next $m$ lines contains three integers $ui$, $vi$, $wi$ ($ui$?≠?$vi$, 1?≤?$wi$?≤?5·10$^5$) — the endpoints and weight of the $i$-th edge. There can be more than one edges between two vertices. It’s guaranteed that the given graph is connected.</p>
-<p>The next line contains a single integer $q$ (1?≤?$q$?≤?5·10$^5$) — the number of queries.</p>
-<p>$q$ lines follow, the $i$-th of them contains the $i$-th query. It starts with an integer $ki$ (1?≤?$ki$?≤?$n$?-?1) — the size of edges subset and continues with $ki$ distinct space-separated integers from 1 to $m$ — the indices of the edges. It is guaranteed that the sum of $ki$ for 1?≤?$i$?≤?$q$ does not exceed 5·10$^5$.</p>
+<p>For a connected undirected weighted graph $G$, MST (minimum spanning tree) is a subgraph of $G$ that contains all of $G$’s vertices, is a tree, and sum of its edges is minimum possible.</p>
+<p>You are given a graph $G$. If you run a MST algorithm on graph it would give you only one MST and it causes other edges to become jealous. You are given some queries, each query contains a set of edges of graph $G$, and you should determine whether there is a MST containing all these edges or not.<br><a id="more"></a></p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line contains two integers $n$, $m$ (2≤$n$,$m$≤5·10$^5$, $n$-1≤$m$) — the number of vertices and edges in the graph and the number of queries.</p>
+<p>The $i$-th of the next $m$ lines contains three integers $ui$, $vi$, $wi$ ($ui$≠$vi$, 1≤$wi$≤5·10$^5$) — the endpoints and weight of the $i$-th edge. There can be more than one edges between two vertices. It’s guaranteed that the given graph is connected.</p>
+<p>The next line contains a single integer $q$ (1≤$q$≤5·10$^5$) — the number of queries.</p>
+<p>$q$ lines follow, the $i$-th of them contains the $i$-th query. It starts with an integer $ki$ (1≤$ki$≤$n$-1) — the size of edges subset and continues with $ki$ distinct space-separated integers from 1 to $m$ — the indices of the edges. It is guaranteed that the sum of $ki$ for 1≤$i$≤$q$ does not exceed 5·10$^5$.</p>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>For each query you should print “YES” (without quotes) if there’s a MST containing these edges and “NO” (of course without quotes again) otherwise.</p>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><table>
 <thead>
@@ -717,6 +717,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
