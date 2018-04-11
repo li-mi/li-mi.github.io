@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="贪心," />
 
 
 
@@ -90,16 +90,17 @@
 
 
 
-<meta name="description" content="题目：定义：一个 P 单词是指，这个单词不包含 3 个连续的辅音字母，且不包含 3 个连续的元音字母，且至少包含一个字母 L。现有一个由大写字母与下划线构成的单词，要求将所有下划线替换成大写字母，构成一个新的单词，求构成 P 单词的方案数。元音字母是指 A，E，I，O，U，其余字母都是辅音字。">
+<meta name="description" content="12345贪心从高到低每一位考虑放0还是10能造成伤害就放0否则，1能造成就放1否则，不放">
+<meta name="keywords" content="贪心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NOIP 2017 复赛练习卷（一)word">
-<meta property="og:url" content="http://yoursite.com/2017/06/04/NOIP-2017-复赛练习卷（一）-word/index.html">
+<meta property="og:title" content="小明的阁楼">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/luogu2114 [NOI2014]起床困难综合症/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="题目：定义：一个 P 单词是指，这个单词不包含 3 个连续的辅音字母，且不包含 3 个连续的元音字母，且至少包含一个字母 L。现有一个由大写字母与下划线构成的单词，要求将所有下划线替换成大写字母，构成一个新的单词，求构成 P 单词的方案数。元音字母是指 A，E，I，O，U，其余字母都是辅音字。">
-<meta property="og:updated_time" content="2017-06-04T10:27:48.372Z">
+<meta property="og:description" content="12345贪心从高到低每一位考虑放0还是10能造成伤害就放0否则，1能造成就放1否则，不放">
+<meta property="og:updated_time" content="2018-04-11T08:41:28.434Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NOIP 2017 复赛练习卷（一)word">
-<meta name="twitter:description" content="题目：定义：一个 P 单词是指，这个单词不包含 3 个连续的辅音字母，且不包含 3 个连续的元音字母，且至少包含一个字母 L。现有一个由大写字母与下划线构成的单词，要求将所有下划线替换成大写字母，构成一个新的单词，求构成 P 单词的方案数。元音字母是指 A，E，I，O，U，其余字母都是辅音字。">
+<meta name="twitter:title" content="小明的阁楼">
+<meta name="twitter:description" content="12345贪心从高到低每一位考虑放0还是10能造成伤害就放0否则，1能造成就放1否则，不放">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/04/NOIP-2017-复赛练习卷（一）-word/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/11/luogu2114 [NOI2014]起床困难综合症/"/>
 
 
 
 
 
-  <title>NOIP 2017 复赛练习卷（一)word | 小明的阁楼</title>
+  <title> | 小明的阁楼</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -253,7 +254,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/04/NOIP-2017-复赛练习卷（一）-word/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/luogu2114 [NOI2014]起床困难综合症/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="littleming">
@@ -270,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NOIP 2017 复赛练习卷（一)word</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -282,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-04T18:24:58+08:00">
-                2017-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T16:41:28+08:00">
+                2018-04-11
               </time>
             
 
@@ -317,11 +318,9 @@
       
 
       
-        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>定义：一个 P 单词是指，这个单词不包含 3 个连续的辅音字母，且不包含 3 个连续的元音字母，且至少包含一个字母 L。<br>现有一个由大写字母与下划线构成的单词，要求将所有下划线替换成大写字母，构成一个新的单词，求构成 P 单词的方案数。<br>元音字母是指 A，E，I，O，U，其余字母都是辅音字。<br><a id="more"></a><br>【输入】<br>一行，一个字符串（长度不超过 100，下划线个数不超过 10）。<br>【输出】<br>一行，一个整数，表示构成 P 单词的方案数。<br>【样例输入一】<br>L<em>V<br>【样例输出一】<br>5<br>【样例输入二】<br>V</em> _K<br>【样例输出二】<br>10<br>【样例输入三】<br>JA_BU_K_A<br>【样例输出三】<br>485</p>
-<h1 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h1><p>将元音字母用0表示，辅音字母用1表示。<br>dp[i][j]，其中i=0/1，表示第j位选择i时的总方案数。<br>但是写起来有点麻烦，最后决定听取大佬的建议，换用暴力做↓<br>暴力枚举10个下滑线，再判断。<br>第一遍做的时候没看见必须要有一个L，于是gg。。<br>所有判断原先是否已有L,有了正常做，没有的话↓<br>将得到的方案数减去没有一个L的方案数。<br>记住开long long。</p>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">inline int read()</div><div class="line">string s;</div><div class="line">int a[108],p[18];</div><div class="line">int n,num;</div><div class="line">bool suc;</div><div class="line">LL ans,tmp=1,gg;</div><div class="line">inline bool  check()&#123;</div><div class="line">	for(int i=1;i&lt;=n-2;i++) if(a[i]==a[i+1]&amp;&amp;a[i]==a[i+2])	return 0;</div><div class="line">	return 1;</div><div class="line">&#125;</div><div class="line">void dfs(int t)</div><div class="line">&#123;</div><div class="line">	if(t&gt;num)&#123;</div><div class="line">		if(check())&#123;</div><div class="line">			ans+=tmp;</div><div class="line">			if(!suc)&#123;</div><div class="line">				gg=tmp;</div><div class="line">				while(gg%21==0&amp;&amp;gg&gt;0)&#123;</div><div class="line">					gg=gg/21*20;</div><div class="line">				&#125;</div><div class="line">				ans-=gg;				</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	for(int i=0;i&lt;=1;i++)&#123;</div><div class="line">		a[p[t]]=i;</div><div class="line">		if(i==0)	tmp*=5;</div><div class="line">		else	tmp*=21;</div><div class="line">		dfs(t+1);</div><div class="line">		if(i==0)	tmp/=5;</div><div class="line">		else	tmp/=21;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    cin&gt;&gt;s;</div><div class="line">    for(int i=0;i&lt;s.size();i++)&#123;</div><div class="line">		if(s[i]==&apos;L&apos;)	suc=1;</div><div class="line">		if(s[i]==&apos;_&apos;)&#123;</div><div class="line">			p[++num]=i+1;</div><div class="line">		&#125;</div><div class="line">		else if(s[i]==&apos;A&apos;||s[i]==&apos;E&apos;||s[i]==&apos;I&apos;||s[i]==&apos;O&apos;||s[i]==&apos;U&apos;)	a[i+1]=0;</div><div class="line">		else a[i+1]=1;</div><div class="line">    &#125;</div><div class="line">    n=s.size();</div><div class="line">    dfs(1);</div><div class="line">    cout&lt;&lt;ans;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>欢迎转载或引用，能附上lz的网址就更好啦</p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">贪心</div><div class="line">从高到低每一位考虑放0还是1</div><div class="line">0能造成伤害就放0</div><div class="line">否则，1能造成就放1</div><div class="line">否则，不放</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=100008;</div><div class="line">int n,m,maxi,ans;</div><div class="line">char s[5];</div><div class="line">struct node&#123;</div><div class="line">	int type,x;</div><div class="line">	inline int calc(const int &amp;y)&#123;</div><div class="line">		if(type==0)&#123;</div><div class="line">			return x|y;</div><div class="line">		&#125;</div><div class="line">		else if(type==1)&#123;</div><div class="line">			return x&amp;y;</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			return x^y;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;a[N];</div><div class="line">inline int solve(int x)</div><div class="line">&#123;</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		x=a[i].calc(x);</div><div class="line">	&#125;</div><div class="line">	return x;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();m=read();</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		scanf(&quot;%s&quot;,s);</div><div class="line">		if(s[0]==&apos;O&apos;)&#123;</div><div class="line">			a[i].type=0;</div><div class="line">		&#125;</div><div class="line">		else if(s[0]==&apos;A&apos;)&#123;</div><div class="line">			a[i].type=1;</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			a[i].type=2;</div><div class="line">		&#125;</div><div class="line">		a[i].x=read();</div><div class="line">	&#125;</div><div class="line">	for(maxi=1;maxi&lt;=m;maxi&lt;&lt;=1);</div><div class="line">	for(maxi&gt;&gt;=1;maxi;maxi&gt;&gt;=1)&#123;</div><div class="line">		if(solve(0)&amp;maxi)&#123;</div><div class="line">			continue;</div><div class="line">		&#125;</div><div class="line">		if((ans^maxi)&lt;=m&amp;&amp;(solve(maxi)&amp;maxi))&#123;</div><div class="line">			ans^=maxi;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	printf(&quot;%d&quot;,solve(ans));</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -348,6 +347,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/贪心/" rel="tag"># 贪心</a>
+          
+        </div>
+      
 
       
         
@@ -357,8 +362,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/03/Usaco2015-Open-Gold-Trapped-in-the-Haybales/" rel="next" title="[Usaco2015 Open Gold]Trapped in the Haybales">
-                <i class="fa fa-chevron-left"></i> [Usaco2015 Open Gold]Trapped in the Haybales
+              <a href="/2018/04/11/luogu1580 yyy loves Easter_Egg I/" rel="next" title="luogu1580 yyy loves Easter_Egg I">
+                <i class="fa fa-chevron-left"></i> luogu1580 yyy loves Easter_Egg I
               </a>
             
           </div>
@@ -367,8 +372,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/06/NOIP-2017-复赛练习卷（一）-game/" rel="prev" title="NOIP 2017 复赛练习卷（一)game">
-                NOIP 2017 复赛练习卷（一)game <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/11/luogu2396 yyy loves Maths VII/" rel="prev" title="luogu2396 yyy loves Maths VII">
+                luogu2396 yyy loves Maths VII <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -416,17 +421,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -479,22 +475,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解："><span class="nav-number">2.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">3.</span> <span class="nav-text">代码：</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
