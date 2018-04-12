@@ -254,6 +254,118 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/luogu2014 选课/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/12/luogu2014 选课/" itemprop="url">luogu2014 选课</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T12:22:22+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">做完apple tree以后</div><div class="line">这题就很简单啦</div><div class="line">f[i][j]表示i的子树中选j个课程的最大学分</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=308;</div><div class="line">int n,m;</div><div class="line">int fa;</div><div class="line"></div><div class="line">int nume,head[N];</div><div class="line">struct node&#123;</div><div class="line">	int to,nxt;</div><div class="line">&#125;e[N];</div><div class="line">inline void addedge(int x,int y)</div><div class="line">&#123;</div><div class="line">	e[++nume]=(node)&#123;y,head[x]&#125;;head[x]=nume;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int f[N][N];</div><div class="line">inline void dfs(int x)</div><div class="line">&#123;</div><div class="line">	for(int i=head[x];i;i=e[i].nxt)&#123;</div><div class="line">		dfs(e[i].to);</div><div class="line">		for(int j=m;j;--j)&#123;</div><div class="line">			for(int k=1;k&lt;j;++k)&#123;</div><div class="line">				f[x][j]=max(f[x][j],f[e[i].to][k]+f[x][j-k]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();m=read();++m;</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		fa=read();f[i][1]=read();</div><div class="line">		addedge(fa,i);</div><div class="line">	&#125;</div><div class="line">	dfs(0);</div><div class="line">	printf(&quot;%d&quot;,f[0][m]);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/poj2486 Apple Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1281,123 +1393,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/luogu2763 试题库问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/09/luogu2763 试题库问题/" itemprop="url">luogu2763 试题库问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T09:19:00+08:00">
-                2018-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">基础网络流，不要打错变量名！！</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">    LL x=0,f=1;char ch=getchar();</div><div class="line">    while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">    while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">    return x*f;</div><div class="line">&#125;</div><div class="line">const int K=28,N=1008;</div><div class="line">int n,m,k,p,tmp;</div><div class="line">int s,t;</div><div class="line">int req[K];</div><div class="line">int ans;</div><div class="line"></div><div class="line">int nume=1,head[N+K],cur[N+K];</div><div class="line">struct node&#123;</div><div class="line">    int to,nxt,f;</div><div class="line">&#125;e[N*K*2];</div><div class="line">inline void addedge(int x,int y,int z)</div><div class="line">&#123;</div><div class="line">    e[++nume]=(node)&#123;y,head[x],z&#125;;head[x]=nume;</div><div class="line">    e[++nume]=(node)&#123;x,head[y],0&#125;;head[y]=nume;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int dis[N+K];</div><div class="line">int he,ta,q[N+K];</div><div class="line">inline bool bfs()</div><div class="line">&#123;</div><div class="line">    memset(dis,0,sizeof(dis));</div><div class="line">    he=1;ta=2;</div><div class="line">    q[1]=s;</div><div class="line">    dis[s]=1;</div><div class="line">    while(he!=ta)&#123;</div><div class="line">        int x=q[he];</div><div class="line">        ++he;</div><div class="line">        for(int i=head[x];i;i=e[i].nxt)&#123;</div><div class="line">            if(e[i].f&amp;&amp;!dis[e[i].to])&#123;</div><div class="line">                dis[e[i].to]=dis[x]+1;</div><div class="line">                if(e[i].to==t)	return 1;</div><div class="line">                q[ta]=e[i].to;</div><div class="line">                ++ta;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line">inline int dfs(int x,int low)</div><div class="line">&#123;</div><div class="line">    if(x==t||!low)	return low;</div><div class="line">    int flow=0,tmp;</div><div class="line">    for(int &amp;i=cur[x];i;i=e[i].nxt)&#123;</div><div class="line">        if(dis[e[i].to]==dis[x]+1&amp;&amp;(tmp=dfs(e[i].to,min(low,e[i].f))))&#123;</div><div class="line">            flow+=tmp;</div><div class="line">            low-=tmp;</div><div class="line">            e[i].f-=tmp;</div><div class="line">            e[i^1].f+=tmp;</div><div class="line">            if(!low)	return flow;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(low)	dis[x]=0;</div><div class="line">    return flow;</div><div class="line">&#125;</div><div class="line">inline int dinic()</div><div class="line">&#123;</div><div class="line">    int maxflow=0;</div><div class="line">    while(bfs())&#123;</div><div class="line">        for(int i=0;i&lt;=t;++i)&#123;</div><div class="line">            cur[i]=head[i];</div><div class="line">        &#125;</div><div class="line">        maxflow+=dfs(s,INT_MAX);</div><div class="line">    &#125;</div><div class="line">    return maxflow;</div><div class="line">&#125;</div><div class="line">vector&lt;int&gt; plan[K];</div><div class="line">inline void print()</div><div class="line">&#123;</div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        for(int j=head[i];j;j=e[j].nxt)&#123;</div><div class="line">            if(j%2==0&amp;&amp;e[j].f==0)&#123;//i/j</div><div class="line">                plan[e[j].to-n].pb(i);//i/j</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;=k;++i)&#123;</div><div class="line">        printf(&quot;%d:&quot;,i);</div><div class="line">        for(int j=0;j&lt;plan[i].size();++j)&#123;</div><div class="line">            printf(&quot; %d&quot;,plan[i][j]);</div><div class="line">        &#125;</div><div class="line">        puts(&quot;&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    k=read();n=read();</div><div class="line">    s=0;t=n+k+1;</div><div class="line">    for(int i=1;i&lt;=k;++i)&#123;</div><div class="line">        req[i]=read();</div><div class="line">        addedge(i+n,t,req[i]);</div><div class="line">        m+=req[i];</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        addedge(s,i,1);</div><div class="line">        p=read();</div><div class="line">        for(int j=1;j&lt;=p;++j)&#123;</div><div class="line">            tmp=read();</div><div class="line">            addedge(i,tmp+n,1);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ans=dinic();</div><div class="line">    if(ans!=m)&#123;</div><div class="line">        puts(&quot;No Solution!&quot;);</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        print();</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1442,7 +1442,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
