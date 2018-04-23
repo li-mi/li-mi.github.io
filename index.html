@@ -438,22 +438,122 @@
       
         
           
-            <a id="more"></a>
-<p>欧拉路：</p>
-<ul>
-<li>1.存在性判断：<br>  无向图：无奇点等价于欧拉回路；有两个奇点等价于欧拉通路<br>  有向图：所有点的入度都等于出度等价于存在欧拉回路；一个点入度比出度多1，另一个点出度比入度多1等价于欧拉通路</li>
-<li><p>2.fleury算法：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  DFS(u):</div><div class="line">While (u存在未被删除的边e(u,v))</div><div class="line">	删除边e(u,v)</div><div class="line">	DFS(v)</div><div class="line">End</div><div class="line">PathSize ← PathSize + 1</div><div class="line">Path[ PathSize ] ← u</div></pre></td></tr></table></figure>
-<p> 注意有向图的欧拉路要倒序输出</p>
-</li>
-</ul>
-<p><a href="http://www.cnblogs.com/TheRoadToTheGold/p/8439160.html" target="_blank" rel="external">很好的资料</a><br>哈密顿路（np问题）：</p>
-<ul>
-<li>1.狄拉克定理：如果图G是一个具有$n(n\geq 3)$个顶点的简单无向图，并且图G中每个顶点的度数至少为$n/2$，那么图G是哈密顿图（具有哈密顿回路的图）。（证明：归纳）<br>  奥勒定理（dirac定理的推广）：如果图G是一个具有$n(n\geq 3)$个顶点的简单无向图，并且图G中每一对不相邻的顶点u和v满足$deg(u)+deg(v)\geq n$，那么图G是哈密顿图。</li>
-<li>2.n(n&gt;=2)阶竞赛图一定存在哈密顿通路。（证明：归纳）<br>当且仅当竞赛图是强连通的，存在哈密顿回路。（证明：归纳）</li>
-<li>3.竞赛图上的哈密顿回路<br>  先找到一个环，再在环上扩展。<br>  hdu3414  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;climits&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;bitset&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">    LL x=0,f=1;char ch=getchar();</div><div class="line">    while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">    while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">    return x*f;</div><div class="line">&#125;</div><div class="line">const int N=1008;</div><div class="line">int n;</div><div class="line">int a[N][N];</div><div class="line">int nxt[N];</div><div class="line">bool vis[N];</div><div class="line">bool flag;</div><div class="line">int cnt;</div><div class="line"></div><div class="line">inline bool dfs(int x)</div><div class="line">&#123;</div><div class="line">    vis[x]=1;</div><div class="line">    if(a[x][1])&#123;</div><div class="line">        nxt[x]=1;</div><div class="line">        ++cnt;</div><div class="line">        return 1;</div><div class="line">    &#125;</div><div class="line">    for(int i=2;i&lt;=n;++i)&#123;</div><div class="line">        if(!vis[i]&amp;&amp;a[x][i])&#123;</div><div class="line">            if(dfs(i))&#123;</div><div class="line">                nxt[x]=i;</div><div class="line">                ++cnt;</div><div class="line">                return 1;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line">inline void solve()</div><div class="line">&#123;</div><div class="line">    memset(nxt,0,sizeof(nxt));</div><div class="line">    memset(vis,0,sizeof(vis));</div><div class="line">    cnt=0;</div><div class="line">    if(!dfs(1))&#123;</div><div class="line">        puts(&quot;-1&quot;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    while(1)&#123;</div><div class="line">        flag=0;</div><div class="line">        for(int i=2;i&lt;=n;++i)&#123;</div><div class="line">            if(!nxt[i])&#123;</div><div class="line">                for(int j=1;j&lt;=n;++j)&#123;</div><div class="line">                    if(nxt[j]&amp;&amp;a[j][i]&amp;&amp;a[i][nxt[j]])&#123;</div><div class="line">                        nxt[i]=nxt[j];</div><div class="line">                        nxt[j]=i;</div><div class="line">                        ++cnt;</div><div class="line">                        flag=1;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if(!flag)&#123;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(cnt==n)&#123;</div><div class="line">        printf(&quot;1&quot;);</div><div class="line">        for(int i=nxt[1];i!=1;i=nxt[i])&#123;</div><div class="line">            printf(&quot; %d&quot;,i);</div><div class="line">        &#125;</div><div class="line">        puts(&quot;&quot;);</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        puts(&quot;-1&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    while(1)&#123;</div><div class="line">        scanf(&quot;%d&quot;,&amp;n);</div><div class="line">        if(!n)	return 0;</div><div class="line">        for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">            for(int j=1;j&lt;=n;++j)&#123;</div><div class="line">                a[i][j]=read();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if(n==1)&#123;</div><div class="line">            puts(&quot;1&quot;);</div><div class="line">            continue;</div><div class="line">        &#125;</div><div class="line">        solve();</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
-</ul>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">&lt;!--more--&gt;</div><div class="line">欧拉路：</div><div class="line"> - 1.存在性判断：</div><div class="line">     无向图：无奇点等价于欧拉回路；有两个奇点等价于欧拉通路</div><div class="line">     有向图：所有点的入度都等于出度等价于存在欧拉回路；一个点入度比出度多1，另一个点出度比入度多1等价于欧拉通路</div><div class="line"> - 2.fleury算法：</div></pre></td></tr></table></figure>
+<pre><code>DFS(u):
+    While (u存在未被删除的边e(u,v))
+        删除边e(u,v)
+        DFS(v)
+    End
+    PathSize ← PathSize + 1
+    Path[ PathSize ] ← u
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">    注意有向图的欧拉路要倒序输出</div><div class="line">    </div><div class="line">[很好的资料](http://www.cnblogs.com/TheRoadToTheGold/p/8439160.html)</div><div class="line">哈密顿路（np问题）：</div><div class="line">- 1.狄拉克定理：如果图G是一个具有$n(n\geq 3)$个顶点的简单无向图，并且图G中每个顶点的度数至少为$n/2$，那么图G是哈密顿图（具有哈密顿回路的图）。（证明：归纳）</div><div class="line">    奥勒定理（dirac定理的推广）：如果图G是一个具有$n(n\geq 3)$个顶点的简单无向图，并且图G中每一对不相邻的顶点u和v满足$deg(u)+deg(v)\geq n$，那么图G是哈密顿图。</div><div class="line">- 2.n(n&gt;=2)阶竞赛图一定存在哈密顿通路。（证明：归纳）</div><div class="line">  当且仅当竞赛图是强连通的，存在哈密顿回路。（证明：归纳）</div><div class="line">- 3.竞赛图上的哈密顿回路</div><div class="line">    先找到一个环，再在环上扩展。</div><div class="line">    hdu3414</div></pre></td></tr></table></figure>
 
+#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;climits&gt;
+#include&lt;queue&gt;
+#include&lt;bitset&gt;
+#define mp make_pair
+#define pb push_back
+using namespace std;
+typedef long long LL;
+typedef pair&lt;int,int&gt; PII;
+inline LL read()
+{
+    LL x=0,f=1;char ch=getchar();
+    while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;){if(ch==&apos;-&apos;)f=-1;ch=getchar();}
+    while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;){x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();}
+    return x*f;
+}
+const int N=1008;
+int n;
+int a[N][N];
+int nxt[N];
+bool vis[N];
+bool flag;
+int cnt;
+
+inline bool dfs(int x)
+{
+    vis[x]=1;
+    if(a[x][1]){
+        nxt[x]=1;
+        ++cnt;
+        return 1;
+    }
+    for(int i=2;i&lt;=n;++i){
+        if(!vis[i]&amp;&amp;a[x][i]){
+            if(dfs(i)){
+                nxt[x]=i;
+                ++cnt;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+inline void solve()
+{
+    memset(nxt,0,sizeof(nxt));
+    memset(vis,0,sizeof(vis));
+    cnt=0;
+    if(!dfs(1)){
+        puts(&quot;-1&quot;);
+        return;
+    }
+
+    while(1){
+        flag=0;
+        for(int i=2;i&lt;=n;++i){
+            if(!nxt[i]){
+                for(int j=1;j&lt;=n;++j){
+                    if(nxt[j]&amp;&amp;a[j][i]&amp;&amp;a[i][nxt[j]]){
+                        nxt[i]=nxt[j];
+                        nxt[j]=i;
+                        ++cnt;
+                        flag=1;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if(!flag){
+            break;
+        }
+    }
+    if(cnt==n){
+        printf(&quot;1&quot;);
+        for(int i=nxt[1];i!=1;i=nxt[i]){
+            printf(&quot; %d&quot;,i);
+        }
+        puts(&quot;&quot;);
+    }
+    else{
+        puts(&quot;-1&quot;);
+    }
+}
+int main()
+{
+    while(1){
+        scanf(&quot;%d&quot;,&amp;n);
+        if(!n)    return 0;
+        for(int i=1;i&lt;=n;++i){
+            for(int j=1;j&lt;=n;++j){
+                a[i][j]=read();
+            }
+        }
+        if(n==1){
+            puts(&quot;1&quot;);
+            continue;
+        }
+        solve();
+    }
+    return 0;
+}
+```
+</code></pre>
           
         
       
