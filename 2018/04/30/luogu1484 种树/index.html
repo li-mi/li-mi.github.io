@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="树上dp,背包," />
+  <meta name="keywords" content="思维,堆," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="123做完apple tree以后这题就很简单啦f[i][j]表示i的子树中选j个课程的最大学分 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&amp;lt;bits/stdc++.h&amp;gt;#define mp make_pair#define pb pu">
-<meta name="keywords" content="树上dp,背包">
+<meta name="description" content="12345678910111213大根堆要能够反悔注意到选了一个，它一定比两边的优所以要么选它，要么两边同时选选一个点之后将它两边的值减去它，更新到这个点，删去两边的点这样每轮还是相当于选一个点注意边界处理调了一天要先弹完用过的再判负顺序很重要！顺序很重要！顺序很重要！">
+<meta name="keywords" content="思维,堆">
 <meta property="og:type" content="article">
-<meta property="og:title" content="luogu2014 选课">
-<meta property="og:url" content="http://yoursite.com/2018/04/12/luogu2014 选课/index.html">
+<meta property="og:title" content="luogu1484 种树">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/luogu1484 种树/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="123做完apple tree以后这题就很简单啦f[i][j]表示i的子树中选j个课程的最大学分 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&amp;lt;bits/stdc++.h&amp;gt;#define mp make_pair#define pb pu">
-<meta property="og:updated_time" content="2018-04-12T04:22:22.113Z">
+<meta property="og:description" content="12345678910111213大根堆要能够反悔注意到选了一个，它一定比两边的优所以要么选它，要么两边同时选选一个点之后将它两边的值减去它，更新到这个点，删去两边的点这样每轮还是相当于选一个点注意边界处理调了一天要先弹完用过的再判负顺序很重要！顺序很重要！顺序很重要！">
+<meta property="og:updated_time" content="2018-04-30T02:14:08.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luogu2014 选课">
-<meta name="twitter:description" content="123做完apple tree以后这题就很简单啦f[i][j]表示i的子树中选j个课程的最大学分 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&amp;lt;bits/stdc++.h&amp;gt;#define mp make_pair#define pb pu">
+<meta name="twitter:title" content="luogu1484 种树">
+<meta name="twitter:description" content="12345678910111213大根堆要能够反悔注意到选了一个，它一定比两边的优所以要么选它，要么两边同时选选一个点之后将它两边的值减去它，更新到这个点，删去两边的点这样每轮还是相当于选一个点注意边界处理调了一天要先弹完用过的再判负顺序很重要！顺序很重要！顺序很重要！">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/12/luogu2014 选课/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/30/luogu1484 种树/"/>
 
 
 
 
 
-  <title>luogu2014 选课 | 小明的阁楼</title>
+  <title>luogu1484 种树 | 小明的阁楼</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -254,7 +254,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/luogu2014 选课/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/luogu1484 种树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="littleming">
@@ -271,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">luogu2014 选课</h1>
+          <h1 class="post-title" itemprop="name headline">luogu1484 种树</h1>
         
 
         <div class="post-meta">
@@ -283,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T12:22:22+08:00">
-                2018-04-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T10:05:43+08:00">
+                2018-04-30
               </time>
             
 
@@ -318,8 +318,9 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">做完apple tree以后</div><div class="line">这题就很简单啦</div><div class="line">f[i][j]表示i的子树中选j个课程的最大学分</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=308;</div><div class="line">int n,m;</div><div class="line">int fa;</div><div class="line"></div><div class="line">int nume,head[N];</div><div class="line">struct node&#123;</div><div class="line">	int to,nxt;</div><div class="line">&#125;e[N];</div><div class="line">inline void addedge(int x,int y)</div><div class="line">&#123;</div><div class="line">	e[++nume]=(node)&#123;y,head[x]&#125;;head[x]=nume;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int f[N][N];</div><div class="line">inline void dfs(int x)</div><div class="line">&#123;</div><div class="line">	for(int i=head[x];i;i=e[i].nxt)&#123;</div><div class="line">		dfs(e[i].to);</div><div class="line">		for(int j=m;j;--j)&#123;</div><div class="line">			for(int k=1;k&lt;j;++k)&#123;</div><div class="line">				f[x][j]=max(f[x][j],f[e[i].to][k]+f[x][j-k]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();m=read();++m;</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		fa=read();f[i][1]=read();</div><div class="line">		addedge(fa,i);</div><div class="line">	&#125;</div><div class="line">	dfs(0);</div><div class="line">	printf(&quot;%d&quot;,f[0][m]);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">大根堆</div><div class="line">要能够反悔</div><div class="line">注意到选了一个，它一定比两边的优</div><div class="line">所以要么选它，要么两边同时选</div><div class="line">选一个点之后将它两边的值减去它，更新到这个点，删去两边的点</div><div class="line">这样每轮还是相当于选一个点</div><div class="line">注意边界处理</div><div class="line"></div><div class="line">调了一天</div><div class="line">要先弹完用过的再判负</div><div class="line">顺序很重要！</div><div class="line">顺序很重要！</div><div class="line">顺序很重要！</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=500008;</div><div class="line">int n,k;</div><div class="line">int pre[N],nxt[N];</div><div class="line">LL a[N];</div><div class="line">priority_queue&lt;pair&lt;LL,int&gt; &gt; q;</div><div class="line">LL ans;</div><div class="line">bool vis[N];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();k=read();</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		a[i]=read();</div><div class="line">		q.push(mp(a[i],i));</div><div class="line">		pre[i]=i-1;</div><div class="line">		nxt[i]=i+1;</div><div class="line">	&#125;</div><div class="line">	while(k--)&#123;</div><div class="line">		while(vis[q.top().second])&#123;//要用while，if的话会消耗k </div><div class="line">			q.pop();</div><div class="line">		&#125;</div><div class="line">		if(q.top().first&lt;=0)	break;	</div><div class="line">		ans+=q.top().first;</div><div class="line">		int x=q.top().second;</div><div class="line">		q.pop();</div><div class="line">		a[x]=a[pre[x]]+a[nxt[x]]-a[x];</div><div class="line">		if(pre[x]!=0)&#123;</div><div class="line">			vis[pre[x]]=1;</div><div class="line">			pre[x]=pre[pre[x]];</div><div class="line">			nxt[pre[x]]=x;</div><div class="line">		&#125;</div><div class="line">		if(nxt[x]!=n+1)&#123;</div><div class="line">			vis[nxt[x]]=1;</div><div class="line">			nxt[x]=nxt[nxt[x]];</div><div class="line">			pre[nxt[x]]=x;</div><div class="line">		&#125;	</div><div class="line">		q.push(mp(a[x],x));</div><div class="line">	&#125;</div><div class="line">	printf(&quot;%lld&quot;,ans);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -348,9 +349,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树上dp/" rel="tag"># 树上dp</a>
+            <a href="/tags/思维/" rel="tag"># 思维</a>
           
-            <a href="/tags/背包/" rel="tag"># 背包</a>
+            <a href="/tags/堆/" rel="tag"># 堆</a>
           
         </div>
       
@@ -363,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/12/poj2486 Apple Tree/" rel="next" title="poj2486 Apple Tree">
-                <i class="fa fa-chevron-left"></i> poj2486 Apple Tree
+              <a href="/2018/04/28/技巧/" rel="next" title="技巧">
+                <i class="fa fa-chevron-left"></i> 技巧
               </a>
             
           </div>
@@ -372,10 +373,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/13/hihocoder1063 缩地/" rel="prev" title="hihocoder1063 缩地">
-                hihocoder1063 缩地 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

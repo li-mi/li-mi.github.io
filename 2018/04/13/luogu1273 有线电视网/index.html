@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="12345O(n^3)的dp有一个重要的地方每个点的循环大小是它子树中用户节点的个数不加上这个50分然而菊花图好像可以卡这个">
+<meta name="description" content="123456O(n^2)的dp有一个重要的地方每个点的循环大小是它子树中用户节点的个数不加上这个50分每两个点只会在lca产生贡献所以n^2">
 <meta name="keywords" content="树上dp,背包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="luogu1273 有线电视网">
 <meta property="og:url" content="http://yoursite.com/2018/04/13/luogu1273 有线电视网/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="12345O(n^3)的dp有一个重要的地方每个点的循环大小是它子树中用户节点的个数不加上这个50分然而菊花图好像可以卡这个">
-<meta property="og:updated_time" content="2018-04-13T13:00:13.028Z">
+<meta property="og:description" content="123456O(n^2)的dp有一个重要的地方每个点的循环大小是它子树中用户节点的个数不加上这个50分每两个点只会在lca产生贡献所以n^2">
+<meta property="og:updated_time" content="2018-04-29T03:54:56.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="luogu1273 有线电视网">
-<meta name="twitter:description" content="12345O(n^3)的dp有一个重要的地方每个点的循环大小是它子树中用户节点的个数不加上这个50分然而菊花图好像可以卡这个">
+<meta name="twitter:description" content="123456O(n^2)的dp有一个重要的地方每个点的循环大小是它子树中用户节点的个数不加上这个50分每两个点只会在lca产生贡献所以n^2">
 
 
 
@@ -318,7 +318,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">O(n^3)的dp</div><div class="line">有一个重要的地方</div><div class="line">每个点的循环大小是它子树中用户节点的个数</div><div class="line">不加上这个50分</div><div class="line">然而菊花图好像可以卡这个</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">O(n^2)的dp</div><div class="line">有一个重要的地方</div><div class="line">每个点的循环大小是它子树中用户节点的个数</div><div class="line">不加上这个50分</div><div class="line">每两个点只会在lca产生贡献</div><div class="line">所以n^2</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=3008;</div><div class="line">int n,m;</div><div class="line">int x,y,z;</div><div class="line"></div><div class="line">int nume,head[N];</div><div class="line">struct node&#123;</div><div class="line">	int to,nxt,f;</div><div class="line">&#125;e[N&lt;&lt;1];</div><div class="line">inline void addedge(int x,int y,int z)</div><div class="line">&#123;</div><div class="line">	e[++nume]=(node)&#123;y,head[x],z&#125;;head[x]=nume;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int f[N][N];</div><div class="line">inline int dfs(int x,int fa)</div><div class="line">&#123;</div><div class="line">	if(x&gt;n-m)&#123;</div><div class="line">		return 1;</div><div class="line">	&#125;</div><div class="line">	int tot=0;</div><div class="line">	for(int i=head[x];i;i=e[i].nxt)&#123;</div><div class="line">		if(e[i].to!=fa)&#123;</div><div class="line">			tot+=dfs(e[i].to,x);</div><div class="line">			for(int j=tot;j;--j)&#123;</div><div class="line">				for(int k=j;k;--k)&#123;</div><div class="line">					f[x][j]=max(f[x][j],f[e[i].to][k]+f[x][j-k]-e[i].f);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return tot;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();m=read();</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		for(int j=1;j&lt;=n;++j)&#123;</div><div class="line">			f[i][j]=-0x3f3f3f3f;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	for(int i=1;i&lt;=n-m;++i)&#123;</div><div class="line">		z=read();</div><div class="line">		while(z--)&#123;</div><div class="line">			x=read();y=read();</div><div class="line">			addedge(i,x,y);</div><div class="line">			addedge(x,i,y);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	for(int i=n-m+1;i&lt;=n;++i)&#123;</div><div class="line">		x=read();</div><div class="line">		f[i][1]=x;</div><div class="line">	&#125;</div><div class="line">	dfs(1,0);</div><div class="line">	</div><div class="line">	for(int j=n;j&gt;=0;--j)&#123;</div><div class="line">		if(f[1][j]&gt;=0)&#123;</div><div class="line">			printf(&quot;%d&quot;,j);</div><div class="line">			break;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
@@ -439,7 +439,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -452,7 +452,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
