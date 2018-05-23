@@ -1,0 +1,657 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ac自动机," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="12trie图上面跑环先因为trie树多加continue跪了，然后发现没有把fail指向危险节点的点标为危险的（后缀中有危险的，说明自身也是危险的）">
+<meta name="keywords" content="ac自动机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="luogu2444 [POI2000]病毒">
+<meta property="og:url" content="http://yoursite.com/2018/05/22/luogu2444 [POI2000]病毒/index.html">
+<meta property="og:site_name" content="小明的阁楼">
+<meta property="og:description" content="12trie图上面跑环先因为trie树多加continue跪了，然后发现没有把fail指向危险节点的点标为危险的（后缀中有危险的，说明自身也是危险的）">
+<meta property="og:updated_time" content="2018-05-22T13:42:30.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="luogu2444 [POI2000]病毒">
+<meta name="twitter:description" content="12trie图上面跑环先因为trie树多加continue跪了，然后发现没有把fail指向危险节点的点标为危险的（后缀中有危险的，说明自身也是危险的）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/22/luogu2444 [POI2000]病毒/"/>
+
+
+
+
+
+  <title>luogu2444 [POI2000]病毒 | 小明的阁楼</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小明的阁楼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">故事再美  结局还是再见</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/luogu2444 [POI2000]病毒/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">luogu2444 [POI2000]病毒</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T21:42:30+08:00">
+                2018-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">trie图上面跑环</div><div class="line">先因为trie树多加continue跪了，然后发现没有把fail指向危险节点的点标为危险的（后缀中有危险的，说明自身也是危险的）</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=30008;</div><div class="line">int n;</div><div class="line">char s[N];</div><div class="line">struct node&#123;</div><div class="line">	int ch[2],fail;</div><div class="line">	bool num;</div><div class="line">&#125;t[N];</div><div class="line">int sz;</div><div class="line">inline void inser()</div><div class="line">&#123;</div><div class="line">	int u=0,n=strlen(s+1),c;</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		c=s[i]-&apos;0&apos;;</div><div class="line">		if(!t[u].ch[c])&#123;</div><div class="line">			t[u].ch[c]=++sz;</div><div class="line">		&#125;</div><div class="line">		u=t[u].ch[c];</div><div class="line">	&#125;</div><div class="line">	t[u].num=1;</div><div class="line">&#125;</div><div class="line">int q[N],he,ta;</div><div class="line">inline void getAC()</div><div class="line">&#123;</div><div class="line">	he=1;ta=1;</div><div class="line">	for(int i=0;i&lt;2;++i)&#123;</div><div class="line">		if(t[0].ch[i])&#123;</div><div class="line">			q[ta]=t[0].ch[i];</div><div class="line">			++ta;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	int u,v;</div><div class="line">	while(he!=ta)&#123;</div><div class="line">		u=q[he];</div><div class="line">		++he;</div><div class="line">		for(int i=0;i&lt;2;++i)&#123;</div><div class="line">			v=t[u].ch[i];</div><div class="line">			if(!v)&#123;</div><div class="line">				t[u].ch[i]=t[t[u].fail].ch[i];</div><div class="line">				continue;</div><div class="line">			&#125;</div><div class="line">			t[v].fail=t[t[u].fail].ch[i];</div><div class="line">			t[v].num|=t[t[t[u].fail].ch[i]].num;</div><div class="line">			q[ta]=v;</div><div class="line">			++ta;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">bool ins[N],vis[N];</div><div class="line">inline bool dfs(int x)</div><div class="line">&#123;</div><div class="line">	ins[x]=1;</div><div class="line">	vis[x]=1;</div><div class="line">	for(int i=0;i&lt;2;++i)&#123;</div><div class="line">		if(ins[t[x].ch[i]])	return 1;</div><div class="line">		if(!t[t[x].ch[i]].num&amp;&amp;!vis[t[x].ch[i]])&#123;</div><div class="line">			if(dfs(t[x].ch[i]))	return 1;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	ins[x]=0;</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		scanf(&quot;%s&quot;,s+1);</div><div class="line">		inser();</div><div class="line">	&#125;</div><div class="line">	getAC();</div><div class="line">	</div><div class="line">	if(dfs(0))&#123;</div><div class="line">		puts(&quot;TAK&quot;);</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		puts(&quot;NIE&quot;);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>错误代码：将没有的设为-1<br>反例：<br>1<br>0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">    LL x=0,f=1;char ch=getchar();</div><div class="line">    while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">    while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">    return x*f;</div><div class="line">&#125;</div><div class="line">const int N=30008;</div><div class="line">int n;</div><div class="line">char s[N];</div><div class="line">struct node&#123;</div><div class="line">    int ch[2],fail;</div><div class="line">    bool num;</div><div class="line">&#125;t[N];</div><div class="line">int sz;</div><div class="line">inline void inser()</div><div class="line">&#123;</div><div class="line">    int u=0,n=strlen(s+1),c;</div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        c=s[i]-&apos;0&apos;;</div><div class="line">        if(!t[u].ch[c])&#123;</div><div class="line">            t[u].ch[c]=++sz;</div><div class="line">        &#125;</div><div class="line">        u=t[u].ch[c];</div><div class="line">    &#125;</div><div class="line">    t[u].num=1;</div><div class="line">&#125;</div><div class="line">int q[N],he,ta;</div><div class="line">inline void getAC()</div><div class="line">&#123;</div><div class="line">    he=1;ta=1;</div><div class="line">    for(int i=0;i&lt;2;++i)&#123;</div><div class="line">        if(t[0].ch[i])&#123;</div><div class="line">            q[ta]=t[0].ch[i];</div><div class="line">            ++ta;</div><div class="line">        &#125;</div><div class="line">        else&#123;</div><div class="line">            t[0].ch[i]=-1;</div><div class="line">        &#125; </div><div class="line">    &#125;</div><div class="line">    int u,v,x;</div><div class="line">    while(he!=ta)&#123;</div><div class="line">        u=q[he];</div><div class="line">        ++he;</div><div class="line">        for(int i=0;i&lt;2;++i)&#123;</div><div class="line">            v=t[u].ch[i];</div><div class="line">            if(!v)&#123;</div><div class="line">                t[u].ch[i]=t[t[u].fail].ch[i];</div><div class="line">                continue;</div><div class="line">            &#125;</div><div class="line">            t[v].fail=t[t[u].fail].ch[i];</div><div class="line">            t[v].num|=t[t[t[u].fail].ch[i]].num; </div><div class="line">            q[ta]=v;</div><div class="line">            ++ta;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">bool ins[N],vis[N];</div><div class="line">inline bool dfs(int x)</div><div class="line">&#123;</div><div class="line">    ins[x]=1;</div><div class="line">    vis[x]=1;</div><div class="line">    for(int i=0;i&lt;2;++i)&#123;</div><div class="line">        if(t[x].ch[i]==-1)	continue; </div><div class="line">        if(ins[t[x].ch[i]])	return 1;</div><div class="line">        if(!t[t[x].ch[i]].num&amp;&amp;!vis[t[x].ch[i]])&#123;</div><div class="line">            if(dfs(t[x].ch[i]))	return 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ins[x]=0;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    n=read();</div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        scanf(&quot;%s&quot;,s+1);</div><div class="line">        inser();</div><div class="line">    &#125;</div><div class="line">    getAC();</div><div class="line">    if(dfs(0))&#123;</div><div class="line">        puts(&quot;TAK&quot;);</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        puts(&quot;NIE&quot;);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ac自动机/" rel="tag"># ac自动机</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/21/luogu3808 【模板】AC自动机（简单版）/" rel="next" title="luogu3808 【模板】AC自动机（简单版）">
+                <i class="fa fa-chevron-left"></i> luogu3808 【模板】AC自动机（简单版）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/23/bzoj3172 [Tjoi2013]单词/" rel="prev" title="bzoj3172 [Tjoi2013]单词">
+                bzoj3172 [Tjoi2013]单词 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="littleming" />
+          <p class="site-author-name" itemprop="name">littleming</p>
+           
+              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">littleming</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
