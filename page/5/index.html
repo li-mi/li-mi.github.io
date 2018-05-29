@@ -254,6 +254,354 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/luogu2577 [ZJOI2005]午餐/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/15/luogu2577 [ZJOI2005]午餐/" itemprop="url">luogu2577 [ZJOI2005]午餐</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-15T09:21:28+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">套路的贪心</div><div class="line">假如只有一个窗口，可以证明按吃饭时间降序排是最优的</div><div class="line">先排序</div><div class="line">然后将人按顺序分到两个窗口</div><div class="line">这样就可以dp了</div><div class="line">f[i][j]表示安排完第i个人，第一队的排队时间为j，的最小吃饭时间</div><div class="line">sum[i]表示前i人的排队时间和</div><div class="line">f[i][j]=min(f[i][j],max(f[i-1][j],sum[i]-j+a[i].y)) (j=0 to sum[i-1])</div><div class="line">f[i][j]=min(f[i][j],max(f[i-1][j-a[i].x],j+a[i].x+a[i].y)) (j=a[i].x to sum[i])</div><div class="line">观察到上下两个方程的范围正好差一个a[i].x</div><div class="line">可以像01背包一样减一维</div><div class="line">将j降序遍历</div><div class="line"></div><div class="line">还有一个更厉害的做法</div><div class="line">随机化。。</div><div class="line">既然是随机化就有风险</div><div class="line">随机化数组用到n+1就能a了（不管用不用srand(time(0)))</div><div class="line">开到n+10就会出现wa了（用了70，不用80）</div><div class="line">随机有风险，考试需谨慎</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/15/luogu2577 [ZJOI2005]午餐/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/14/luogu1169 [ZJOI2007]棋盘制作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/14/luogu1169 [ZJOI2007]棋盘制作/" itemprop="url">luogu1169 [ZJOI2007]棋盘制作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-14T21:12:59+08:00">
+                2018-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">整张图可以重新分为两类</div><div class="line">然后悬线法解决</div><div class="line">极大子正方形和极大子矩阵</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/14/luogu1169 [ZJOI2007]棋盘制作/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/luogu1273 有线电视网/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/13/luogu1273 有线电视网/" itemprop="url">luogu1273 有线电视网</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T21:00:13+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">O(n^2)的dp</div><div class="line">有一个重要的地方</div><div class="line">每个点的循环大小是它子树中用户节点的个数</div><div class="line">不加上这个50分</div><div class="line">每两个点只会在lca产生贡献</div><div class="line">所以n^2</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/13/luogu1273 有线电视网/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/hihocoder1063 缩地/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1053,350 +1401,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/poj2987 Firing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/10/poj2987 Firing/" itemprop="url">poj2987 Firing</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T11:44:07+08:00">
-                2018-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">最大权闭合子图</div><div class="line">最小割一定是简单割，即只割与s或t相连的边</div><div class="line">在poj交ce，&apos;LONG_LONG_MAX&apos; was not declared in this scope，不知道为什么</div><div class="line">改成INF就过了</div><div class="line">用C++编译会ce，G++才能过。。</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/10/poj2987 Firing/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/uva1515 pool construction/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/10/uva1515 pool construction/" itemprop="url">uva1515 pool construction</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T09:47:33+08:00">
-                2018-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">建图很妙啊</div><div class="line">最小割的应用</div><div class="line">注意所有相邻的格子都要连边</div><div class="line">只要相邻的格子所属的集合不同，这条边就要被割掉</div><div class="line">注意不要打错变量名</div><div class="line">（在vjudge上的两个oj交a了，还有一个oj上mle，将空间缩小到1/4就a了，很迷）</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/10/uva1515 pool construction/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/luogu2766 最长不下降子序列问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/09/luogu2766 最长不下降子序列问题/" itemprop="url">luogu2766 最长不下降子序列问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T13:41:39+08:00">
-                2018-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">第一问lis</div><div class="line">第二问和第三问都是网络流</div><div class="line">第二问的建图：</div><div class="line">s - 1 - i (f[i]==1)</div><div class="line">i - 1 - i&apos;</div><div class="line">i&apos; - 1 - j (f[i]+1==f[j]&amp;&amp;a[i]&lt;=a[j]&amp;&amp;i&lt;j)</div><div class="line">i&apos; - 1 - t (f[i]==ans)</div><div class="line">第三问只要把(s,1),(1,1&apos;),(n,n&apos;),(n&apos;,t)的流量改成INF</div><div class="line">82分的原因是加边的时候忘记判a[i]&gt;=a[j]</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">    LL x=0,f=1;char ch=getchar();</div><div class="line">    while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">    while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">    return x*f;</div><div class="line">&#125;</div><div class="line">const int N=508;</div><div class="line">int n,s,t,tmp;</div><div class="line">int a[N];</div><div class="line">int f[N],lis[N],num;</div><div class="line">int ans;</div><div class="line"></div><div class="line">int nume=1,head[N*2],cur[N*2];</div><div class="line">struct node&#123;</div><div class="line">    int to,nxt,f;</div><div class="line">&#125;e[N*N*2];</div><div class="line">inline void addedge(int x,int y,int z)&#123;</div><div class="line">    e[++nume]=(node)&#123;y,head[x],z&#125;;head[x]=nume;</div><div class="line">    e[++nume]=(node)&#123;x,head[y],0&#125;;head[y]=nume;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int dis[N*2];</div><div class="line">int q[N*2],he,ta;</div><div class="line">inline bool bfs()</div><div class="line">&#123;</div><div class="line">    memset(dis,0,sizeof(dis));</div><div class="line">    he=1;ta=2;</div><div class="line">    q[1]=s;</div><div class="line">    dis[s]=1;</div><div class="line">    while(he!=ta)&#123;</div><div class="line">        int x=q[he];</div><div class="line">        ++he;</div><div class="line">        for(int i=head[x];i;i=e[i].nxt)&#123;</div><div class="line">            if(e[i].f&amp;&amp;!dis[e[i].to])&#123;</div><div class="line">                dis[e[i].to]=dis[x]+1;</div><div class="line">                if(e[i].to==t)	return 1;</div><div class="line">                q[ta]=e[i].to;</div><div class="line">                ++ta;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line">inline int dfs(int x,int low)</div><div class="line">&#123;</div><div class="line">    if(x==t||!low)	return low;</div><div class="line">    int flow=0,tmp;</div><div class="line">    for(int i=head[x];i;i=e[i].nxt)&#123;</div><div class="line">        if(dis[e[i].to]==dis[x]+1&amp;&amp;(tmp=dfs(e[i].to,min(low,e[i].f))))&#123;</div><div class="line">            flow+=tmp;</div><div class="line">            low-=tmp;</div><div class="line">            e[i].f-=tmp;</div><div class="line">            e[i^1].f+=tmp;</div><div class="line">            if(!low)	return flow;	</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(low)	dis[x]=0;</div><div class="line">    return flow;</div><div class="line">&#125;</div><div class="line">inline int dinic()</div><div class="line">&#123;</div><div class="line">    int maxflow=0;</div><div class="line">    while(bfs())&#123;</div><div class="line">        for(int i=0;i&lt;=t;++i)&#123;</div><div class="line">            cur[i]=head[i];</div><div class="line">        &#125;</div><div class="line">        maxflow+=dfs(s,INT_MAX);</div><div class="line">    &#125;</div><div class="line">    return maxflow;</div><div class="line">&#125;</div><div class="line">inline void init()</div><div class="line">&#123;</div><div class="line">    for(int i=0;i&lt;=t;++i)&#123;</div><div class="line">        for(int j=head[i];j;j=e[j].nxt)&#123;</div><div class="line">            if(j%2==0)&#123;</div><div class="line">                if((i==0&amp;&amp;e[j].to==1) || (i==1&amp;&amp;e[j].to==1+n) || (i==n&amp;&amp;e[j].to==n+n) || (i==n+n&amp;&amp;e[j].to==t))&#123;</div><div class="line">                    e[j].f=INT_MAX;</div><div class="line">                    e[j^1].f=0;</div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    e[j].f+=e[j^1].f;</div><div class="line">                    e[j^1].f=0;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    n=read();</div><div class="line">    s=0;t=n+n+1;</div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        a[i]=read();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        if(a[i]&gt;=lis[num])&#123;</div><div class="line">            lis[++num]=a[i];</div><div class="line">            f[i]=num;</div><div class="line">        &#125;</div><div class="line">        else&#123;</div><div class="line">            tmp=upper_bound(lis+1,lis+num+1,a[i])-lis;</div><div class="line">            lis[tmp]=a[i];</div><div class="line">            f[i]=tmp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        ans=max(ans,f[i]);</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">        addedge(i,i+n,1); </div><div class="line">        if(f[i]==1)	addedge(s,i,1);</div><div class="line">        if(f[i]==ans)	addedge(i+n,t,1);</div><div class="line">        for(int j=1;j&lt;i;++j)&#123;</div><div class="line">            if(f[i]==f[j]+1&amp;&amp;a[i]&gt;=a[j])&#123;</div><div class="line">                addedge(j+n,i,1);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,dinic());</div><div class="line">    init();</div><div class="line">    printf(&quot;%d\n&quot;,dinic());</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1446,7 +1450,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-count">64</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1459,7 +1463,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

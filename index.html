@@ -358,6 +358,7 @@
 <p>7) 输出与题意不符（少复制了什么）！！</p>
 <ul>
 <li>poj2947 Widget Factory（少输出’.’）</li>
+<li>bzoj1027 [JSOI2007]合金 （1输成-1）</li>
 </ul>
 <p>8) dp没有初始化或初始化出错！！</p>
 <ul>
@@ -404,8 +405,364 @@
 </ul>
 <p>18) eps设置太小会t</p>
 <p>19) (apio2018)使用set查找时尽量不要用pair，对双关键字排序要注意</p>
+<p>20) 数组下标打反</p>
+<ul>
+<li>bzoj1027 [JSOI2007]合金</li>
+</ul>
+<p>21) 程序改一半忘了</p>
+<ul>
+<li>bzoj1027 [JSOI2007]合金</li>
+</ul>
 
           
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/luogu3233 [HNOI2014]世界树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/29/luogu3233 [HNOI2014]世界树/" itemprop="url">luogu3233 [HNOI2014]世界树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T10:31:25+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">显然是虚树</div><div class="line">然而怎么dp。。</div><div class="line"></div><div class="line">看题解看题解。。</div><div class="line">先两遍dfs求出虚树上每个点到哪个点最近</div><div class="line">注意到虚树上的一条链所属的点一定和某一个端点是一样的（为什么我没有注意到）</div><div class="line">然后就是看两个端点是否是属于同一个点</div><div class="line">是的话说明整条链就是这个点的</div><div class="line">不是的话可以算出中间的分割点的深度</div><div class="line"></div><div class="line">倍增可以求节点a的深度为x的祖先</div><div class="line">倍增大概有3种写法，若用dep[fa[x][i]]&gt;=dep[y]，请将根节点的dep设为1</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/29/luogu3233 [HNOI2014]世界树/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/luogu3320 [SDOI2015]寻宝游戏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/28/luogu3320 [SDOI2015]寻宝游戏/" itemprop="url">luogu3320 [SDOI2015]寻宝游戏</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T21:10:35+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">每加入一个点，其实就是在虚树上从前驱和后继向这个点连边</div><div class="line">虚树不需要建，用set求前驱后继</div><div class="line">细节！！</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/28/luogu3320 [SDOI2015]寻宝游戏/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/hdu1599 find the mincost route/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/hdu1599 find the mincost route/" itemprop="url">hdu1599 find the mincost route</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T18:17:02+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">无向图找最小环</div><div class="line">floyd O(n^3)</div><div class="line">枚举三点的环，但要确保有一点不在其他两个点的最短路上，所以一边floyd一边枚举</div><div class="line"></div><div class="line">注意0x3f3f3f3f*3会爆int</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/27/hdu1599 find the mincost route/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1134,352 +1491,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/题目/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/20/题目/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T09:44:58+08:00">
-                2018-05-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>网络流</p>
-<p>luogu4249 [WC2007]剪刀石头布<br>S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T<br>跑10000的费用流，数据较水能过</p>
-<p>luogu3973 [TJOI2015]线性代数<br>每个数取0/1，建图如图</p>
-<p>bzoj3894 文理分科<br>图</p>
-<p>bzoj3232 圈地游戏<br>1.二分+spfa判负环<br>2.二分+[线性代数]建图，要解方程</p>
-<p>bzoj2229 [Zjoi2011]最小割<br>gomory hu tree O(n*flow) 最小割树<br>建树有两种<br>1.任选s,t跑最小割，然后分治（递归）<br>2.1下面连2到n，从2到n，s=fa[x],t=x跑网络流，每次将和x相连的点的fa指向x</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/【学习笔记】splay/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/09/【学习笔记】splay/" itemprop="url">【学习笔记】splay</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T22:32:54+08:00">
-                2018-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>splay是个好东西<br>复杂度O(nlogn)（势能分析我不会）<br>常数较大请写迭代<br>每次询问后都要做splay操作（一直询问深度为O(n)的点就挂了，例如依次插入1到n）<br><del>一个常数不太大的模板</del><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=100008;</div><div class="line">int n;</div><div class="line">int opt,x;</div><div class="line">int tot,rt,ch[N][2],fa[N],key[N],num[N],sum[N];</div><div class="line">inline void newnode(int &amp;pos,int p,int x)</div><div class="line">&#123;</div><div class="line">	pos=++tot;</div><div class="line">	fa[pos]=p;</div><div class="line">	key[pos]=x;</div><div class="line">	num[pos]=sum[pos]=1;</div><div class="line">	ch[pos][0]=ch[pos][1]=0;</div><div class="line">&#125;</div><div class="line">inline void pushup(int x)</div><div class="line">&#123;</div><div class="line">	sum[x]=sum[ch[x][0]]+sum[ch[x][1]]+num[x];</div><div class="line">&#125;</div><div class="line">inline void rotate(int x,int op)</div><div class="line">&#123;</div><div class="line">	int y=fa[x];</div><div class="line">	ch[y][!op]=ch[x][op];</div><div class="line">	fa[ch[x][op]]=y;</div><div class="line">	if(fa[y])&#123;</div><div class="line">		ch[fa[y]][ch[fa[y]][1]==y]=x;</div><div class="line">	&#125;</div><div class="line">	fa[x]=fa[y];</div><div class="line">	ch[x][op]=y;</div><div class="line">	fa[y]=x;</div><div class="line">	</div><div class="line">	pushup(y);</div><div class="line">	pushup(x); </div><div class="line">&#125;</div><div class="line">inline void splay(int x,int goal)</div><div class="line">&#123;</div><div class="line">	while(fa[x]!=goal)&#123;</div><div class="line">		if(fa[fa[x]]==goal)&#123;</div><div class="line">			rotate(x,ch[fa[x]][0]==x);</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			int y=fa[x];</div><div class="line">			bool op=ch[fa[y]][0]==y;</div><div class="line">			if(ch[y][op]==x)&#123;</div><div class="line">				rotate(x,!op);</div><div class="line">				rotate(x,op);</div><div class="line">			&#125;</div><div class="line">			else&#123;</div><div class="line">				rotate(y,op);</div><div class="line">				rotate(x,op);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	if(goal==0)&#123;</div><div class="line">		rt=x;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">inline void insert(int x)</div><div class="line">&#123;</div><div class="line">	if(rt==0)&#123;</div><div class="line">		newnode(rt,0,x);</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	int tmp=rt;</div><div class="line">	while(1)&#123;</div><div class="line">		if(key[tmp]==x)&#123;</div><div class="line">			++num[tmp];</div><div class="line">			splay(tmp,0);</div><div class="line">			return;</div><div class="line">		&#125;</div><div class="line">		if(ch[tmp][key[tmp]&lt;x]==0)	break;</div><div class="line">		tmp=ch[tmp][key[tmp]&lt;x];</div><div class="line">	&#125;</div><div class="line">	newnode(ch[tmp][key[tmp]&lt;x],tmp,x);</div><div class="line">	splay(tot,0);</div><div class="line">	return;</div><div class="line">&#125;</div><div class="line">inline bool find(int x)</div><div class="line">&#123;</div><div class="line">	int tmp=rt;</div><div class="line">	while(tmp)&#123;</div><div class="line">		if(key[tmp]==x)&#123;</div><div class="line">			splay(tmp,0);</div><div class="line">			return 1;</div><div class="line">		&#125;	</div><div class="line">		if(key[tmp]&gt;x)&#123;</div><div class="line">			tmp=ch[tmp][0];</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			tmp=ch[tmp][1];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">inline void pop()</div><div class="line">&#123;</div><div class="line">	if(num[rt]&gt;1)&#123;</div><div class="line">		--num[rt];--sum[rt];return;</div><div class="line">	&#125;</div><div class="line">	if(!ch[rt][0])&#123;</div><div class="line">		fa[ch[rt][1]]=0;</div><div class="line">		rt=ch[rt][1];</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	if(!ch[rt][1])&#123;</div><div class="line">		fa[ch[rt][0]]=0;</div><div class="line">		rt=ch[rt][0];</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	int tmp=ch[rt][0];</div><div class="line">	while(ch[tmp][1])	tmp=ch[tmp][1];</div><div class="line">	splay(tmp,rt);</div><div class="line">	ch[tmp][1]=ch[rt][1];</div><div class="line">	rt=tmp;</div><div class="line">	fa[tmp]=0;</div><div class="line">	fa[ch[rt][1]]=rt;</div><div class="line">	</div><div class="line">	pushup(rt);</div><div class="line">&#125;</div><div class="line">inline void del(int x)</div><div class="line">&#123;</div><div class="line">	if(find(x))&#123;</div><div class="line">		pop(); </div><div class="line">	&#125;	</div><div class="line">&#125;</div><div class="line">inline int get_pre(int x)</div><div class="line">&#123;</div><div class="line">	int tmp=rt,ans=INT_MIN;</div><div class="line">	while(1)&#123;</div><div class="line">		if(key[tmp]&lt;x)&#123;</div><div class="line">			ans=max(ans,key[tmp]);</div><div class="line">			if(!ch[tmp][1])&#123;</div><div class="line">				splay(tmp,0);</div><div class="line">				break; </div><div class="line">			&#125; </div><div class="line">			tmp=ch[tmp][1];</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			if(!ch[tmp][0])&#123;</div><div class="line">				splay(tmp,0);</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			tmp=ch[tmp][0];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return ans;</div><div class="line">&#125;</div><div class="line">inline int get_nxt(int x)</div><div class="line">&#123;</div><div class="line">	int tmp=rt,ans=INT_MAX;</div><div class="line">	while(1)&#123;</div><div class="line">		if(key[tmp]&gt;x)&#123;</div><div class="line">			ans=min(ans,key[tmp]);</div><div class="line">			if(!ch[tmp][0])&#123;</div><div class="line">				splay(tmp,0);</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			tmp=ch[tmp][0];</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			if(!ch[tmp][1])&#123;</div><div class="line">				splay(tmp,0);</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			tmp=ch[tmp][1];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return ans;</div><div class="line">&#125;</div><div class="line">inline int rank(int x)</div><div class="line">&#123;</div><div class="line">	int tmp=rt,ans=0;</div><div class="line">	while(1)&#123;</div><div class="line">		if(key[tmp]&gt;=x)&#123;</div><div class="line">			if(!ch[tmp][0])&#123;</div><div class="line">				splay(tmp,0);</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			tmp=ch[tmp][0];</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			ans+=sum[ch[tmp][0]]+num[tmp];</div><div class="line">			if(!ch[tmp][1])&#123;</div><div class="line">				splay(tmp,0);</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			tmp=ch[tmp][1];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return ans+1;</div><div class="line">&#125;</div><div class="line">inline int kth(int x)</div><div class="line">&#123;</div><div class="line">	int tmp=rt;</div><div class="line">	while(x)&#123;</div><div class="line">		if(sum[ch[tmp][0]]&gt;=x)&#123;</div><div class="line">			tmp=ch[tmp][0];</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			x-=sum[ch[tmp][0]];</div><div class="line">			if(x&lt;=num[tmp])&#123;</div><div class="line">				splay(tmp,0);</div><div class="line">				return key[tmp];</div><div class="line">			&#125;</div><div class="line">			x-=num[tmp];</div><div class="line">			tmp=ch[tmp][1];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();</div><div class="line">	for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">		opt=read();x=read();</div><div class="line">		switch (opt)&#123;</div><div class="line">			case 1:&#123;</div><div class="line">				insert(x);</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			case 2:&#123;</div><div class="line">				del(x);</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			case 3:&#123;</div><div class="line">				printf(&quot;%d\n&quot;,rank(x));</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			case 4:&#123;</div><div class="line">				printf(&quot;%d\n&quot;,kth(x));</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			case 5:&#123;</div><div class="line">				printf(&quot;%d\n&quot;,get_pre(x));</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			case 6:&#123;</div><div class="line">				printf(&quot;%d\n&quot;,get_nxt(x));</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>splay最特色的区间翻转<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">const int N=100008;</div><div class="line">int n,m;</div><div class="line">int l,r,rt,tot;</div><div class="line">int fa[N],sz[N],ch[N][2];</div><div class="line">bool rev[N];</div><div class="line">inline void pushup(int x)</div><div class="line">&#123;</div><div class="line">	sz[x]=sz[ch[x][0]]+sz[ch[x][1]]+1;</div><div class="line">&#125;</div><div class="line">inline void rotate(int x,int op)</div><div class="line">&#123;</div><div class="line">	int y=fa[x];</div><div class="line">	ch[y][!op]=ch[x][op];</div><div class="line">	fa[ch[x][op]]=y;</div><div class="line">	if(fa[y])&#123;</div><div class="line">		ch[fa[y]][ch[fa[y]][1]==y]=x;</div><div class="line">	&#125;</div><div class="line">	fa[x]=fa[y];</div><div class="line">	ch[x][op]=y;</div><div class="line">	fa[y]=x;</div><div class="line">	</div><div class="line">	pushup(y);</div><div class="line">	pushup(x);</div><div class="line">&#125;</div><div class="line">inline void splay(int x,int goal)</div><div class="line">&#123;</div><div class="line">	while(fa[x]!=goal)&#123;</div><div class="line">		if(fa[fa[x]]==goal)&#123;</div><div class="line">			rotate(x,ch[fa[x]][0]==x);</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			int y=fa[x];</div><div class="line">			bool op=ch[fa[y]][0]==y;</div><div class="line">			if(ch[y][op]==x)&#123;</div><div class="line">				rotate(x,!op);</div><div class="line">				rotate(x,op);</div><div class="line">			&#125;</div><div class="line">			else&#123;</div><div class="line">				rotate(y,op);</div><div class="line">				rotate(x,op);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	if(goal==0)&#123;</div><div class="line">		rt=x;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">inline void pushdown(int x)</div><div class="line">&#123;</div><div class="line">	if(rev[x])&#123;</div><div class="line">		swap(ch[x][0],ch[x][1]);</div><div class="line">		rev[ch[x][0]]^=1;</div><div class="line">		rev[ch[x][1]]^=1;</div><div class="line">		rev[x]=0;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">inline int find(int x)</div><div class="line">&#123;</div><div class="line">	int tmp=rt,cnt=0;</div><div class="line">	while(1)&#123;</div><div class="line">		pushdown(tmp);</div><div class="line">		if(sz[ch[tmp][0]]+1==x)	return tmp;</div><div class="line">		if(sz[ch[tmp][0]]&gt;=x)&#123;</div><div class="line">			tmp=ch[tmp][0];</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			x-=sz[ch[tmp][0]]+1;</div><div class="line">			tmp=ch[tmp][1];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">inline void rever(int l,int r)</div><div class="line">&#123;</div><div class="line">	int x=find(l-1),y=find(r+1);</div><div class="line">	splay(x,0);</div><div class="line">	splay(y,rt);</div><div class="line">	rev[ch[y][0]]^=1;</div><div class="line">&#125;</div><div class="line">inline void build(int p,int l,int r)</div><div class="line">&#123;</div><div class="line">	if(l&gt;r)	return;</div><div class="line">	if(l==r)&#123;</div><div class="line">		fa[l]=p;</div><div class="line">		sz[l]=1;</div><div class="line">		if(l&lt;p)&#123;</div><div class="line">			ch[p][0]=l;</div><div class="line">		&#125;	</div><div class="line">		else&#123;</div><div class="line">			ch[p][1]=l;</div><div class="line">		&#125;	</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	int mid=(l+r)&gt;&gt;1;</div><div class="line">	fa[mid]=p;</div><div class="line">	build(mid,l,mid-1);</div><div class="line">	build(mid,mid+1,r);</div><div class="line">	pushup(mid);</div><div class="line">	if(mid&lt;p)&#123;</div><div class="line">		ch[p][0]=mid;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		ch[p][1]=mid;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	n=read();m=read();</div><div class="line">	build(0,1,n+2);</div><div class="line">	rt=(n+3)&gt;&gt;1;</div><div class="line">	while(m--)&#123;</div><div class="line">		l=read()+1;r=read()+1;</div><div class="line">		if(l==r)	continue;</div><div class="line">		rever(l,r);</div><div class="line">	&#125;</div><div class="line">	//不能print！！有标记还没下放！！</div><div class="line">	for(int i=2;i&lt;=n+1;++i)&#123;</div><div class="line">		printf(&quot;%d &quot;,find(i)-1);</div><div class="line">	&#125; </div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/poj2985The k-th Largest Group/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/07/poj2985The k-th Largest Group/" itemprop="url">poj2985The k-th Largest Group</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T09:17:25+08:00">
-                2018-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">单点修改</div><div class="line">找第k大</div><div class="line">二分+树状数组，复杂度O(nlog^2n)</div><div class="line">树状数组上二分，复杂度O(nlogn)</div><div class="line">妙极了</div><div class="line">树状数组二分和线段树二分差不多</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/07/poj2985The k-th Largest Group/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1529,7 +1540,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-count">64</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1542,7 +1553,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
