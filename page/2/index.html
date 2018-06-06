@@ -254,6 +254,122 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/hdu1599 find the mincost route/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/hdu1599 find the mincost route/" itemprop="url">hdu1599 find the mincost route</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T18:17:02+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">无向图找最小环</div><div class="line">floyd O(n^3)</div><div class="line">枚举三点的环，但要确保有一点不在其他两个点的最短路上，所以一边floyd一边枚举</div><div class="line"></div><div class="line">注意0x3f3f3f3f*3会爆int</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/27/hdu1599 find the mincost route/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/【学习笔记】虚树 luogu2495 [SDOI2011]消耗战/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1027,7 +1143,7 @@
 <p>【BZOJ2085】[Poi2010]Hamsters hash+倍增floyd</p>
 <p>bzoj2795 [Poi2012]A Horrible Poem<br>判断一个字符串的循环节：<br>枚举len（len整除|s|)<br>然后判断前|s|-len和后|s|-len个的hash值是否相同<br>对每个询问，不断除以长度的质因数并判断<br>总复杂度是O(n+qlogn)<br>先线性筛求出每个数的最小质因数，然后可以在O(总因数个数)内求出1到n的因数个数</p>
 <p>[BZOJ 4416][Shoi2013]阶乘字符串<br>序列自动机就是dp（next）。。记录next[i][26]，O(26n)的预处理，从n到1，每次a[26]记录最后出现的位置，然后复制给next就可以了（next是dag）<br>状压加手算优化（大于21就无解我也不会证）</p>
-<p>hihocoder1412 : Rikka with Subsequence<br>不考虑删除，建出next，变成求dag中不同路径的个数<br>考虑删除<br>方程变成：<br>$c[ch]=\sum<em>{j&lt;i}$$(f[j]*\prod</em>{(j&lt;k&lt;i\bigcup a[k]=ch)}a_k)$<br>$f[i]=c[s[i]]*(1-ai)$<br>（大概是这样请手推）</p>
+<p>hihocoder1412 : Rikka with Subsequence<br>不考虑删除，建出next，问题等价于dag中以起点开始的不同路径的个数，dp即可<br>考虑删除<br>方程变成：<br>$c[ch]=\sum<em>{j&lt;i}$$(f[j]*\prod</em>{(j&lt;k&lt;i\bigcup a[k]=ch)}a_k)$ c[ch]表示到i位置前面的f对第i位字符为ch的贡献<br>$f[i]=c[s[i]]*(1-ai)$ f[i]表示第i位对答案的贡献<br>（大概是这样请手推）</p>
 <p>[NOI2015]品酒大会<br>codeforces 452E 和品酒大会差不多</p>
 <p>bzoj4516 [Sdoi2016]生成魔咒<br>不同子串的个数为n(n+1)/2-sum(height)</p>
 
@@ -1293,127 +1409,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/luogu1903 [国家集训队]数颜色/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/02/luogu1903 [国家集训队]数颜色/" itemprop="url">luogu1903 [国家集训队]数颜色</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T09:34:26+08:00">
-                2018-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">带修改的莫队</div><div class="line">设块长为blk</div><div class="line">则复杂度为O(n*blk+n*n/blk+(n/blk)*(n/blk)*n)</div><div class="line">均值求出blk=n^(2/3)</div><div class="line">总复杂度为O(n^5/3)</div><div class="line"></div><div class="line">排序的时候一定要求出每个点所属的块</div><div class="line">不要用除法！</div><div class="line">不要用除法！</div><div class="line">不要用除法！</div><div class="line">（t到死）</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/02/luogu1903 [国家集训队]数颜色/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1458,7 +1458,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">70</span>
+                <span class="site-state-item-count">71</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

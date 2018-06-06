@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/05/20/题目/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
-<meta property="og:updated_time" content="2018-06-03T04:25:14.121Z">
+<meta property="og:updated_time" content="2018-06-05T03:06:55.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小明的阁楼">
 <meta name="twitter:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
@@ -326,7 +326,7 @@
 <p>【BZOJ2085】[Poi2010]Hamsters hash+倍增floyd</p>
 <p>bzoj2795 [Poi2012]A Horrible Poem<br>判断一个字符串的循环节：<br>枚举len（len整除|s|)<br>然后判断前|s|-len和后|s|-len个的hash值是否相同<br>对每个询问，不断除以长度的质因数并判断<br>总复杂度是O(n+qlogn)<br>先线性筛求出每个数的最小质因数，然后可以在O(总因数个数)内求出1到n的因数个数</p>
 <p>[BZOJ 4416][Shoi2013]阶乘字符串<br>序列自动机就是dp（next）。。记录next[i][26]，O(26n)的预处理，从n到1，每次a[26]记录最后出现的位置，然后复制给next就可以了（next是dag）<br>状压加手算优化（大于21就无解我也不会证）</p>
-<p>hihocoder1412 : Rikka with Subsequence<br>不考虑删除，建出next，变成求dag中不同路径的个数<br>考虑删除<br>方程变成：<br>$c[ch]=\sum<em>{j&lt;i}$$(f[j]*\prod</em>{(j&lt;k&lt;i\bigcup a[k]=ch)}a_k)$<br>$f[i]=c[s[i]]*(1-ai)$<br>（大概是这样请手推）</p>
+<p>hihocoder1412 : Rikka with Subsequence<br>不考虑删除，建出next，问题等价于dag中以起点开始的不同路径的个数，dp即可<br>考虑删除<br>方程变成：<br>$c[ch]=\sum<em>{j&lt;i}$$(f[j]*\prod</em>{(j&lt;k&lt;i\bigcup a[k]=ch)}a_k)$ c[ch]表示到i位置前面的f对第i位字符为ch的贡献<br>$f[i]=c[s[i]]*(1-ai)$ f[i]表示第i位对答案的贡献<br>（大概是这样请手推）</p>
 <p>[NOI2015]品酒大会<br>codeforces 452E 和品酒大会差不多</p>
 <p>bzoj4516 [Sdoi2016]生成魔咒<br>不同子串的个数为n(n+1)/2-sum(height)</p>
 
@@ -440,7 +440,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">70</span>
+                <span class="site-state-item-count">71</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
