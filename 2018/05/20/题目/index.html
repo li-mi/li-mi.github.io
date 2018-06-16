@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/05/20/题目/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
-<meta property="og:updated_time" content="2018-06-05T03:06:55.700Z">
+<meta property="og:updated_time" content="2018-06-10T04:41:15.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小明的阁楼">
 <meta name="twitter:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
@@ -329,6 +329,14 @@
 <p>hihocoder1412 : Rikka with Subsequence<br>不考虑删除，建出next，问题等价于dag中以起点开始的不同路径的个数，dp即可<br>考虑删除<br>方程变成：<br>$c[ch]=\sum<em>{j&lt;i}$$(f[j]*\prod</em>{(j&lt;k&lt;i\bigcup a[k]=ch)}a_k)$ c[ch]表示到i位置前面的f对第i位字符为ch的贡献<br>$f[i]=c[s[i]]*(1-ai)$ f[i]表示第i位对答案的贡献<br>（大概是这样请手推）</p>
 <p>[NOI2015]品酒大会<br>codeforces 452E 和品酒大会差不多</p>
 <p>bzoj4516 [Sdoi2016]生成魔咒<br>不同子串的个数为n(n+1)/2-sum(height)</p>
+<p>[AHOI2014/JSOI2014]骑士游戏<br>最短路就是某种意义上的dp（无负边），每次用最小值更新<br>这题也是每次用每个点的最小值更新其他点，一开始将所有点的魔法值入堆</p>
+<p>[AHOI2014/JSOI2014]支线剧情<br>上下界网络流</p>
+<p>[AHOI2014/JSOI2014]奇怪的计算器<br>先二分出全变成l和r的地方<br>中间的在线段树上做，加、乘、at三个标记</p>
+<p>[AHOI2014/JSOI2014]拼图<br>先枚举底在第i行，再枚举高度为j，最后每一列扫一遍<br>复杂度$O(n<em>m</em>min(m,n))$</p>
+<p>[Jsoi2014]病毒分类<br>trie树上搞出每个串属于的两个集合<br>每个串变成边<br>求最小点覆盖</p>
+<p>题目：区间有每个数的出现次数限制，求数的最小次数<br>差分约束</p>
+<p>[Jsoi2014]支线剧情2</p>
+<p>[Jsoi2014]打兔子<br>观察发现发枪顺序没有影响，且不会发相邻的枪<br>dp[i][j][0/1]表示到i打j枪且i处是否发枪<br>多dp几遍，考虑第1个位置和第2个位置放不放</p>
 
       
     </div>
@@ -440,7 +448,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -453,7 +461,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
