@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/05/20/题目/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
-<meta property="og:updated_time" content="2018-06-10T04:41:15.950Z">
+<meta property="og:updated_time" content="2018-06-20T14:35:48.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小明的阁楼">
 <meta name="twitter:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
@@ -337,6 +337,13 @@
 <p>题目：区间有每个数的出现次数限制，求数的最小次数<br>差分约束</p>
 <p>[Jsoi2014]支线剧情2</p>
 <p>[Jsoi2014]打兔子<br>观察发现发枪顺序没有影响，且不会发相邻的枪<br>dp[i][j][0/1]表示到i打j枪且i处是否发枪<br>多dp几遍，考虑第1个位置和第2个位置放不放</p>
+<p>2118: 墨墨的等式<br>套路dp<br>考虑B%ai的值,0~ai-1<br>对每个余数i进行dp，求出最小的余数为i的B<br>f[i]=min(f[j]+ak|(j+ak%ai)%ai==i)<br>dp的顺序不知道<br>变成最短路即可<br>建图的复杂度是O(na)<br>跑spfa或者dijk的复杂度是O(能过)<br>显然用ai最小的值作除数</p>
+<p>4082: [Wf2014]Surveillance<br>去掉包含的区间：<br>先排序，R[i]=max(R[i-1],end[i])表示左端点在i及左边，右端点的最远值，则对于区间[l,r]，只要判断R[l]和r的关系即可<br>先变成链（翻两倍），去掉包含的区间 O(nlogn)<br>在环上预处理后继的区间 O(nlogn)<br>再变成链倍增求出f[i][j]表示从第i个区间/第i个位置走j步到达的最远距离<br>然后每个区间的首位置再判一遍</p>
+<p>2303: [Apio2011]方格染色<br>注意到第一行和第一列确定后可以确定整个图<br>图中每个点(i,j)可以列出异或方程：<br>a11^a1j^ai1^aij=[i,j都是偶数]<br>aij和a11都可以去掉<br>然后并查集</p>
+<p>3150: [Ctsc2013]猴子<br>先考虑n=10<br>一个状态可以变成好多状态啊<br>列方程吧<br>f(s)表示s状态的胜率<br>结论：<br>f(s)∩f(t)=∅，f(s)+f(t)=f(s+t)<br>证明:s=s1+s2,f(s1)+f(s2)+f(t)=1,f(s)+f(t)=1 =&gt; f(s)=f(s1)+f(s2)<br>所以处理所有只有一个1的状态就可以了</p>
+<p>4237: 稻草人<br>分治加平衡树<br>O(nlognlogn)</p>
+<p>hdu5800 To My Girlfriend<br>f[i][j][f1][f2]<br>表示到第i个和为j已经’钦定’的选的个数为f1，’钦定’不选的为f2</p>
+<p>多区间问题，每个区间有要求，如：<br>2018 计蒜之道 初赛 第四场 贝壳找房搜房<br>[USACO13OPEN]照片Photo</p>
 
       
     </div>
@@ -448,7 +455,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">82</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -461,7 +468,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">41</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
