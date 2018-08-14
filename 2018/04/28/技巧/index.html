@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/28/技巧/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="1.$n$维曼哈顿距离可以变成$2^{n-1}$维契比雪夫距离。（相当于枚举$n-1$个的符号） 2.三分：(2l+r)/3,(l+2r+2)/3 3.对时间建线段树可以代替cdq分治 4.二进制分组 5.离散化：sort+unique+lower_bound或者12345678910for(int i=1;i&amp;lt;=n;++i)&amp;#123;	a[i].x=read();a[i].id=i;&amp;#">
-<meta property="og:updated_time" content="2018-06-12T01:32:20.324Z">
+<meta property="og:updated_time" content="2018-08-05T08:45:50.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="技巧">
 <meta name="twitter:description" content="1.$n$维曼哈顿距离可以变成$2^{n-1}$维契比雪夫距离。（相当于枚举$n-1$个的符号） 2.三分：(2l+r)/3,(l+2r+2)/3 3.对时间建线段树可以代替cdq分治 4.二进制分组 5.离散化：sort+unique+lower_bound或者12345678910for(int i=1;i&amp;lt;=n;++i)&amp;#123;	a[i].x=read();a[i].id=i;&amp;#">
@@ -329,6 +329,21 @@
 <p>9.dtx： 倍增替代二分</p>
 <p>10.二分图中：最小点覆盖等于最大匹配（最小点覆盖$\geq$最大匹配，且每个匹配中取一个点可以成为点覆盖）<br>            最大独立集+最小点覆盖=点数（独立集是点覆盖的补集）</p>
 <p>11.符号：%的值同被除数，/的值根据被除数和除数的符号，相同为正，不相同为负</p>
+<p>12.[k/i]一共根号个值，下一个i=k/(k/i)+1</p>
+<p>13.printf输出double是四舍五入的，保留两位向下取整就-0.005+eps再输出，向上取整就+0.005-eps再输出<br>   double有15位有效数字<br>   eps应该是小于你能算出来所有数两两之差(xy)<br>   精度误差可以认为在[-1e-13,1e-13]之间</p>
+<p>   何时+/-eps凭感觉(xy)<br>   只能详细记录各种情况了：<br>   （负数的四舍五入要看题目定义，故只讨论正数）<br>   拿边界往里带<br>   正数的四舍五入要+eps，（负数可能要-eps)</p>
+<p>14.尺规作图只能做加减乘除开方五种运算</p>
+<p>15.隔板法要么是隔数字要么是隔位置</p>
+<p>16.线性求逆元：inv[i]=(p-p/i)<em>inv[p%i]%p或者inv[i]=p-p/i</em>inv[p%i]%p;</p>
+<p>17.最大团和最大独立集是等价的，都是npc<br>   一个图的最大团和取反的图的最大独立集等价</p>
+<p>18.高维前缀和要一位一位做<br>   集合的子集和和高维前缀和一样<br>   要一位一位做<br>   否则会重复<br>   001&lt;-000<br>   010&lt;-000<br>   011&lt;-001<br>      &lt;-010<br>   然后发现000在011中出现两次、</p>
+<p>19.坐标范围1到n的下凸壳上有sqrt(n)个点</p>
+<p>20.A坐标系中的切比雪夫距离=B坐标系中的曼哈顿距离<br>   A坐标系中的曼哈顿距离=B坐标系中的切比雪夫距离（B为A旋转45°，顺时针和逆时针是一样的，因为在互相垂直的坐标系中切比雪夫距离和曼哈顿距离是等价的）<br>   旋转45°,(x,y)-&gt;((x+y)/2,(x-y)/2)</p>
+<p>21.无向仙人掌图判定：dfs+差分，返祖边的下端点+1，上端点-1，一条边属于&gt;2个环就不是仙人掌，否则是。<br>   有向仙人掌图判定：dfs，找到一个环就暴力的把环上每条边+1</p>
+<p>22.$T(n)=2T(n/2)+O(n) =&gt; O(nlogn)$<br>   $T(n)=T(n/2)+O(n) =&gt; O(n)$<br>   $T(n)=4T(n/2)+O(n) =&gt; O(n^2)$</p>
+<p>23.处理与询问无关可以用分治</p>
+<p>24.打决策点看决策单调性</p>
+<p>25.一定要造极限数据！！把int全换成ll再跑一遍看结果之类的。</p>
 
       
     </div>
@@ -446,7 +461,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">85</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -459,7 +474,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

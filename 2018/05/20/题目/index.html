@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
+<meta name="description" content="title:题目网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小明的阁楼">
 <meta property="og:url" content="http://yoursite.com/2018/05/20/题目/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
-<meta property="og:updated_time" content="2018-06-20T14:35:48.679Z">
+<meta property="og:description" content="title:题目网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解">
+<meta property="og:updated_time" content="2018-07-11T04:29:57.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小明的阁楼">
-<meta name="twitter:description" content="网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解方程 bzoj22">
+<meta name="twitter:description" content="title:题目网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解">
 
 
 
@@ -317,7 +317,8 @@
       
 
       
-        <p>网络流</p>
+        <hr>
+<h2 id="title-题目"><a href="#title-题目" class="headerlink" title="title:题目"></a>title:题目</h2><p>网络流</p>
 <p>luogu4249 [WC2007]剪刀石头布<br>S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T<br>跑10000的费用流，数据较水能过</p>
 <p>luogu3973 [TJOI2015]线性代数<br>每个数取0/1，建图如图</p>
 <p>bzoj3894 文理分科<br>图</p>
@@ -344,6 +345,15 @@
 <p>4237: 稻草人<br>分治加平衡树<br>O(nlognlogn)</p>
 <p>hdu5800 To My Girlfriend<br>f[i][j][f1][f2]<br>表示到第i个和为j已经’钦定’的选的个数为f1，’钦定’不选的为f2</p>
 <p>多区间问题，每个区间有要求，如：<br>2018 计蒜之道 初赛 第四场 贝壳找房搜房<br>[USACO13OPEN]照片Photo</p>
+<p>18-7-1<br>b. sigma(g[i]<em>(n-i)-g[i+1]</em>(n-i-1)*(i+1))<br>f.区间排序的套路：二分，使序列变成0/1</p>
+<p>18-7-4<br>d.套路分块 f[i][x]表示从i到第x块结束的答案 f[x][i]表示从第x块开始到i的答案<br>  O(nsqrtnlogn)<br>a.f[i][j][x]表示i到j最终变成字符x，转移是枚举i,j,分界点k,和变化规则，O(n^4)<br>  g[i][j]表示第一个到i，第二个到j，的最短长度，转移再枚举p,q,O(n^4)<br>b.预处理撞到每个红灯的时间区间，从后往前做，在线段树上覆盖（动态开点），然后求出每个红灯到终点的答案（相当于求一辆车到的下一个红灯）<br>c.和最大的情况下x1最小，等价于x2最大，所以重新定义优先级后，再求线性基，线性基中的所有数都给x2，其他给x1<br>e.建图小技巧：要连nm条边的时候，考虑每个ai加辅助点ci，排序，每个点向自己的辅助点连wi，辅助点向自己连0，ci向ci+1连差，ci+1向ci连0，这样只有O(n)条边，在起点前加一个0点，重点后加两个0点（因为在新图上走一步就是走两条边）最终答案为最后两个0点中的较小值</p>
+<p>约瑟夫问题<br>1)n个人，顺着杀和倒着杀k个人<br>  顺着杀：<br>  m=1(mod n)<br>  m=1(mod n-1)<br>  .<br>  .<br>  .<br>  m=1(mod n-k+1)<br>  倒着杀：<br>  m=0(mod n)<br>  m=0(mod n-1)<br>  .<br>  .<br>  .<br>  m=0(mod n-k+1)<br>2)n个人，要求让第k个人活下来，求m<br>  若n为质数：<br>  m=k-1(mod n)<br>  m=0(mod 1)<br>  m=0(mod 2)<br>  .<br>  .<br>  .<br>  m=0(mod n-1)<br>  或者<br>  m=k+1(mod n)<br>  m=1(mod 1)<br>  m=1(mod 2)<br>  .<br>  .<br>  .<br>  m=1(mod n-1)<br>  若n为不是质数：<br>  伯特兰—切比雪夫定理说明：若整数n &gt; 3，则至少存在一个质数p，符合n &lt; p &lt; 2n − 2。另一个稍弱说法是：对于所有大于1的整数n，存在一个质数p，符合n &lt; p &lt; 2n。<br>  不妨设k&gt;n/2<br>  m=1(mod lcm(1,2,…,n)/p)<br>  m=k+1-n(mod p)</p>
+<p>18-7-6<br>a.欧拉函数可以不管指数！用LL记录60个质数是否出现过，复杂度少一个60<br>b.f(S)表示集合S中连通块的个数（S包含1），$f(S)=\prod (C<em>{ij}+1)-f(S’)*(C</em>{i’j’}+1)$(S’属于S,i’,j’属于S/S’) </p>
+<p>d.1e12以内因数最多的数大概有6000个因数，f[i][x]={a,b}表示前i个数选了a个，总和为b，且与k的最大公因数为x，f[i][x] - a[i+1] -&gt; f[i+1][gcd(x*a[i+1],k)] 答案为f[n][k]，记录每个f从哪个状态转移过来的，倒推可以求出序列<br>f.n(n&gt;=3)可以，则n+2可以。n=3，6可以，n=4不可以<br>e.线段树，维护加标记和相同标记和颜色标记(如果相同标记=1)，对于区间修改，若该区间相同标记=1,直接改，否则递归下去处理。复杂度等于添加标记的次数为O(nlogn)</p>
+<p>18-7-8<br>a.用hash可以去一个log<br>b.基尔霍夫矩阵去一行一列的行列式的值等于选n-1条边构成树，每条边权的乘积的和。最傻的做法会发现没有考虑其他边被删掉的情况，所以先把所有边都删掉，再在矩阵中补上<br>$ans=\prod(1-p<em>{ij})*|p</em>{ij}/(1-p_{ij})|$</p>
+<p>c.二维线段树可以改成一维线段树，按r建线段树，叶子节点开vector记录所有l，非叶子记录子树中l的最大值，删除的话就暴力删，反正只有m个区间<br>d.按dfs序排序，值等于相邻点的距离加起来/2<br>e.记录每个点向前最远到那+倍增<br>f.卡空间。两种做法：1.分块，每sqrt(n)行记录一次dp值，求路径的话就再用O(sqrt(n))的空间暴力求<br>2.分治，对于行(l,r)，找出中间行的最优位置，每次面积/2</p>
+<p>18-7-10<br>a.多项式<br>c.谁想写谁写。。f[i][sta][s]表示到第i个数的，前i个数的集合为s，单调栈中的集合为sta，O(n)转移<br>d.n^2构造，对一个连通块，yes &lt;=&gt; sigma(ai)=sigma(bi)，dfs到叶子，以叶子为根再dfs，能流就流<br>e.dp优化网络流，0代表与s相连，1代表与t相连，1的前面有0的话就要有一个c的贡献，dp[i][j]表示前i个点中有j个1，O(1)转移</p>
+<p>18-7-11<br>e.和[文理分科]很想，一只狗可以选择公的或者母的，一个人希望某些狗是公的或者母的。最小割，狗向s,t连边，人向他希望的那些狗连边。联系最小割的含义建图。<br>f.n=3,4无解，n&gt;4，第一条边长1000，以后每条边减0.1，最后两条边直接算，有相等的概率很小。。<br>d.f[i][j][k]表示前i个人中，有j组未闭合，代价和为k。</p>
 
       
     </div>
@@ -439,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -455,7 +474,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">85</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -468,7 +487,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -493,6 +512,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-题目"><span class="nav-number">1.</span> <span class="nav-text">title:题目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
