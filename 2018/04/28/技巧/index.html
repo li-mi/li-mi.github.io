@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/28/技巧/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="1.$n$维曼哈顿距离可以变成$2^{n-1}$维契比雪夫距离。（相当于枚举$n-1$个的符号） 2.三分：(2l+r)/3,(l+2r+2)/3 3.对时间建线段树可以代替cdq分治 4.二进制分组 5.离散化：sort+unique+lower_bound或者12345678910for(int i=1;i&amp;lt;=n;++i)&amp;#123;	a[i].x=read();a[i].id=i;&amp;#">
-<meta property="og:updated_time" content="2018-08-05T08:45:50.566Z">
+<meta property="og:updated_time" content="2018-09-06T01:21:32.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="技巧">
 <meta name="twitter:description" content="1.$n$维曼哈顿距离可以变成$2^{n-1}$维契比雪夫距离。（相当于枚举$n-1$个的符号） 2.三分：(2l+r)/3,(l+2r+2)/3 3.对时间建线段树可以代替cdq分治 4.二进制分组 5.离散化：sort+unique+lower_bound或者12345678910for(int i=1;i&amp;lt;=n;++i)&amp;#123;	a[i].x=read();a[i].id=i;&amp;#">
@@ -303,6 +303,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
 
@@ -344,6 +349,14 @@
 <p>23.处理与询问无关可以用分治</p>
 <p>24.打决策点看决策单调性</p>
 <p>25.一定要造极限数据！！把int全换成ll再跑一遍看结果之类的。</p>
+<p>26.两遍dfs找树的直径不适用于负权（证明需要每条边大于等于0）<br>   例子：(1) -&gt; 1 -&gt; (2) -&gt; -2 -&gt; (3) -&gt; 2 -&gt; (4)，从2开始就爆炸了</p>
+<p>27.$\sum_{i|n}n/i=O(n)*质因数个数(n)$</p>
+<p>28.开根复杂度：O(loglogn)牛顿迭代复杂度</p>
+<p>29.p1+p2=1则模意义下p1+p2=1(mod p)（要求：设p1=a/b（没有约分时）,(a,p)=1,(b,p)=1）</p>
+<p>30.在剩下的数中等概率选，可以等价为：不减少数，在所有数中等概率选，选中不合法的无收益，重来<br>   证明：<br>   $F=\frac{1}{n-1}<em>(f(1)+…+f(n-1))$<br>   $F=\frac{1}{n}</em>(f(1)+…+f(n-1))+\frac{1}{n}F$<br>   显然两式等价</p>
+<p>31.treap的删除要注意，删到不存在的节点要停住，不然tle（cjq）</p>
+<p>32.rand用48271ll*seed%INT_MAX可以生产1到INT_MAX-1的所有数</p>
+<p>33.结构体中的函数可以调用该结构体后面的函数，结构体中不能声明函数。<br>   正常的函数如果出现循环调用要先声明。</p>
 
       
     </div>
@@ -461,7 +474,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">85</span>
+                <span class="site-state-item-count">94</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -474,7 +487,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -537,6 +550,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
         
       </div>
