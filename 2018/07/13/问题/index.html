@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/07/13/问题/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="1.点双的缩点 点双中的边全部去掉，连向一个新点2.有向图至少加几条边变成强连通图  （易证明，无环的有向图至少存在一个入度为0/出度为0的点）先缩点，ans=max(入度为0的点数，出度为0的点数)（只有一个点说明已经是强连通图，要特判掉）  注意一个点的时候，是否算作强连通，要看题目！！  有向图至少加几条边使得每条边都在某个强连通分量内：和上面的问题一样，不过要把单点去掉。3.无向图至少加几">
-<meta property="og:updated_time" content="2018-08-10T08:20:47.541Z">
+<meta property="og:updated_time" content="2018-10-15T02:17:47.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小明的阁楼">
 <meta name="twitter:description" content="1.点双的缩点 点双中的边全部去掉，连向一个新点2.有向图至少加几条边变成强连通图  （易证明，无环的有向图至少存在一个入度为0/出度为0的点）先缩点，ans=max(入度为0的点数，出度为0的点数)（只有一个点说明已经是强连通图，要特判掉）  注意一个点的时候，是否算作强连通，要看题目！！  有向图至少加几条边使得每条边都在某个强连通分量内：和上面的问题一样，不过要把单点去掉。3.无向图至少加几">
@@ -322,7 +322,7 @@
       
 
       
-        <p>1.点双的缩点 点双中的边全部去掉，连向一个新点<br>2.有向图至少加几条边变成强连通图<br>  （易证明，无环的有向图至少存在一个入度为0/出度为0的点）先缩点，ans=max(入度为0的点数，出度为0的点数)（只有一个点说明已经是强连通图，要特判掉）<br>  <strong>注意一个点的时候，是否算作强连通，要看题目！！</strong><br>  有向图至少加几条边使得每条边都在某个强连通分量内：和上面的问题一样，不过要把单点去掉。<br>3.无向图至少加几条边变成边双<br>  先缩点，ans=ceiling(度数为1的点的数量/2)+度数为0的点的数量（特判只有一个点）<br>  证明（简略）：一条边可以干掉两个叶子 叶子干光了就是双联通 一个点可以插入到一条边里去<br>  无向图至少加几条边变成点双？<br>4.设f[u][i]为在节点u的子树内，费用限制为i的条件下能取到的最大价值<br>5.树上莫队<br>6.//return dcmp(cross(a-p,b-p))==0&amp;&amp;dcmp(dot(a-p,b-p))&lt;0;//ac<br>    return dcmp(length(a-p)+length(b-p)-length(a-b))==0&amp;&amp;!(p==a)&amp;&amp;!(p==b);//wa，误差巨大<br>7.double在g++中的输入是%lf,输出时%f。什么时候用什么？<br>  g++中abs一定要有cstdlib，c++不用。<br>8.printf(“%.3f”,0);有错？<br>9.线和凸包是否有交、凸包和凸包是否有交<br>  线和凸包：找线上一个远一些的点，找到两条切线，判断线是否在切线之间<br>  凸包是否有交：？<br>10.点和凸包的切线<br>   凸包外的点p向凸包上一点连线，有的是入凸包，有的是出凸包。则cross(a[i]-p,a[i+1]-a[i])的方向是不同的。找到最后一个入凸包的点，那么下一个点就是切点。左右切线找的时候只需要把方向判断反一下即可。<br>   判断一个点在凸包内：找不到切线，即找不到入凸包的点。<br>11.二维区间和 树套树？<br>12.函数内新建pq？在函数结束时会自动清空吗 会吧<br>13.dp of dp<br>14.异或hash？ 冲突概率1/个数<br>15.并查集 撤销？拆并查集？不能拆<br>16.判断两个点在一个点的不同子树中？<br>17.矩阵转移？<br>18.决策单调性的写法<br>19.prufer编码<br>20.指针和迭代器<br>21.O(n)找第k大<br>22.遍历set是O(n)<br>23.long double怎么用啊<br>24.<strong>int128怎么用<br>25.</strong>float128怎么用</p>
+        <p>1.点双的缩点 点双中的边全部去掉，连向一个新点<br>2.有向图至少加几条边变成强连通图<br>  （易证明，无环的有向图至少存在一个入度为0/出度为0的点）先缩点，ans=max(入度为0的点数，出度为0的点数)（只有一个点说明已经是强连通图，要特判掉）<br>  <strong>注意一个点的时候，是否算作强连通，要看题目！！</strong><br>  有向图至少加几条边使得每条边都在某个强连通分量内：和上面的问题一样，不过要把单点去掉。<br>3.无向图至少加几条边变成边双<br>  先缩点，ans=ceiling(度数为1的点的数量/2)+度数为0的点的数量（特判只有一个点）<br>  证明（简略）：一条边可以干掉两个叶子 叶子干光了就是双联通 一个点可以插入到一条边里去<br>  无向图至少加几条边变成点双？<br>4.设f[u][i]为在节点u的子树内，费用限制为i的条件下能取到的最大价值<br>5.树上莫队<br>6.//return dcmp(cross(a-p,b-p))==0&amp;&amp;dcmp(dot(a-p,b-p))&lt;0;//ac<br>    return dcmp(length(a-p)+length(b-p)-length(a-b))==0&amp;&amp;!(p==a)&amp;&amp;!(p==b);//wa，误差巨大<br>7.double在g++中的输入是%lf,输出时%f。什么时候用什么？<br>  g++中abs一定要有cstdlib，c++不用。<br>8.printf(“%.3f”,0);有错？<br>9.线和凸包是否有交、凸包和凸包是否有交<br>  线和凸包：找线上一个远一些的点，找到两条切线，判断线是否在切线之间<br>  凸包是否有交：？<br>10.点和凸包的切线<br>   凸包外的点p向凸包上一点连线，有的是入凸包，有的是出凸包。则cross(a[i]-p,a[i+1]-a[i])的方向是不同的。找到最后一个入凸包的点，那么下一个点就是切点。左右切线找的时候只需要把方向判断反一下即可。<br>   判断一个点在凸包内：找不到切线，即找不到入凸包的点。<br>11.二维区间和 树套树？<br>12.函数内新建pq？在函数结束时会自动清空吗 会吧<br>13.dp of dp<br>14.异或hash？ 冲突概率1/个数<br>15.并查集 撤销？拆并查集？不能拆<br>16.判断两个点在一个点的不同子树中？<br>17.矩阵转移？<br>18.决策单调性的写法<br>19.prufer编码<br>20.指针和迭代器<br>21.O(n)找第k大<br>22.遍历set是O(n)<br>23.long double怎么用啊<br>24.<strong>int128怎么用<br>25.</strong>float128怎么用<br>26.01覆盖问题是npc吗 反正不可做</p>
 
       
     </div>
@@ -426,7 +426,7 @@
                alt="littleming" />
           <p class="site-author-name" itemprop="name">littleming</p>
            
-              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ</p>
+              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -434,7 +434,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">102</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -447,7 +447,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

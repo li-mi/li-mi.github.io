@@ -90,15 +90,15 @@
 
 
 
-<meta name="description" content="爱信息 爱数学 爱吃的萌新QAQ">
+<meta name="description" content="爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128">
 <meta property="og:type" content="website">
 <meta property="og:title" content="小明的阁楼">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="爱信息 爱数学 爱吃的萌新QAQ">
+<meta property="og:description" content="爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小明的阁楼">
-<meta name="twitter:description" content="爱信息 爱数学 爱吃的萌新QAQ">
+<meta name="twitter:description" content="爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128">
 
 
 
@@ -244,6 +244,664 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/zr2018模拟赛/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/zr2018模拟赛/" itemprop="url">zr2018提高十连测</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T08:26:00+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>考试的首要目标：得高分！<br>不写对拍的话，一半概率会炸。</p>
+<h1 id="提高r1"><a href="#提高r1" class="headerlink" title="提高r1"></a>提高r1</h1><p>第一题找规律，40min完成<br>第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完<br>第三题没什么思路，打了暴力。<br>期望100+100+50=250<br>实际100+100+40=240<br>第三题应该是n&gt;20是特判，结果写成n&gt;100，有10分t了。</p>
+<p>t3正解：<br>应该想到区间dp，但是很难想到维护什么<br>因为很杂乱<br>首先要枚举出是哪个字符串p，复杂度 $\sum_{len|n}(n-len+1)$</p>
+<p>dp[i][j]表示</p>
+<ul>
+<li>若j-i+1是len的倍数，则dp[i][j]=[能否消完]</li>
+<li>若j-i+1不是len的倍数，则dp[i][j]=[是否能消成p的前缀]，注意到这个前缀是固定的，可以通过长度算<br>转移：</li>
+<li>考虑往区间后面加一个字符，$dp[i][j]=dp[i][j-1]&amp;s[j]==prefix((j-i)%len+1)$</li>
+<li>考虑往区间前面加一段字符，$dp[i][j]=dp[i][j-k<em>len]&amp;dp[j-k</em>len+1][j]$</li>
+</ul>
+<p>这样就可以考虑到所有的情况，向后加一段可以通过一个一个加得到，向前加一个可以通过改变i得到。<br>注意初始化：dp[i][i-1]=1，其他为0</p>
+<h1 id="提高r5-18-9-22"><a href="#提高r5-18-9-22" class="headerlink" title="提高r5 18-9-22"></a>提高r5 18-9-22</h1><p>找规律真有趣</p>
+<h1 id="提高r7-18-10-13"><a href="#提高r7-18-10-13" class="headerlink" title="提高r7 18-10-13"></a>提高r7 18-10-13</h1><p>第一题<br>相当于01覆盖问题<br>然而这个问题并不可做<br>但是n&gt;=m^2且数据随机<br>所以可以认为图是连通的。。<br>卡了2h。。</p>
+<p>第二题<br>树上随机游走+树上最长路<br>最可做的一题吧<br>考完试1minac</p>
+<p>第三题<br>数学+推式子<br>不是很擅长啊<br>看完题解觉得挺简单的<br>暴力写炸了<br>心态爆炸加写炸<br>对1和2的状态写错了（小状态一定要写对啊，那大状态的程序跑一下也行啊。。）<br>还有tarjan写的丑<br>st和ins什么的最好都清空！！<br>数组不要只开大1！！（sta[ta+1]!=x，这样爆了！！）</p>
+<h1 id="提高r8-18-10-20"><a href="#提高r8-18-10-20" class="headerlink" title="提高r8 18-10-20"></a>提高r8 18-10-20</h1><p>心态不能崩，暴力不能挂‘<br>打好暴力就rk10了！！</p>
+<p>第一题暴力挂+第二题暴力挂<br>艹</p>
+<p>第一题<br>a[i]写成i</p>
+<p>第二题<br>递归的变量和全局变量重了</p>
+<p>wtf!<br>这种错误静态查错应该能查出来的！！<br>以后模拟赛不管怎样都要静态查错，包括暴力！！</p>
+<h1 id="提高r9-18-10-27"><a href="#提高r9-18-10-27" class="headerlink" title="提高r9 18-10-27"></a>提高r9 18-10-27</h1><p>第一题<br>还是逻辑不够严谨<br>证明的东西还是要写下来才严谨啊<br>在cpp开头写倒是不错</p>
+<p>第二题<br>容斥<br>（我容斥好差啊</p>
+<p>第三题<br>毒瘤题<br>好好读题，不要被长题面吓到了</p>
+<h1 id="普转提r1-18-9-9"><a href="#普转提r1-18-9-9" class="headerlink" title="普转提r1 18-9-9"></a>普转提r1 18-9-9</h1><p>第一题<br>二分加滑动窗口<br>被精度卡到死<br>对拍了好久<br>不停的调eps<br>实际上什么都没卡。。</p>
+<p>第二题<br>贪心<br>dp<br>随便<br>dp：记录每个左端点最近的右端点，f[r[i]]=max(f[r[i]],f[i]+1),f[i+1]=max(f[i+1],f[i])<br>贪心：</p>
+<ul>
+<li>遇到一个右端点，假如这个区间还有效，++ans，将目前遇到的所有区间置为无效</li>
+<li>遇到一个左端点，使这个区间有效</li>
+</ul>
+<p>第四题<br>心中有边的时候（就是你知道应该访问哪些点的时候）<br>可以不建边，节约时间空间<br>把这题暴力*掉。</p>
+<p>正解是优化建图（你胡思乱想哪些倍增有甚么用）<br>把每个点的高度再作为1维<br>变成n^3的点数和边数，上dijk就行</p>
+<h1 id="普转提r2-18-9-16"><a href="#普转提r2-18-9-16" class="headerlink" title="普转提r2 18-9-16"></a>普转提r2 18-9-16</h1><p>第一题<br>注意到交换两个数之和左右两边就分开了<br>按区间考虑<br>一旦区间的左右位置确定了，区间中有哪些数就确定了<br>这样就可以dp[l][r]表示将[l,r]排成递增的顺序有多少种方法<br>枚举中间的转移点就可以了<br>记忆化搜索<br>判断转移合法的方式（也就是[l,i]中恰好含有[l,i]）：<br>用cnt[i]记录从l到i有多少个数在[l,i]<br>合法&lt;=&gt;cnt[i]==i-1&amp;&amp;((cnt[i+1]==i&amp;&amp;a[i]!=l+i)||(cnt[i+1]==i+1&amp;&amp;a[i]==l+i))<br>O(n^3)</p>
+<p>第二题<br>有2^(R+C)的贡献<br>相当于每个子集有1的贡献<br>相当于求每个集合被多少个集合包含<br>先枚举包含的行列数，令$t=i<em>m+j</em>n-i*j$<br>相当于长度为n的格子，往里面填m个数，再选择k个数，使得前t个格子被选中</p>
+<p>$ans=\sum<em>{i=0}^{n}\sum</em>{j=0}^{m}C_n^i<em>C_m^j</em>F$<br>其中F表示满足i行j列的概率<br>$$F=\frac{A<em>m^{n^2}*C</em>{m-k}^{k-t}}{A<em>m^{n^2}*C</em>{m}^{k}}$$<br>分母表示总方案数<br>分子表示满足条件的方案数<br>总体考虑分子（而不是对某种选完k个数的方案进行考虑）<br>对某个排列，它可以对应的方案数是$C_{m-k}^{k-t}$<br>或者暴力的算<br>先钦定选数和t个数，再算上排列<br>$$C<em>m^t*C</em>{m-k}^{k-t}<em>t!</em>A_{m-t}^{n^2-t}=A<em>m^{n^2}*C</em>{m-k}^{k-t}$$</p>
+<p>第三题<br>相当于中序遍历的序列单调上升<br>最小化修改次数相当于最大化不修改数（重要的思想：补集！！）<br>注意到lis<br>但是两个数中间不一定能放下这么多数<br>如果是求单调不降的序列就比较简单，直接求原序列的单调不降的序列<br>但是单调不降和单调上升还是很容易转化的<br>让a[i]-=i即可<br>（其实也可以理解为在严格单增问题中能拓展的条件为$a[i]-a[k]\geq i-k$那么也就是$a[i]-i\geq a[k]-k$）</p>
+<p>第四题<br>显然ak是区间的最小值且其他数都是它的倍数<br>找l，r即可</p>
+<h1 id="普转提r3-18-9-23"><a href="#普转提r3-18-9-23" class="headerlink" title="普转提r3 18-9-23"></a>普转提r3 18-9-23</h1><p>第一题<br>思维题<br>好好观察题目性质</p>
+<p>第二题<br>发现桥的板子是写假了。<br>不能记fa，因为有重边！！<br>其实建图也假了<br>要正反各跑一遍dijk</p>
+<p>第三题<br>数位的题目<br>要以二进制的眼光看数<br>加一个数就是在每位加0或1<br>fi,j表示处理到第i位（从右往左的第i位以左已经处理完），第i-1位有j个数进位了<br>考虑第i位加的是0还是1，O1转移<br><img src="zr18-9-23t3.png" alt="巨佬的题解"></p>
+<p>第四题<br>n^2logn应该要想到<br>然后要注意到可以拿当前值先判一下，这个剪枝很强，可以直接a掉<br>某奇怪性质：</p>
+<ul>
+<li>随机序列的lis的长度的期望是2sqrt(n)的（有论文）</li>
+<li>长度为n2+1的排列至少有一个长为n+1的上升子序列或下降子序列（证明：dp是说以每个数结尾的最长上升子序列长度和最长下降子序列长度 对于两个数而言两者不能都一样 所以要是都在1-n就最多有n2个数 from ytl）</li>
+<li>长度为n的排列，设它的最长上升子序列长度为a，最长下降子序列长度为b，则ab&gt;=n（证明：这n个位置的dp值都不一样，在二维坐标系下表示这些点，ab最小的时候一定是这些点围成一个矩形，矩形的长乘宽就是ab，所以ab&gt;=b）</li>
+<li>随机序列的不同前缀最大值个数是（调和级数）ln(n)的（证明：因为第i个数有1/i概率比之前的都大 所以根据期望的线性性加起来就是ln）</li>
+</ul>
+<p>将顺序随机一下，只有log个位置需要进去二分，其他位置只要判掉就行<br>复杂度O(n^2+nlognlogn)</p>
+<h1 id="普转提r4-18-9-30"><a href="#普转提r4-18-9-30" class="headerlink" title="普转提r4 18-9-30"></a>普转提r4 18-9-30</h1><p>第一题<br>数学<br>线性筛因数个数（暴力卡时过。。）</p>
+<p>第二题<br>分类讨论<br>knight’s tour：<br>n<em>n中，n&gt;=5存在哈密尔顿路径，n&gt;=6且n为偶数存在哈密尔顿回路（证明见wiki）<br>n</em>m中，只要min(n,m)&gt;=5则存在哈密尔顿路径，无证明（搜索证明。。</p>
+<p>第三题<br>暴力加最优性剪枝暴艹正解<br>正解二分+扫描线+set</p>
+<p>第四题<br>暴力r和m打错。。<br>常用变量名还是不要乱动。。<br>转对偶图+并查集</p>
+<h1 id="普及r3-18-9-29"><a href="#普及r3-18-9-29" class="headerlink" title="普及r3 18-9-29"></a>普及r3 18-9-29</h1><p>你oi比赛当然要好好检查啊    from fizzydavid</p>
+<p>第一题<br>sb题<br>sb题也要仔细做！！<br>想清楚再写！！</p>
+<p>第二题<br>人眼查错<br>不是用眼睛查错<br>是用脑子查错！！</p>
+<p>这才是优秀的写法<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">Calc</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (x == <span class="number">4</span>) <span class="keyword">return</span> s[x];</div><div class="line">	<span class="keyword">if</span> (f[x] &lt;= <span class="number">2</span>) &#123;</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">1</span>) s[x + <span class="number">1</span>] *= s[x];</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">2</span>) s[x + <span class="number">1</span>] = s[x] / s[x + <span class="number">1</span>];</div><div class="line">		<span class="keyword">return</span> Calc(x + <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">3</span>) <span class="keyword">return</span> s[x] + Calc(x + <span class="number">1</span>);</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">4</span>) <span class="keyword">return</span> s[x] - Calc(x + <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>round：取离自己最近的整数（四舍五入），0.5的话取远离0的值<br>trunc：舍弃小数<br>floor：小于等于的最大整数<br>ceil：大于等于的最小整数<br>int()和LL()这种强制类型转换等同于trunc<br>判断x是否是整数：fabs(x-round(x))<eps fabs可以用="" abs(int)可以用="" abs(ll)最好自己写="" <figure="" class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* round vs floor vs ceil vs trunc */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;      /* printf */</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;       /* round, floor, ceil, trunc */</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">const</span> <span class="keyword">char</span> * format = <span class="string">"%.1f \t%.1f \t%.1f \t%.1f \t%.1f\n"</span>;</div><div class="line">  <span class="built_in">printf</span> (<span class="string">"value\tround\tfloor\tceil\ttrunc\n"</span>);</div><div class="line">  <span class="built_in">printf</span> (<span class="string">"-----\t-----\t-----\t----\t-----\n"</span>);</div><div class="line">  <span class="built_in">printf</span> (format, <span class="number">2.3</span>,round( <span class="number">2.3</span>),<span class="built_in">floor</span>( <span class="number">2.3</span>),<span class="built_in">ceil</span>( <span class="number">2.3</span>),trunc( <span class="number">2.3</span>));</div><div class="line">  <span class="built_in">printf</span> (format, <span class="number">3.8</span>,round( <span class="number">3.8</span>),<span class="built_in">floor</span>( <span class="number">3.8</span>),<span class="built_in">ceil</span>( <span class="number">3.8</span>),trunc( <span class="number">3.8</span>));</div><div class="line">  <span class="built_in">printf</span> (format, <span class="number">5.5</span>,round( <span class="number">5.5</span>),<span class="built_in">floor</span>( <span class="number">5.5</span>),<span class="built_in">ceil</span>( <span class="number">5.5</span>),trunc( <span class="number">5.5</span>));</div><div class="line">  <span class="built_in">printf</span> (format,<span class="number">-2.3</span>,round(<span class="number">-2.3</span>),<span class="built_in">floor</span>(<span class="number">-2.3</span>),<span class="built_in">ceil</span>(<span class="number">-2.3</span>),trunc(<span class="number">-2.3</span>));</div><div class="line">  <span class="built_in">printf</span> (format,<span class="number">-3.8</span>,round(<span class="number">-3.8</span>),<span class="built_in">floor</span>(<span class="number">-3.8</span>),<span class="built_in">ceil</span>(<span class="number">-3.8</span>),trunc(<span class="number">-3.8</span>));</div><div class="line">  <span class="built_in">printf</span> (format,<span class="number">-5.5</span>,round(<span class="number">-5.5</span>),<span class="built_in">floor</span>(<span class="number">-5.5</span>),<span class="built_in">ceil</span>(<span class="number">-5.5</span>),trunc(<span class="number">-5.5</span>));</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line">value   round   <span class="built_in">floor</span>   <span class="built_in">ceil</span>    trunc</div><div class="line">-----   -----   -----   ----    -----</div><div class="line"><span class="number">2.3</span>     <span class="number">2.0</span>     <span class="number">2.0</span>     <span class="number">3.0</span>     <span class="number">2.0</span></div><div class="line"><span class="number">3.8</span>     <span class="number">4.0</span>     <span class="number">3.0</span>     <span class="number">4.0</span>     <span class="number">3.0</span></div><div class="line"><span class="number">5.5</span>     <span class="number">6.0</span>     <span class="number">5.0</span>     <span class="number">6.0</span>     <span class="number">5.0</span></div><div class="line"><span class="number">-2.3</span>    <span class="number">-2.0</span>    <span class="number">-3.0</span>    <span class="number">-2.0</span>    <span class="number">-2.0</span></div><div class="line"><span class="number">-3.8</span>    <span class="number">-4.0</span>    <span class="number">-4.0</span>    <span class="number">-3.0</span>    <span class="number">-3.0</span></div><div class="line"><span class="number">-5.5</span>    <span class="number">-6.0</span>    <span class="number">-6.0</span>    <span class="number">-5.0</span>    <span class="number">-5.0</span></div></pre></td></tr></table></eps></p>
+<p>第三题<br>推推性质</p>
+<p>第四题<br>有点坑的模拟<br>t4…你想清楚再写….也不会错的那么离谱啊 from fizzydavid<br>一开始没注意到只有弹音符的时候才会调音量<br>然后循环中的8打成n（这个错误调了很久。。以后出错了请先静态查错！！）<br>最后时刻发下来的大样例炸了<br>考完发现是一个变量名打错了（脑子不清爽，这个时候重开一个cpp，把调试代码删掉，一部分一部分看）</p>
+<h1 id="十一r1-18-10-2"><a href="#十一r1-18-10-2" class="headerlink" title="十一r1 18-10-2"></a>十一r1 18-10-2</h1><p>第一题<br>数学题（17年之后的模拟赛t1都是要动脑筋的数学题了？）<br>推推推 拍拍拍</p>
+<p>第二题<br>挺好想的<br>就是卡空间卡时间<br>发现最多只有深度大小，可以优化空间（空间优化的同时也优化了时间）<br>vector的resize是个好东西<br>卡成90差评。。（输入较大且卡常的时候考虑fread！！）</p>
+<p>第三题<br>暴力没有memset<br>就算是暴力也不能随便应付<br>要仔细写<br>（没事了不要浪好好检查，又想起了“你oi比赛当然要好好检查啊”    from fizzydavid）</p>
+<p>期望得分：100+100+20=220<br>实际得分：100+90+0=190</p>
+<h1 id="十一r2-18-10-4"><a href="#十一r2-18-10-4" class="headerlink" title="十一r2 18-10-4"></a>十一r2 18-10-4</h1><p>第二题<br>（打表都不开O2吗 from dls）<br>（打表要早跑啊    from dls）<br>n&lt;=5的点n=1的写错了，然而数据就是1..</p>
+<p>爆搜无标号的树（爆搜树形态），不可写。</p>
+<p>有根树和无根树就是*/n</p>
+<p>有标号树和无标号树？</p>
+<p>第三题<br>不要的点是独立集！！（没有抽象出这个结论）<br>二分图的最大权独立集等于总权值-最大权匹配（最小割/最大流）</p>
+<h1 id="停课训练r6-18-10-22"><a href="#停课训练r6-18-10-22" class="headerlink" title="停课训练r6 18-10-22"></a>停课训练r6 18-10-22</h1><p>第一题<br>我的贪心想的是假的。。<br>反例：<br>20<br>acabcccccacccbccccaa<br>bababcbcabcbbccaccbb<br>正确的做法：<br>逐位确定<br>字符串A和字符串B相当于一个匹配<br>只要网络流能跑满流就是有解<br>判断这个网络流能跑满可以O(字符集大小k)判<br>s1[0]&lt;=s2[1]+…+s2[k] &lt;=&gt; s1[0]&lt;=len-s2[0]<br>s1[1]&lt;=len-s2[1]<br>…<br>s1[k]&lt;=len-s2[k]<br>hall定理可以证明以上 或 网络流最小割证明<br>维护s1[i]+s2[i]，复杂度O(nk+klogk)</p>
+<p>第二题<br>改成gcd恐怕就不可做了<br>改成异或可以nloglog</p>
+<p>$\frac{P}{N}\times N+P\times(2\ln N-\ln P)$</p>
+<h1 id="停课训练r7-18-10-23"><a href="#停课训练r7-18-10-23" class="headerlink" title="停课训练r7 18-10-23"></a>停课训练r7 18-10-23</h1>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/luogu2120 [ZJOI2007]仓库建设/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/luogu2120 [ZJOI2007]仓库建设/" itemprop="url">luogu2120 [ZJOI2007]仓库建设</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T21:30:28+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>做特别行动队的时候发现这题的题解还没写<br>这才是第一道斜率优化啊<br>当时懵懵懂懂对着题解写的<br>现在明白了</p>
+<p>想想全tm是套路<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/17/luogu2120 [ZJOI2007]仓库建设/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/luogu3628 [APIO2010]特别行动队/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/luogu3628 [APIO2010]特别行动队/" itemprop="url">luogu3628 [APIO2010]特别行动队</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T21:11:42+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>斜率优化真是套路</p>
+<p>$f[i]=min(a[i]*b[j]+c[j]+d[i])$</p>
+<p>看到这种带当前i和转移j的二次项的，就是斜率优化了<br>d[i]最后加可以不管，去掉min，然后整理成y=kx+b的形式</p>
+<p>$c[j]=-a[i]*b[j]+f[i]$</p>
+<p>k为-a[i]，b为f[i]，(x,y)为(b[j],c[j])<br>要最大化f[i]，就是维护上凸壳<br>要最小化f[i]，就是维护下凸壳<br>注意起点在哪个位置（一般是(0,0)</p>
+<p>还可以考虑比较法<br>考虑1&lt;=k&lt;j&lt;i<br>假如j的转移更优要满足的条件<br>然后推一波式子发现和上面的是一样的</p>
+<p>然后是重点（敲黑板<br>如果b[i]随i有单调性（单调递增最好，如果是单调递减可以提负号好理解</p>
+<ul>
+<li>a[i]有单调性，分成两种单调性，一种随着凸壳往后而往后，一种只会停在第一个点（这种情况几乎不会有吧<br>复杂度是O(n)</li>
+<li>a[i]没有单调性，那么要二分，复杂度O(nlogn)。以下引用：<br>二分做法：假设你要在上凸包上二分找斜率为k的切线。取中间的mid号点，如果mid+1存在且与mid点的斜率小于k，则l=mid+1；如果mid−1存在且与mid点的斜率大于k，则r=mid−1；如果上面两条都不满足，则mid就是切点。<a href="http://www.cnblogs.com/MashiroSky/p/6009685.html" target="_blank" rel="external">一个很好的斜率优化讲解</a></li>
+</ul>
+<p>如果b[i]没有单调性（糟糕要动态维护凸包）<br>那么考虑set/手写平衡树/cdq分治，复杂度O(nlogn)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/17/luogu3628 [APIO2010]特别行动队/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/bzoj2819 Nim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/bzoj2819 Nim/" itemprop="url">bzoj2819 Nim</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T23:15:21+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>裸树剖+线段树<br>码码码<br>挂了<br>查了好久<br>发现dfs2挂了<br>伤心欲绝以为我一直以来的板子都是错的<br>开始吐槽过去a掉的题目数据水<br>然后发现<br>只有套线段树才会挂<br>因为没有先dfs重孩子（原来我写的都是求lca吗。</p>
+<p>正解是在dfs序上搞<br>发现答案是两点到根的异或和再异或lca<br>一个点只对子树有贡献<br>然后<br>我跑去写手写栈<br>其实是第一次写<br>入栈的时候处理一个点的信息<br>全部处理完出栈<br>出栈时处理对父亲的贡献<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/16/bzoj2819 Nim/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/luogu2046 [NOI2010]海拔/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/luogu2046 [NOI2010]海拔/" itemprop="url">luogu2046 [NOI2010]海拔</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T23:07:53+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>一眼——要么0要么1<br>最小割！<br>码码码<br>90分（dinic<br>滚去写正解<br>还好就是建图有点烦<br>挂了一次是写成大根堆（这tm能过样例。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/16/luogu2046 [NOI2010]海拔/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -826,587 +1484,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/13/问题/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T14:05:23+08:00">
-                2018-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.点双的缩点 点双中的边全部去掉，连向一个新点<br>2.有向图至少加几条边变成强连通图<br>  （易证明，无环的有向图至少存在一个入度为0/出度为0的点）先缩点，ans=max(入度为0的点数，出度为0的点数)（只有一个点说明已经是强连通图，要特判掉）<br>  <strong>注意一个点的时候，是否算作强连通，要看题目！！</strong><br>  有向图至少加几条边使得每条边都在某个强连通分量内：和上面的问题一样，不过要把单点去掉。<br>3.无向图至少加几条边变成边双<br>  先缩点，ans=ceiling(度数为1的点的数量/2)+度数为0的点的数量（特判只有一个点）<br>  证明（简略）：一条边可以干掉两个叶子 叶子干光了就是双联通 一个点可以插入到一条边里去<br>  无向图至少加几条边变成点双？<br>4.设f[u][i]为在节点u的子树内，费用限制为i的条件下能取到的最大价值<br>5.树上莫队<br>6.//return dcmp(cross(a-p,b-p))==0&amp;&amp;dcmp(dot(a-p,b-p))&lt;0;//ac<br>    return dcmp(length(a-p)+length(b-p)-length(a-b))==0&amp;&amp;!(p==a)&amp;&amp;!(p==b);//wa，误差巨大<br>7.double在g++中的输入是%lf,输出时%f。什么时候用什么？<br>  g++中abs一定要有cstdlib，c++不用。<br>8.printf(“%.3f”,0);有错？<br>9.线和凸包是否有交、凸包和凸包是否有交<br>  线和凸包：找线上一个远一些的点，找到两条切线，判断线是否在切线之间<br>  凸包是否有交：？<br>10.点和凸包的切线<br>   凸包外的点p向凸包上一点连线，有的是入凸包，有的是出凸包。则cross(a[i]-p,a[i+1]-a[i])的方向是不同的。找到最后一个入凸包的点，那么下一个点就是切点。左右切线找的时候只需要把方向判断反一下即可。<br>   判断一个点在凸包内：找不到切线，即找不到入凸包的点。<br>11.二维区间和 树套树？<br>12.函数内新建pq？在函数结束时会自动清空吗 会吧<br>13.dp of dp<br>14.异或hash？ 冲突概率1/个数<br>15.并查集 撤销？拆并查集？不能拆<br>16.判断两个点在一个点的不同子树中？<br>17.矩阵转移？<br>18.决策单调性的写法<br>19.prufer编码<br>20.指针和迭代器<br>21.O(n)找第k大<br>22.遍历set是O(n)<br>23.long double怎么用啊<br>24.<strong>int128怎么用<br>25.</strong>float128怎么用</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/luogu3084 [USACO13OPEN]照片Photo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/25/luogu3084 [USACO13OPEN]照片Photo/" itemprop="url">luogu3084 [USACO13OPEN]照片Photo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T09:06:37+08:00">
-                2018-06-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">区间中有多少个数的题目</div><div class="line">和pku的夏令营题目挺像的</div><div class="line">这种题目好像都可以用差分约束做</div><div class="line">不过卡时</div><div class="line">这题spfa只能过6个点</div><div class="line">d[i]表示从1到i的个数</div><div class="line">d[i]和d[i+1]的关系为</div><div class="line">d[i]=d[i+1]或d[i]+1=d[i+1]</div><div class="line">拆成不等式为</div><div class="line">d[i]=d[i+1] =&gt; d[i]&lt;=d[i+1] d[i]&gt;=d[i+1]</div><div class="line">d[i]+1=d[i+1] =&gt; d[i]&lt;=d[i+1]-1 d[i]+1&gt;=d[i+1]</div><div class="line">合并为下面两个（若a&lt;=b，则要让b尽量大）</div><div class="line">d[i]&lt;=d[i+1]</div><div class="line">d[i]+1&gt;=d[i+1]</div><div class="line">初始情况为d[0]=0，其他无穷大</div><div class="line">（</div><div class="line">松弛大于n次就有负环一点都不靠谱，随便构造出反例</div><div class="line">入队大于n次才是正确的，因为</div><div class="line">假如没有负环，bfs一层就能至少确定一个点的dis</div><div class="line">所以最多做n(其实n-1，但是要考虑1个点)轮，&gt;n就无解(其实&gt;=n)</div><div class="line">每个点在每一层最多入队1次(可能被松弛很多次)</div><div class="line">所以入队次数大于n就无解</div><div class="line">）</div><div class="line"></div><div class="line">正解dp</div><div class="line">f[i]表示前i个已经满足条件，第i个放了的最大个数</div><div class="line">f[i]=max(f[j])+1</div><div class="line">j的范围是关键</div><div class="line">设i对应的j满足l[i]&lt;=j&lt;=r[i]</div><div class="line">有且只有1个这个条件拆成</div><div class="line">至少1个和至多1个</div><div class="line">l[i]为区间右端点在i左边的左端点的最大值（因为至少1个）</div><div class="line">r[i]为i所在的区间的左端点的最小值-1（因为至多1个）</div><div class="line">注意到l[i]和r[i]都是单调不降的</div><div class="line">所以转移可以用单调队列优化</div><div class="line">求l[i]和r[i]也可以利用单调性的特点做到O(n)</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/25/luogu3084 [USACO13OPEN]照片Photo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/luogu2157 [SDOI2009]学校食堂/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/21/luogu2157 [SDOI2009]学校食堂/" itemprop="url">luogu2157 [SDOI2009]学校食堂</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T08:29:57+08:00">
-                2018-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">好题</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/21/luogu2157 [SDOI2009]学校食堂/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/luogu2331 [SCOI2005]最大子矩阵/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/20/luogu2331 [SCOI2005]最大子矩阵/" itemprop="url">luogu2331 [SCOI2005]最大子矩阵</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T21:49:09+08:00">
-                2018-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">简单的dp</div><div class="line">对于已经走过的区域，不管有没有选择，都不会管了</div><div class="line">对于当前的i和j，一定是考虑选这个i或j，而不是之前的（因为之前的在之前被考虑）</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/20/luogu2331 [SCOI2005]最大子矩阵/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/luogu2216 [HAOI2007]理想的正方形/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/20/luogu2216 [HAOI2007]理想的正方形/" itemprop="url">luogu2216 [HAOI2007]理想的正方形</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T21:43:32+08:00">
-                2018-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">裸题</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/20/luogu2216 [HAOI2007]理想的正方形/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1443,7 +1525,7 @@
                alt="littleming" />
           <p class="site-author-name" itemprop="name">littleming</p>
            
-              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ</p>
+              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -1451,7 +1533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">102</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1464,7 +1546,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

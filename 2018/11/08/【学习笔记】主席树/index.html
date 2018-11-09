@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="心情," />
+  <meta name="keywords" content="主席树," />
 
 
 
@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="提高r1第一题找规律，40min完成第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完第三题没什么思路，打了暴力。期望100+100+50=250实际100+100+40=240第三题应该是n&amp;gt;20是特判，结果写成n&amp;gt;100，有10分t了。 t3正解：应该想到区间dp，但是很难想到维护什么因为很杂乱首先要枚举出是哪个字符串p，复杂度 $\sum_">
-<meta name="keywords" content="心情">
+<meta name="description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more*/&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf的">
+<meta name="keywords" content="主席树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zr2018提高十连测">
-<meta property="og:url" content="http://yoursite.com/2018/09/04/zr2018/index.html">
+<meta property="og:title" content="【学习笔记】主席树">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/【学习笔记】主席树/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="提高r1第一题找规律，40min完成第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完第三题没什么思路，打了暴力。期望100+100+50=250实际100+100+40=240第三题应该是n&amp;gt;20是特判，结果写成n&amp;gt;100，有10分t了。 t3正解：应该想到区间dp，但是很难想到维护什么因为很杂乱首先要枚举出是哪个字符串p，复杂度 $\sum_">
-<meta property="og:image" content="http://yoursite.com/2018/09/04/zr2018/zr18-9-23t3.png">
-<meta property="og:updated_time" content="2018-09-25T06:12:57.517Z">
+<meta property="og:description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more*/&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf的">
+<meta property="og:updated_time" content="2018-11-08T05:44:37.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zr2018提高十连测">
-<meta name="twitter:description" content="提高r1第一题找规律，40min完成第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完第三题没什么思路，打了暴力。期望100+100+50=250实际100+100+40=240第三题应该是n&amp;gt;20是特判，结果写成n&amp;gt;100，有10分t了。 t3正解：应该想到区间dp，但是很难想到维护什么因为很杂乱首先要枚举出是哪个字符串p，复杂度 $\sum_">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/04/zr2018/zr18-9-23t3.png">
+<meta name="twitter:title" content="【学习笔记】主席树">
+<meta name="twitter:description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more*/&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf的">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/04/zr2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/08/【学习笔记】主席树/"/>
 
 
 
 
 
-  <title>zr2018提高十连测 | 小明的阁楼</title>
+  <title>【学习笔记】主席树 | 小明的阁楼</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +254,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/zr2018/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/【学习笔记】主席树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="littleming">
@@ -273,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">zr2018提高十连测</h1>
+          <h1 class="post-title" itemprop="name headline">【学习笔记】主席树</h1>
         
 
         <div class="post-meta">
@@ -285,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T08:26:00+08:00">
-                2018-09-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T13:04:50+08:00">
+                2018-11-08
               </time>
             
 
@@ -325,17 +323,11 @@
       
 
       
-        <h1 id="提高r1"><a href="#提高r1" class="headerlink" title="提高r1"></a>提高r1</h1><p>第一题找规律，40min完成<br>第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完<br>第三题没什么思路，打了暴力。<br>期望100+100+50=250<br>实际100+100+40=240<br>第三题应该是n&gt;20是特判，结果写成n&gt;100，有10分t了。</p>
-<p>t3正解：<br>应该想到区间dp，但是很难想到维护什么<br>因为很杂乱<br>首先要枚举出是哪个字符串p，复杂度 $\sum_{len|n}(n-len+1)$</p>
-<p>dp[i][j]表示</p>
-<ul>
-<li>若j-i+1是len的倍数，则dp[i][j]=[能否消完]</li>
-<li>若j-i+1不是len的倍数，则dp[i][j]=[是否能消成p的前缀]，注意到这个前缀是固定的，可以通过长度算<br>转移：</li>
-<li>考虑往区间后面加一个字符，$dp[i][j]=dp[i][j-1]&amp;s[j]==prefix((j-i)%len+1)$</li>
-<li>考虑往区间前面加一段字符，$dp[i][j]=dp[i][j-k<em>len]&amp;dp[j-k</em>len+1][j]$</li>
-</ul>
-<p>这样就可以考虑到所有的情况，向后加一段可以通过一个一个加得到，向前加一个可以通过改变i得到。<br>注意初始化：dp[i][i-1]=1，其他为0</p>
-<h1 id="普转提r3-18-9-23"><a href="#普转提r3-18-9-23" class="headerlink" title="普转提r3 18-9-23"></a>普转提r3 18-9-23</h1><p>第三题<br>数位的题目<br>要以二进制的眼光看数<br>加一个数就是在每位加0或1<br>fi,j表示处理到第i位（从右往左的第i位以左已经处理完），第i-1位有j个数进位了<br>考虑第i位加的是0还是1，O1转移<br><img src="zr18-9-23t3.png" alt="巨佬的题解"></p>
+        <p>主席树的时间复杂度：O(nlogn)<br>主席树的空间复杂度：O(nlogn)（开<strong>2logn</strong>比较好）<br>主席树的插入要用<strong>引用</strong>！</p>
+<p>主席树的主体：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int rt[N],tot;</div><div class="line">struct president_tree&#123;</div><div class="line">	int ls,rs,sz;</div><div class="line">	LL sum;</div><div class="line">	/* more*/</div><div class="line">&#125;tr[N*150];//能开多大开多大</div></pre></td></tr></table></figure></p>
+<p>主席树是动态开点权值线段树，注意上下界的设置（注意inf的设置和0/1的设置）<br>因为主席树是不支持修改的，所以一般都是一开始就把树建好<br>插入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">inline void update(int &amp;t,int l,int r,int val)</div><div class="line">&#123;</div><div class="line">	tr[++tot]=tr[t];</div><div class="line">	++tr[tot].sz;</div><div class="line">	tr[tot].sum+=val;//先产生一个新点</div><div class="line">	t=tot;//再赋值</div><div class="line">	if(l==r)	return;</div><div class="line">	int mid=l+(r-l)/2;//可能会爆int</div><div class="line">	if(val&lt;=mid)	update(tr[t].ls,l,mid,val);</div><div class="line">	else	update(tr[t].rs,mid+1,r,val);</div><div class="line">&#125;</div><div class="line">for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">	rt[i]=rt[i-1];</div><div class="line">	update(rt[i],1,inf,a[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>询问函数可以有返回值，也可以没有，而使用一个全局变量记录答案<br>询问：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">LL tmp;</div><div class="line">inline void query(int t1,int t2,int l,int r,int num)</div><div class="line">&#123;</div><div class="line">	if(!num)	return;</div><div class="line">	if(tr[t2].sz-tr[t1].sz&lt;=num)&#123;</div><div class="line">		tmp+=tr[t2].sum-tr[t1].sum;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	if(l==r)&#123;</div><div class="line">		tmp+=1ll*num*l;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	int mid=l+(r-l)/2,t=tr[tr[t2].rs].sz-tr[tr[t1].rs].sz;</div><div class="line">	if(num&lt;=t)	query(tr[t1].rs,tr[t2].rs,mid+1,r,num);</div><div class="line">	else&#123;</div><div class="line">		tmp+=tr[tr[t2].rs].sum-tr[tr[t1].rs].sum;</div><div class="line">		query(tr[t1].ls,tr[t2].ls,l,mid,num-t);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>清空主席树：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tot=0;</div><div class="line">//rt[]和tr[]里的东西都会重新加</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -365,7 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/心情/" rel="tag"># 心情</a>
+            <a href="/tags/主席树/" rel="tag"># 主席树</a>
           
         </div>
       
@@ -378,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/17/luogu2120 [ZJOI2007]仓库建设/" rel="next" title="luogu2120 [ZJOI2007]仓库建设">
-                <i class="fa fa-chevron-left"></i> luogu2120 [ZJOI2007]仓库建设
+              <a href="/2018/11/08/【学习笔记】fx treap/" rel="next" title="【学习笔记】fx treap">
+                <i class="fa fa-chevron-left"></i> 【学习笔记】fx treap
               </a>
             
           </div>
@@ -388,8 +380,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/17/【学习笔记】可并堆/" rel="prev" title="【学习笔记】可并堆">
-                【学习笔记】可并堆 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/09/考试安排/" rel="prev" title="考试安排">
+                考试安排 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -437,24 +429,15 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
                alt="littleming" />
           <p class="site-author-name" itemprop="name">littleming</p>
            
-              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ</p>
+              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -462,7 +445,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">102</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -475,7 +458,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -500,22 +483,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r1"><span class="nav-number">1.</span> <span class="nav-text">提高r1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r3-18-9-23"><span class="nav-number">2.</span> <span class="nav-text">普转提r3 18-9-23</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

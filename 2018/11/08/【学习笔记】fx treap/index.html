@@ -1,0 +1,698 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="平衡树," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="treap有点难写啊fx treap好！（没有引用！）那么常数大也没什么办法。。 fx treap的主体：1234int rt,tot;struct node&amp;#123;	int ls,rs,val,pri,sz;&amp;#125;fx[N]; （假如要写多颗平衡树，把这个东西封装一下就好了）rt：这颗树的根的编号tot：总点数（删除的点不会消失，只是它的编号不再被使用了）ls：左孩子rs：右孩子val">
+<meta name="keywords" content="平衡树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习笔记】fx treap">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/【学习笔记】fx treap/index.html">
+<meta property="og:site_name" content="小明的阁楼">
+<meta property="og:description" content="treap有点难写啊fx treap好！（没有引用！）那么常数大也没什么办法。。 fx treap的主体：1234int rt,tot;struct node&amp;#123;	int ls,rs,val,pri,sz;&amp;#125;fx[N]; （假如要写多颗平衡树，把这个东西封装一下就好了）rt：这颗树的根的编号tot：总点数（删除的点不会消失，只是它的编号不再被使用了）ls：左孩子rs：右孩子val">
+<meta property="og:updated_time" content="2018-11-08T05:48:00.833Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【学习笔记】fx treap">
+<meta name="twitter:description" content="treap有点难写啊fx treap好！（没有引用！）那么常数大也没什么办法。。 fx treap的主体：1234int rt,tot;struct node&amp;#123;	int ls,rs,val,pri,sz;&amp;#125;fx[N]; （假如要写多颗平衡树，把这个东西封装一下就好了）rt：这颗树的根的编号tot：总点数（删除的点不会消失，只是它的编号不再被使用了）ls：左孩子rs：右孩子val">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/08/【学习笔记】fx treap/"/>
+
+
+
+
+
+  <title>【学习笔记】fx treap | 小明的阁楼</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小明的阁楼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">故事再美  结局还是再见</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/【学习笔记】fx treap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【学习笔记】fx treap</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T10:30:16+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>treap有点难写啊<br>fx treap好！（<strong>没有引用</strong>！）<br>那么<strong>常数大</strong>也没什么办法。。</p>
+<p>fx treap的主体：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int rt,tot;</div><div class="line">struct node&#123;</div><div class="line">	int ls,rs,val,pri,sz;</div><div class="line">&#125;fx[N];</div></pre></td></tr></table></figure></p>
+<p>（假如要写多颗平衡树，把这个东西封装一下就好了）<br>rt：这颗树的根的编号<br>tot：总点数（删除的点不会消失，只是它的编号不再被使用了）<br>ls：左孩子<br>rs：右孩子<br>val：关键码（平衡树存的值）<br>pri：随机的优先级比较值<br>sz：点数（相同的值并没有合并到一起）</p>
+<p>加入一个新的点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">int seed=233;</div><div class="line">inline int ra()//可以不重复的生成1~INT_MAX-1的每一个数</div><div class="line">&#123;</div><div class="line">	seed=48271ll*seed%INT_MAX;</div><div class="line">	return seed;</div><div class="line">&#125;</div><div class="line">inline int new_node(int x)</div><div class="line">&#123;</div><div class="line">	++tot;</div><div class="line">	fx[tot].sz=1;</div><div class="line">	fx[tot].val=x;</div><div class="line">	fx[tot].pri=ra();</div><div class="line">	fx[tot].ls=fx[tot].rs=0;</div><div class="line">	return tot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>更新节点的信息：（更改了树的结构的时候需要更新，fx treap需要在merge和split的时候更新）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">inline void pushup(int x)</div><div class="line">&#123;</div><div class="line">	fx[x].sz=fx[fx[x].ls].sz+fx[fx[x].rs].sz+1;</div><div class="line">	/* more */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>合并(merge)两颗fx，要求左边的fx的每个点的关键码小于右边的fx的每个点的关键码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">inline int merge(int x,int y)</div><div class="line">&#123;</div><div class="line">	if(!x||!y)	return x+y;</div><div class="line">	if(fx[x].pri&lt;fx[y].pri)&#123;</div><div class="line">		fx[x].rs=merge(fx[x].rs,y);</div><div class="line">		pushup(x);</div><div class="line">		return x;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		fx[y].ls=merge(x,fx[y].ls);</div><div class="line">		pushup(y);</div><div class="line">		return y;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>分裂(split)一颗fx，可以按值分裂，也可以按排名分裂，这里将键值&lt;=x的分成左树，其余分成右树<br>split操作会得到两个值，rt_l表示左树的根的编号，rt_r表示右树的根的编号（这样写没有返回值，注意这两个值的变化，要即时的把值存下来，每次split之后他们的值就变了）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">int rt_l,rt_r;</div><div class="line">inline void split(int rt,int x)</div><div class="line">&#123;</div><div class="line">	if(!rt)&#123;</div><div class="line">		rt_l=rt_r=0;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	if(fx[rt].val&gt;x)&#123;</div><div class="line">		split(fx[rt].ls,x);</div><div class="line">		fx[rt].ls=rt_r;</div><div class="line">		rt_r=rt;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		split(fx[rt].rs,x);</div><div class="line">		fx[rt].rs=rt_l;</div><div class="line">		rt_l=rt;</div><div class="line">	&#125;</div><div class="line">	pushup(rt);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>拥有了merge和split的fx treap，仍然拥有treap的一切性质，仍然可以使用treap的一切函数<br>fx treap独特之处在于，它抛弃了旋转操作，那么treap的insert和delete就不适用于fx treap了（只有这两个操作是需要zag和zig的）<br>插入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">inline void inser(int x)</div><div class="line">&#123;</div><div class="line">	split(rt,x);</div><div class="line">	rt=merge(merge(rt_l,new_node(x)),rt_r);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>删除：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">inline void delet(int x)</div><div class="line">&#123;</div><div class="line">	split(rt,x);</div><div class="line">	int tmp=rt_r;</div><div class="line">	split(rt_l,x-1);</div><div class="line">	rt=merge(merge(rt_l,merge(fx[rt_r].ls,fx[rt_r].rs)),tmp);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>短小精悍，那么其他操作也可以考虑用fx特有的merge和split来完成（<strong>常数大</strong>）<br>求键值为x的最小排名（相同的不算）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">inline int rank(int x)//rank在c++11中是关键字</div><div class="line">&#123;</div><div class="line">	split(rt,x-1);</div><div class="line">	int ans=fx[rt_l].sz+1;</div><div class="line">	rt=merge(rt_l,rt_r);</div><div class="line">	return ans;	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>求排名第k的键值：//并不能优化这个过程。。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">inline int kth(int rt,int k)</div><div class="line">&#123;</div><div class="line">	if(k&gt;fx[rt].sz)	return -1;</div><div class="line">	while(1)&#123;</div><div class="line">		if(k==fx[fx[rt].ls].sz+1)	return rt;</div><div class="line">		if(k&lt;=fx[fx[rt].ls].sz)&#123;</div><div class="line">			rt=fx[rt].ls;</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			k-=fx[fx[rt].ls].sz+1;</div><div class="line">			rt=fx[rt].rs;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>求前驱后继：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">inline int get_pre(int x)</div><div class="line">&#123;</div><div class="line">	int ans;</div><div class="line">	split(rt,x-1);</div><div class="line">	if(!rt_l)&#123;</div><div class="line">		ans=-INT_MAX;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		ans=fx[kth(rt_l,fx[rt_l].sz)].val;</div><div class="line">	&#125;</div><div class="line">	rt=merge(rt_l,rt_r);</div><div class="line">	return ans;</div><div class="line">&#125;</div><div class="line">inline int get_nxt(int x)</div><div class="line">&#123;</div><div class="line">	int ans;</div><div class="line">	split(rt,x);</div><div class="line">	if(!rt_r)&#123;</div><div class="line">		ans=INT_MAX;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		ans=fx[kth(rt_r,1)].val;</div><div class="line">	&#125;</div><div class="line">	rt=merge(rt_l,rt_r);</div><div class="line">	return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>清空：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rt=tot=0;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/平衡树/" rel="tag"># 平衡树</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/23/18-10-23学校模拟赛/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/08/【学习笔记】主席树/" rel="prev" title="【学习笔记】主席树">
+                【学习笔记】主席树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="littleming" />
+          <p class="site-author-name" itemprop="name">littleming</p>
+           
+              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">littleming</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">  Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

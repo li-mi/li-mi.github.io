@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/05/20/题目/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="title:题目网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解">
-<meta property="og:updated_time" content="2018-07-11T04:29:57.777Z">
+<meta property="og:updated_time" content="2018-10-15T12:15:29.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小明的阁楼">
 <meta name="twitter:description" content="title:题目网络流 luogu4249 [WC2007]剪刀石头布S - (1,0) - 边 - (1,0) - 点 - (1,0)/(1,1)/…/(1,n-1) - T跑10000的费用流，数据较水能过 luogu3973 [TJOI2015]线性代数每个数取0/1，建图如图 bzoj3894 文理分科图 bzoj3232 圈地游戏1.二分+spfa判负环2.二分+[线性代数]建图，要解">
@@ -359,6 +359,7 @@
 <p>c.二维线段树可以改成一维线段树，按r建线段树，叶子节点开vector记录所有l，非叶子记录子树中l的最大值，删除的话就暴力删，反正只有m个区间<br>d.按dfs序排序，值等于相邻点的距离加起来/2<br>e.记录每个点向前最远到那+倍增<br>f.卡空间。两种做法：1.分块，每sqrt(n)行记录一次dp值，求路径的话就再用O(sqrt(n))的空间暴力求<br>2.分治，对于行(l,r)，找出中间行的最优位置，每次面积/2</p>
 <p>18-7-10<br>a.多项式<br>c.谁想写谁写。。f[i][sta][s]表示到第i个数的，前i个数的集合为s，单调栈中的集合为sta，O(n)转移<br>d.n^2构造，对一个连通块，yes &lt;=&gt; sigma(ai)=sigma(bi)，dfs到叶子，以叶子为根再dfs，能流就流<br>e.dp优化网络流，0代表与s相连，1代表与t相连，1的前面有0的话就要有一个c的贡献，dp[i][j]表示前i个点中有j个1，O(1)转移</p>
 <p>18-7-11<br>e.和[文理分科]很想，一只狗可以选择公的或者母的，一个人希望某些狗是公的或者母的。最小割，狗向s,t连边，人向他希望的那些狗连边。联系最小割的含义建图。<br>f.n=3,4无解，n&gt;4，第一条边长1000，以后每条边减0.1，最后两条边直接算，有相等的概率很小。。<br>d.f[i][j][k]表示前i个人中，有j组未闭合，代价和为k。</p>
+<p>1到n每个位置上有一盏灯，点亮i要w[i]的代价，每个位置会被自己及左右照亮，要求每个位置都亮的最小代价。<br>dp[i][0/1/2]表示到i，0：i点亮了，1：i没点亮i-1点亮了，2：i没点亮i-1没点亮<br>复杂度O(n)<br>加强：可以交换k（k&lt;=9)对位置的代价，求最小代价<br>f[i][j][k][0/1/2]表示到i，前面有j个已经钦点了（可以是负数），已经换了k对，0/1/2同上<br>其实就是已经选了某些位置的集合不好表示，用背包来做<br>复杂度O(nk^2)</p>
 
       
     </div>
@@ -471,7 +472,7 @@
                alt="littleming" />
           <p class="site-author-name" itemprop="name">littleming</p>
            
-              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ</p>
+              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -479,7 +480,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">102</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -492,7 +493,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！  用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）$f[x][j][0/1/2]$表示在x及其子树中选了j条路径，x向它的孩子连出0/1/2条边，e[i].f是边权y是x的一个孩子，">
+<meta name="description" content="在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！  用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）中途瞎改改对了。。（把t[1][0]赋初值-inf而不是0，选一个单点的情况认为向孩子连了2条边）（但是并没有迅速调对是因为前面把0">
 <meta name="keywords" content="树上背包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树上背包">
 <meta property="og:url" content="http://yoursite.com/2018/09/26/树上背包/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！  用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）$f[x][j][0/1/2]$表示在x及其子树中选了j条路径，x向它的孩子连出0/1/2条边，e[i].f是边权y是x的一个孩子，">
-<meta property="og:updated_time" content="2018-09-26T06:20:42.692Z">
+<meta property="og:description" content="在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！  用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）中途瞎改改对了。。（把t[1][0]赋初值-inf而不是0，选一个单点的情况认为向孩子连了2条边）（但是并没有迅速调对是因为前面把0">
+<meta property="og:updated_time" content="2018-09-27T09:15:46.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树上背包">
-<meta name="twitter:description" content="在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！  用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）$f[x][j][0/1/2]$表示在x及其子树中选了j条路径，x向它的孩子连出0/1/2条边，e[i].f是边权y是x的一个孩子，">
+<meta name="twitter:description" content="在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！  用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）中途瞎改改对了。。（把t[1][0]赋初值-inf而不是0，选一个单点的情况认为向孩子连了2条边）（但是并没有迅速调对是因为前面把0">
 
 
 
@@ -324,7 +324,8 @@
 
       
         <p>在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）<br>不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！ </p>
-<p>用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）<br>$f[x][j][0/1/2]$表示在x及其子树中选了j条路径，x向它的孩子连出0/1/2条边，e[i].f是边权<br>y是x的一个孩子，$t[j][0/1/2]$表示当前合并的子树<br>$f[][][]=-inf,f[x][0][0]=f[x][1][0]=f[x][1][1]=f[x][1][2]=0$<br>$t[][]=-inf,t[0][0]=t[1][0]=t[1][1]=t[1][2]=0$<br>$t[j][0]=max(t[j][0],f[x][j-p][0]+max(f[y][p][0],f[y][p][1],f[y][p][2]))$<br>$t[j][1]=max(t[j][1],f[x][j-p][1]+max(f[y][p][0],f[y][p][1],f[y][p][2]),f[x][j-p][0]+f[y][p][1]+e[i].f)$<br>$t[j][2]=max(t[j][2],f[x][j-p][2]+max(f[y][p][0],f[y][p][1],f[y][p][2]),f[x][j-p][1]+f[y][p][1]+e[i].f)$</p>
+<p>用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）<br>中途瞎改改对了。。（把t[1][0]赋初值-inf而不是0，选一个单点的情况认为向孩子连了2条边）（但是并没有迅速调对是因为前面把0/1/2全部取max并到0了，题解误导啊！）<br>$f[x][j][0/1/2]$表示在x及其子树中选了j条路径，x向它的孩子连出0/1/2条边，e[i].f是边权<br>y是x的一个孩子，$t[j][0/1/2]$表示当前合并的子树<br>$f[][][]=-inf,f[x][0][0]=f[x][1][1]=f[x][1][2]=0$<br>$t[][]=-inf,t[0][0]=t[1][1]=t[1][2]=0$<br>$t[j][0]=max(t[j][0],f[x][j-p][0]+max(f[y][p][0],f[y][p][1],f[y][p][2]))$<br>$t[j][1]=max(t[j][1],f[x][j-p][1]+max(f[y][p][0],f[y][p][1],f[y][p][2]),f[x][j-p][0]+f[y][p][1]+e[i].f)$<br>$t[j][2]=max(t[j][2],f[x][j-p][2]+max(f[y][p][0],f[y][p][1],f[y][p][2]),f[x][j-p][1]+f[y][p][1]+e[i].f)$</p>
+<p>嘤嘤嘤嘤这题不太一样<br>不要求路径个数<br>所以只需要0/1表示跟有没有选<br>可以通过sum巧妙的转移到1<br>而确定路径数量的就不好这么做（不能控制sum选了多少，可能还需要一个背包）</p>
 
       
     </div>
@@ -376,6 +377,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/27/图论/" rel="prev" title="图论">
+                图论 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -430,7 +435,7 @@
                alt="littleming" />
           <p class="site-author-name" itemprop="name">littleming</p>
            
-              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ</p>
+              <p class="site-description motion-element" itemprop="description">爱信息 爱数学 爱吃的萌新QAQ QQ:1814291128</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -438,7 +443,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">102</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -451,7 +456,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
