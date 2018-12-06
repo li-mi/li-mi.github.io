@@ -254,6 +254,122 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/luogu4113 [HEOI2012]采花/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/14/luogu4113 [HEOI2012]采花/" itemprop="url">luogu4113 [HEOI2012]采花</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T17:19:24+08:00">
+                2018-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>颓废好久<br>开始newtrain之后每道题都要写题解！！<br>区间限制数量是经典问题，向前连边即可<br>此题是求区间出现次数大于1的数的个数<br>两种求法：<br>1.对pre+1处-1,1处+1，query为左端点及其左的和，相当于对区间赋值，要撤回操作。<br>2.对pre处+1，pre[pre]处-1，query为右端点-（左端点-1），相当于统计每个点对区间的贡献，隐藏了撤回。<br>犯了一个小错误:把n和qn弄错了<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/14/luogu4113 [HEOI2012]采花/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -322,7 +438,7 @@
       
         
           
-            <p>1.点双的缩点 点双中的边全部去掉，连向一个新点<br>2.有向图至少加几条边变成强连通图<br>  （易证明，无环的有向图至少存在一个入度为0/出度为0的点）先缩点，ans=max(入度为0的点数，出度为0的点数)（只有一个点说明已经是强连通图，要特判掉）<br>  <strong>注意一个点的时候，是否算作强连通，要看题目！！</strong><br>  有向图至少加几条边使得每条边都在某个强连通分量内：和上面的问题一样，不过要把单点去掉。<br>3.无向图至少加几条边变成边双<br>  先缩点，ans=ceiling(度数为1的点的数量/2)+度数为0的点的数量（特判只有一个点）<br>  证明（简略）：一条边可以干掉两个叶子 叶子干光了就是双联通 一个点可以插入到一条边里去<br>  无向图至少加几条边变成点双？<br>4.设f[u][i]为在节点u的子树内，费用限制为i的条件下能取到的最大价值<br>5.树上莫队<br>6.//return dcmp(cross(a-p,b-p))==0&amp;&amp;dcmp(dot(a-p,b-p))&lt;0;//ac<br>    return dcmp(length(a-p)+length(b-p)-length(a-b))==0&amp;&amp;!(p==a)&amp;&amp;!(p==b);//wa，误差巨大<br>7.double在g++中的输入是%lf,输出时%f。什么时候用什么？<br>  g++中abs一定要有cstdlib，c++不用。<br>8.printf(“%.3f”,0);有错？<br>9.线和凸包是否有交、凸包和凸包是否有交<br>  线和凸包：找线上一个远一些的点，找到两条切线，判断线是否在切线之间<br>  凸包是否有交：？<br>10.点和凸包的切线<br>   凸包外的点p向凸包上一点连线，有的是入凸包，有的是出凸包。则cross(a[i]-p,a[i+1]-a[i])的方向是不同的。找到最后一个入凸包的点，那么下一个点就是切点。左右切线找的时候只需要把方向判断反一下即可。<br>   判断一个点在凸包内：找不到切线，即找不到入凸包的点。<br>11.二维区间和 树套树？<br>12.函数内新建pq？在函数结束时会自动清空吗 会吧<br>13.dp of dp<br>14.异或hash？ 冲突概率1/个数<br>15.并查集 撤销？拆并查集？不能拆<br>16.判断两个点在一个点的不同子树中？<br>17.矩阵转移？<br>18.决策单调性的写法<br>19.prufer编码<br>20.指针和迭代器<br>21.O(n)找第k大<br>22.遍历set是O(n)<br>23.long double怎么用啊<br>24.<strong>int128怎么用<br>25.</strong>float128怎么用<br>26.01覆盖问题是npc吗 反正不可做</p>
+            <p>1.点双的缩点 点双中的边全部去掉，连向一个新点<br>2.有向图至少加几条边变成强连通图<br>  （易证明，无环的有向图至少存在一个入度为0/出度为0的点）先缩点，ans=max(入度为0的点数，出度为0的点数)（只有一个点说明已经是强连通图，要特判掉）<br>  <strong>注意一个点的时候，是否算作强连通，要看题目！！</strong><br>  有向图至少加几条边使得每条边都在某个强连通分量内：和上面的问题一样，不过要把单点去掉。<br>3.无向图至少加几条边变成边双<br>  先缩点，ans=ceiling(度数为1的点的数量/2)+度数为0的点的数量（特判只有一个点）<br>  证明（简略）：一条边可以干掉两个叶子 叶子干光了就是双联通 一个点可以插入到一条边里去<br>  无向图至少加几条边变成点双？<br>4.设f[u][i]为在节点u的子树内，费用限制为i的条件下能取到的最大价值<br>5.树上莫队<br>6.//return dcmp(cross(a-p,b-p))==0&amp;&amp;dcmp(dot(a-p,b-p))&lt;0;//ac<br>    return dcmp(length(a-p)+length(b-p)-length(a-b))==0&amp;&amp;!(p==a)&amp;&amp;!(p==b);//wa，误差巨大<br>7.double在g++中的输入是%lf,输出时%f。什么时候用什么？<br>  g++中abs一定要有cstdlib，c++不用。<br>8.printf(“%.3f”,0);有错？<br>9.线和凸包是否有交、凸包和凸包是否有交<br>  线和凸包：找线上一个远一些的点，找到两条切线，判断线是否在切线之间<br>  凸包是否有交：？<br>10.点和凸包的切线<br>   凸包外的点p向凸包上一点连线，有的是入凸包，有的是出凸包。则cross(a[i]-p,a[i+1]-a[i])的方向是不同的。找到最后一个入凸包的点，那么下一个点就是切点。左右切线找的时候只需要把方向判断反一下即可。<br>   判断一个点在凸包内：找不到切线，即找不到入凸包的点。<br>11.二维区间和 树套树？<br>12.函数内新建pq？在函数结束时会自动清空吗 会吧<br>13.dp of dp<br>14.异或hash？ 冲突概率1/个数<br>15.并查集 撤销？拆并查集？不能拆<br>16.判断两个点在一个点的不同子树中？<br>17.矩阵转移？<br>18.决策单调性的写法<br>19.prufer编码<br>20.指针和迭代器<br>21.O(n)找第k大<br>22.遍历set是O(n)<br>23.long double怎么用啊<br>24.<strong>int128怎么用<br>25.</strong>float128怎么用<br>26.01覆盖问题是npc吗 反正不可做<br>27.保留x位小数变成-0.00000?</p>
 
           
         
@@ -1285,122 +1401,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/luogu3989 [SHOI2013]阶乘字符串（序列自动机）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/07/luogu3989 [SHOI2013]阶乘字符串（序列自动机）/" itemprop="url">luogu3989 [SHOI2013]阶乘字符串（序列自动机）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-07T11:28:39+08:00">
-                2018-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">序列自动机就是dp。。</div><div class="line">记录next[i][26]，O(26n)的预处理，从n到1，每次a[26]记录最后出现的位置，然后复制给next就可以了（next是dag）</div><div class="line">状压加手算优化（大于21就无解我也不会证）</div><div class="line">可以看第一道魔改题</div><div class="line">构造出n^2-2n+4的数列（所以可以卡22）</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/07/luogu3989 [SHOI2013]阶乘字符串（序列自动机）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1450,7 +1450,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-count">103</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

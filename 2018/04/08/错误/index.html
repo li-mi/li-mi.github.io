@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/08/错误/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="鉴于省选第一轮已经滚粗了。。我把我犯过的错误及对应的题目记下来，以警示自己。 ！！：不容易在调试时发现考试前一定要保持清醒&amp;amp;充足睡眠平时训练一定要保证清醒&amp;amp;充足睡眠 三明治等含有鸡蛋或火腿的食物不要吃！（沙门氏菌） 学会静态+人眼（用脑子）查错！！明明没有改它，为什么它变了？？！！越界了！！检查循环变量！！ 对拍要试试极限数据看看是否超时 交上去一个优秀的暴力（最优化剪枝 浮躁，是">
-<meta property="og:updated_time" content="2018-11-09T10:44:23.677Z">
+<meta property="og:updated_time" content="2018-12-05T13:26:26.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错误">
 <meta name="twitter:description" content="鉴于省选第一轮已经滚粗了。。我把我犯过的错误及对应的题目记下来，以警示自己。 ！！：不容易在调试时发现考试前一定要保持清醒&amp;amp;充足睡眠平时训练一定要保证清醒&amp;amp;充足睡眠 三明治等含有鸡蛋或火腿的食物不要吃！（沙门氏菌） 学会静态+人眼（用脑子）查错！！明明没有改它，为什么它变了？？！！越界了！！检查循环变量！！ 对拍要试试极限数据看看是否超时 交上去一个优秀的暴力（最优化剪枝 浮躁，是">
@@ -330,6 +330,7 @@
 <p>对拍要试试极限数据看看是否超时</p>
 <p>交上去一个优秀的暴力（最优化剪枝</p>
 <p>浮躁，是人生中最大的错误。</p>
+<p>再看漫画或者打游戏就要变小狗了ww</p>
 <p>1) 多测没有清空应当清空的数组或变量（包括某些输入的数组）！！</p>
 <ul>
 <li>luogu4382 劈配</li>
@@ -362,14 +363,16 @@
 <li>luogu3377 【模板】左偏树（可并堆）</li>
 <li>zroi#363. 陈太阳与乐谱 *2！！</li>
 <li>#444. 彩虹糖</li>
+<li>ch5103 传纸条（被wyy<del>批判</del>教育了一番）</li>
 </ul>
 <p>5) 边界出错(n/n+1）！！</p>
 <ul>
 <li>luogu2447 [SDOI2010]外星千足虫</li>
 </ul>
-<p>6) 答案忘记更新或者在某处少更新！！</p>
+<p>6) 答案忘记更新或者在某处少更新！！修改操作少修改某些值！！</p>
 <ul>
 <li>luogu2447 [SDOI2010]外星千足虫</li>
+<li>bzoj1453: [Wc]Dface双面棋盘</li>
 </ul>
 <p>7) 输出与题意不符（少复制了什么）！！</p>
 <ul>
@@ -399,6 +402,8 @@
 <li>luogu2657 [SCOI2009]windy数</li>
 <li>正睿2018暑期集训AB班刷题营Day2 B. 配对</li>
 <li>#378. 【2018普转提day19专题】打架</li>
+<li>ch5102 Mobile Service</li>
+<li>hdu5634 Rikka with Phi（zyb的教导：因为数组越界后会发生什么谁也不知道啊。。wa,tle,red都有可能。。zyf也因为数组开小t了。。）</li>
 </ul>
 <p>12) 输入时出错（出现0之类的，读错，多度，少读）！！</p>
 <ul>
@@ -414,15 +419,18 @@
 <li>luogu3066 [Usaco2012 Dec]Running Away From the Barn</li>
 <li>南外校内18-10-16 a</li>
 <li>南外校内18-10-23 c（前面改过的LL后面相应的没改）</li>
+<li>bzoj2124: 等差子序列（所有和hash相关的量都要用ll！！）</li>
 </ul>
 <p>14) 程序的顺序出错（逻辑顺序）或者逻辑错误（经常性的错误，不过没有记录，大概是认为和题目有关，实际上是思维严谨性的问题，感性理解之后要严谨的证明）</p>
 <ul>
 <li>luogu1484 种树</li>
 <li>#109. 【17 提高 7】当那一天来临</li>
+<li>bzoj2124: 等差子序列（变量名打反）</li>
 </ul>
-<p>15) 下标出现负数</p>
+<p>15) 下标出现负数/下标越界</p>
 <ul>
 <li>bzoj4765 普通计算姬</li>
+<li>bzoj2124: 等差子序列</li>
 </ul>
 <p>16) 题目分析有误</p>
 <ul>
@@ -504,6 +512,18 @@
 <p>38) 涉及图的题目，要注意重边和自环！！</p>
 <ul>
 <li>luoguP1850 换教室</li>
+</ul>
+<p>39) 注意运输符的结合律，连等的时候要注意变量的改变！</p>
+<ul>
+<li>#322. 【Jiangsu Training Contest 5】Graph</li>
+</ul>
+<p>40) 输入scanf(“%d”,a+i)写成scanf(“%d”,a+1)</p>
+<ul>
+<li>bzoj3585╱luogu4137 mex</li>
+</ul>
+<p>41) add_ans和ass_ans搞混</p>
+<ul>
+<li>csa Min Max Sum</li>
 </ul>
 
       
@@ -622,7 +642,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-count">103</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -254,7 +254,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/zr2018模拟赛/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/17/【学习笔记】可并堆/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="littleming">
@@ -273,7 +273,124 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/04/zr2018模拟赛/" itemprop="url">zr2018提高十连测</a></h1>
+                <a class="post-title-link" href="/2018/09/17/【学习笔记】可并堆/" itemprop="url">【学习笔记】可并堆</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-17T22:38:44+08:00">
+                2018-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>好久没写笔记了<br>可并堆是个简单好用（好写）的数据结构<br>做了几道水题<br>luogu2713 罗马游戏<br>luogu3377 【模板】左偏树（可并堆）<br>luogu3066 [Usaco2012 Dec]Running Away From the Barn</p>
+<p>可并堆的核心就是保持深度（要肤浅！）<br>最无脑的斜堆就是每次将左右孩子交换，但这是均摊log的（不会证啊）<br>也可以随机交换（rand()&amp;1）<br>优秀（可持久化）的做法是维护一个dist，表示这个点向右能走的距离<br>要求满足dist_left&gt;=dist_right,dist=dist_right+1<br>容易证明是log的，这就是左偏树（因为向左偏，斜堆也是向左偏的。。）</p>
+<p>实测感觉斜堆跑得最快（数据不够优秀？)</p>
+<p>几个错误：<br>不能merge两个处于同一个堆里的东西！（会翻倍诶）<br>swap(x,y)而不是swap(t[x],t[y])，因为要保证编号和值对应！</p>
+<p>luogu2475 [SCOI2008]斜堆<br>（关于斜堆的一些性质，了解一下）<br>转自MATO IS NO.1<br>考虑斜堆中最后插入的那个结点，容易发现：<br>（1）它一定是一个极左结点（就是从根往它的路上一直都是沿着左链走），因为插入的时候每次都是插入到左子树中；<br>（2）它一定木有右子树，因为插入的时候每次都是把原来的某棵子树作为新结点的左子树；</p>
+<p>满足（1）（2）的结点可能有多个，但紧接着可以发现，这个斜堆中的每个结点如果木有左子结点，那么也木有右子结点（或者说，每个非叶结点都有左子树），而在插入一个结点之前，其所有的祖先都被交换了左右子树，所以，若新结点的祖先中有满足（1）（2）的，且新结点不是叶结点，那么在新结点插入之前，这个满足（1）（2）的祖先必然是只有右子树而木有左子树的，这与上面的那个性质矛盾，所以，可以得出：最后插入的那个结点一定是满足（1）（2）的结点中，深度最小的那个（设为X），除非X的左子结点是叶结点，此时为了满足字典序最小，应该取X的左子结点为最后插入的。找到这个最后插入的结点以后，只需要把它删掉，并把它的所有祖先交换左右子树，就是插入该结点以前的状态了。这样可以找到字典序最小的插入顺序。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/zr模拟赛/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/zr模拟赛/" itemprop="url">zr模拟赛</a></h1>
         
 
         <div class="post-meta">
@@ -392,7 +509,12 @@
 <h1 id="停课训练r6-18-10-22"><a href="#停课训练r6-18-10-22" class="headerlink" title="停课训练r6 18-10-22"></a>停课训练r6 18-10-22</h1><p>第一题<br>我的贪心想的是假的。。<br>反例：<br>20<br>acabcccccacccbccccaa<br>bababcbcabcbbccaccbb<br>正确的做法：<br>逐位确定<br>字符串A和字符串B相当于一个匹配<br>只要网络流能跑满流就是有解<br>判断这个网络流能跑满可以O(字符集大小k)判<br>s1[0]&lt;=s2[1]+…+s2[k] &lt;=&gt; s1[0]&lt;=len-s2[0]<br>s1[1]&lt;=len-s2[1]<br>…<br>s1[k]&lt;=len-s2[k]<br>hall定理可以证明以上 或 网络流最小割证明<br>维护s1[i]+s2[i]，复杂度O(nk+klogk)</p>
 <p>第二题<br>改成gcd恐怕就不可做了<br>改成异或可以nloglog</p>
 <p>$\frac{P}{N}\times N+P\times(2\ln N-\ln P)$</p>
-<h1 id="停课训练r7-18-10-23"><a href="#停课训练r7-18-10-23" class="headerlink" title="停课训练r7 18-10-23"></a>停课训练r7 18-10-23</h1>
+<h1 id="A-new-start-前面的坑无限期拖延"><a href="#A-new-start-前面的坑无限期拖延" class="headerlink" title="A new start! 前面的坑无限期拖延"></a>A new start! 前面的坑无限期拖延</h1><h1 id="省选r1-18-12-2"><a href="#省选r1-18-12-2" class="headerlink" title="省选r1 18-12-2"></a>省选r1 18-12-2</h1><p>上来就开t3是不是很错误呢。。<br>还是应该三题都先看<br>（不过t3好像最好写<br>t1不会<br>t2不会<br>t3不会<br>做题顺序出锅了吧。。<br>t1公式写错。。（调了好久<br>t2强行凑样例得10分（<del>不凑能得15分</del>）<br>t3阶乘求小了（涉及求值的注意数组下标的范围啊！！）</p>
+<p>t1转化成求凸包很妙啊<br>get求凸包新方法：求上下凸壳（排序更好写）<br>cross&lt;eps就弹掉（否则会有很多重复的点，可能会爆数组）<br>排序用atan2就会很慢<br>x相同按y排序，叉积为0也要弹栈</p>
+<p>双调路径也很妙啊（n^2），这需要确定一个点在环上</p>
+<p>t2差分之后贪心+dp</p>
+<p>t3前缀和的迭代，每个值的贡献是组合数！（终于知道了，卡了我好久）<br>然后就是组合数的展开！（暴力展开n^3）</p>
+
           
         
       
@@ -1368,122 +1490,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/luogu4113 [HEOI2012]采花/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/14/luogu4113 [HEOI2012]采花/" itemprop="url">luogu4113 [HEOI2012]采花</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T17:19:24+08:00">
-                2018-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>颓废好久<br>开始newtrain之后每道题都要写题解！！<br>区间限制数量是经典问题，向前连边即可<br>此题是求区间出现次数大于1的数的个数<br>两种求法：<br>1.对pre+1处-1,1处+1，query为左端点及其左的和，相当于对区间赋值，要撤回操作。<br>2.对pre处+1，pre[pre]处-1，query为右端点-（左端点-1），相当于统计每个点对区间的贡献，隐藏了撤回。<br>犯了一个小错误:把n和qn弄错了<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/14/luogu4113 [HEOI2012]采花/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1533,7 +1539,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-count">103</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

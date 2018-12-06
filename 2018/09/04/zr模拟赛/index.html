@@ -93,16 +93,16 @@
 <meta name="description" content="考试的首要目标：得高分！不写对拍的话，一半概率会炸。 提高r1第一题找规律，40min完成第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完第三题没什么思路，打了暴力。期望100+100+50=250实际100+100+40=240第三题应该是n&amp;gt;20是特判，结果写成n&amp;gt;100，有10分t了。 t3正解：应该想到区间dp，但是很难想到维护什么因为">
 <meta name="keywords" content="心情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zr2018提高十连测">
-<meta property="og:url" content="http://yoursite.com/2018/09/04/zr2018模拟赛/index.html">
+<meta property="og:title" content="zr模拟赛">
+<meta property="og:url" content="http://yoursite.com/2018/09/04/zr模拟赛/index.html">
 <meta property="og:site_name" content="小明的阁楼">
 <meta property="og:description" content="考试的首要目标：得高分！不写对拍的话，一半概率会炸。 提高r1第一题找规律，40min完成第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完第三题没什么思路，打了暴力。期望100+100+50=250实际100+100+40=240第三题应该是n&amp;gt;20是特判，结果写成n&amp;gt;100，有10分t了。 t3正解：应该想到区间dp，但是很难想到维护什么因为">
-<meta property="og:image" content="http://yoursite.com/2018/09/04/zr2018模拟赛/zr18-9-23t3.png">
-<meta property="og:updated_time" content="2018-11-08T01:02:24.749Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/04/zr模拟赛/zr18-9-23t3.png">
+<meta property="og:updated_time" content="2018-12-04T07:15:20.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zr2018提高十连测">
+<meta name="twitter:title" content="zr模拟赛">
 <meta name="twitter:description" content="考试的首要目标：得高分！不写对拍的话，一半概率会炸。 提高r1第一题找规律，40min完成第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完第三题没什么思路，打了暴力。期望100+100+50=250实际100+100+40=240第三题应该是n&amp;gt;20是特判，结果写成n&amp;gt;100，有10分t了。 t3正解：应该想到区间dp，但是很难想到维护什么因为">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/04/zr2018模拟赛/zr18-9-23t3.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/04/zr模拟赛/zr18-9-23t3.png">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/04/zr2018模拟赛/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/04/zr模拟赛/"/>
 
 
 
 
 
-  <title>zr2018提高十连测 | 小明的阁楼</title>
+  <title>zr模拟赛 | 小明的阁楼</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/zr2018模拟赛/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/zr模拟赛/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="littleming">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">zr2018提高十连测</h1>
+          <h1 class="post-title" itemprop="name headline">zr模拟赛</h1>
         
 
         <div class="post-meta">
@@ -395,7 +395,12 @@
 <h1 id="停课训练r6-18-10-22"><a href="#停课训练r6-18-10-22" class="headerlink" title="停课训练r6 18-10-22"></a>停课训练r6 18-10-22</h1><p>第一题<br>我的贪心想的是假的。。<br>反例：<br>20<br>acabcccccacccbccccaa<br>bababcbcabcbbccaccbb<br>正确的做法：<br>逐位确定<br>字符串A和字符串B相当于一个匹配<br>只要网络流能跑满流就是有解<br>判断这个网络流能跑满可以O(字符集大小k)判<br>s1[0]&lt;=s2[1]+…+s2[k] &lt;=&gt; s1[0]&lt;=len-s2[0]<br>s1[1]&lt;=len-s2[1]<br>…<br>s1[k]&lt;=len-s2[k]<br>hall定理可以证明以上 或 网络流最小割证明<br>维护s1[i]+s2[i]，复杂度O(nk+klogk)</p>
 <p>第二题<br>改成gcd恐怕就不可做了<br>改成异或可以nloglog</p>
 <p>$\frac{P}{N}\times N+P\times(2\ln N-\ln P)$</p>
-<h1 id="停课训练r7-18-10-23"><a href="#停课训练r7-18-10-23" class="headerlink" title="停课训练r7 18-10-23"></a>停课训练r7 18-10-23</h1>
+<h1 id="A-new-start-前面的坑无限期拖延"><a href="#A-new-start-前面的坑无限期拖延" class="headerlink" title="A new start! 前面的坑无限期拖延"></a>A new start! 前面的坑无限期拖延</h1><h1 id="省选r1-18-12-2"><a href="#省选r1-18-12-2" class="headerlink" title="省选r1 18-12-2"></a>省选r1 18-12-2</h1><p>上来就开t3是不是很错误呢。。<br>还是应该三题都先看<br>（不过t3好像最好写<br>t1不会<br>t2不会<br>t3不会<br>做题顺序出锅了吧。。<br>t1公式写错。。（调了好久<br>t2强行凑样例得10分（<del>不凑能得15分</del>）<br>t3阶乘求小了（涉及求值的注意数组下标的范围啊！！）</p>
+<p>t1转化成求凸包很妙啊<br>get求凸包新方法：求上下凸壳（排序更好写）<br>cross&lt;eps就弹掉（否则会有很多重复的点，可能会爆数组）<br>排序用atan2就会很慢<br>x相同按y排序，叉积为0也要弹栈</p>
+<p>双调路径也很妙啊（n^2），这需要确定一个点在环上</p>
+<p>t2差分之后贪心+dp</p>
+<p>t3前缀和的迭代，每个值的贡献是组合数！（终于知道了，卡了我好久）<br>然后就是组合数的展开！（暴力展开n^3）</p>
+
       
     </div>
 
@@ -521,7 +526,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-count">103</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -569,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r1"><span class="nav-number">1.</span> <span class="nav-text">提高r1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r5-18-9-22"><span class="nav-number">2.</span> <span class="nav-text">提高r5 18-9-22</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r7-18-10-13"><span class="nav-number">3.</span> <span class="nav-text">提高r7 18-10-13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r8-18-10-20"><span class="nav-number">4.</span> <span class="nav-text">提高r8 18-10-20</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r9-18-10-27"><span class="nav-number">5.</span> <span class="nav-text">提高r9 18-10-27</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r1-18-9-9"><span class="nav-number">6.</span> <span class="nav-text">普转提r1 18-9-9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r2-18-9-16"><span class="nav-number">7.</span> <span class="nav-text">普转提r2 18-9-16</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r3-18-9-23"><span class="nav-number">8.</span> <span class="nav-text">普转提r3 18-9-23</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r4-18-9-30"><span class="nav-number">9.</span> <span class="nav-text">普转提r4 18-9-30</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普及r3-18-9-29"><span class="nav-number">10.</span> <span class="nav-text">普及r3 18-9-29</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一r1-18-10-2"><span class="nav-number">11.</span> <span class="nav-text">十一r1 18-10-2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一r2-18-10-4"><span class="nav-number">12.</span> <span class="nav-text">十一r2 18-10-4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#停课训练r6-18-10-22"><span class="nav-number">13.</span> <span class="nav-text">停课训练r6 18-10-22</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#停课训练r7-18-10-23"><span class="nav-number">14.</span> <span class="nav-text">停课训练r7 18-10-23</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r1"><span class="nav-number">1.</span> <span class="nav-text">提高r1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r5-18-9-22"><span class="nav-number">2.</span> <span class="nav-text">提高r5 18-9-22</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r7-18-10-13"><span class="nav-number">3.</span> <span class="nav-text">提高r7 18-10-13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r8-18-10-20"><span class="nav-number">4.</span> <span class="nav-text">提高r8 18-10-20</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高r9-18-10-27"><span class="nav-number">5.</span> <span class="nav-text">提高r9 18-10-27</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r1-18-9-9"><span class="nav-number">6.</span> <span class="nav-text">普转提r1 18-9-9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r2-18-9-16"><span class="nav-number">7.</span> <span class="nav-text">普转提r2 18-9-16</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r3-18-9-23"><span class="nav-number">8.</span> <span class="nav-text">普转提r3 18-9-23</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普转提r4-18-9-30"><span class="nav-number">9.</span> <span class="nav-text">普转提r4 18-9-30</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普及r3-18-9-29"><span class="nav-number">10.</span> <span class="nav-text">普及r3 18-9-29</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一r1-18-10-2"><span class="nav-number">11.</span> <span class="nav-text">十一r1 18-10-2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一r2-18-10-4"><span class="nav-number">12.</span> <span class="nav-text">十一r2 18-10-4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#停课训练r6-18-10-22"><span class="nav-number">13.</span> <span class="nav-text">停课训练r6 18-10-22</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-new-start-前面的坑无限期拖延"><span class="nav-number">14.</span> <span class="nav-text">A new start! 前面的坑无限期拖延</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#省选r1-18-12-2"><span class="nav-number">15.</span> <span class="nav-text">省选r1 18-12-2</span></a></li></ol></div>
             
 
           </div>
