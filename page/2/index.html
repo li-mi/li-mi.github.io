@@ -288,6 +288,823 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/杨氏矩阵&钩子公式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/26/杨氏矩阵&钩子公式/" itemprop="url">杨氏矩阵&钩子公式</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T10:15:01+08:00">
+                2018-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>杨氏矩阵是这样一个矩阵，满足条件：<br>(1)如果格子(i,j)没有元素，则它右边和上边的相邻格子也一定没有元素。<br>(2)如果格子(i,j)有元素a[i][j]，则它右边和上边的相邻格子要么没有元素，要么有元素且比a[i][j]大。<br>$F[1]=1,F[2]=2,F[n]=F[n-1]+(n-1)*F[n-2] (n&gt;2)$</p>
+<p>钩子公式：<br>对于给定形状，不同的杨氏矩阵的个数为：n!除以每个格子的钩子长度加1的积。其中钩子长度定义为该格子右边的格子数和它上边的格子数之和。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/考试安排/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/09/考试安排/" itemprop="url">考试安排</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-09T22:01:50+08:00">
+                2018-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>先安装最新版本dev<br>编译时加入以下命令：<br>-Wall -Wl,–stack=1000000000 -std=c++11（最后改成03编译！！）<br>-O2用于打表找规律</p>
+<p>字体：Consolas<br>预设：Obsidian</p>
+<p>取消代码补全、符号匹配</p>
+<p>开始写模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">#define fi first</div><div class="line">#define se second</div><div class="line">#define IL inline</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef unsigned int U;</div><div class="line">typedef unsigned long long LLU;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">typedef long double LD;</div><div class="line">IL LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">#define io read()</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>写完加入到缺省源</p>
+<p>然后建文件夹</p>
+<p>然后写生成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">timeb tim;</div><div class="line">mt19937 mt;</div><div class="line">inline int ra()</div><div class="line">&#123;</div><div class="line">	return mt()&gt;&gt;1;//mt()是unsigned int </div><div class="line">&#125;</div><div class="line">inline LL rall()</div><div class="line">&#123;</div><div class="line">	return (1ll*ra()&lt;&lt;30)+ra();</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	freopen(&quot;1.in&quot;,&quot;w&quot;,stdout);</div><div class="line">   	ftime(&amp;tim);</div><div class="line">   	mt.seed(tim.time*1000+tim.millitm);</div><div class="line">   	</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后写duipai.bat（和bf拍）和pai.bat（测极限数据的时间）</p>
+<p>最后把东西复制到各个文件夹就行了<br>多余的时间打打ksm，add_ans,add_edge,(fx treap)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/【学习笔记】主席树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/08/【学习笔记】主席树/" itemprop="url">【学习笔记】主席树</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T13:04:50+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>主席树的时间复杂度：O(nlogn)<br>主席树的空间复杂度：O(nlogn)（开<strong>2logn</strong>比较好）<br>主席树的插入要用<strong>引用</strong>！</p>
+<p>主席树的主体：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int rt[N],tot;</div><div class="line">struct president_tree&#123;</div><div class="line">	int ls,rs,sz;</div><div class="line">	LL sum;</div><div class="line">	/* more */</div><div class="line">&#125;tr[N*150];//能开多大开多大</div></pre></td></tr></table></figure></p>
+<p>主席树是动态开点权值线段树，注意上下界的设置（注意inf的设置和0/1的设置）<br>因为主席树是不支持修改的，所以一般都是一开始就把树建好<br>插入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">inline void update(int &amp;t,int l,int r,int val)</div><div class="line">&#123;</div><div class="line">	tr[++tot]=tr[t];</div><div class="line">	++tr[tot].sz;</div><div class="line">	tr[tot].sum+=val;//先产生一个新点</div><div class="line">	t=tot;//再赋值</div><div class="line">	if(l==r)	return;</div><div class="line">	int mid=l+(r-l)/2;//可能会爆int</div><div class="line">	if(val&lt;=mid)	update(tr[t].ls,l,mid,val);</div><div class="line">	else	update(tr[t].rs,mid+1,r,val);</div><div class="line">&#125;</div><div class="line">for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">	rt[i]=rt[i-1];</div><div class="line">	update(rt[i],1,inf,a[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>询问函数可以有返回值，也可以没有，而使用一个全局变量记录答案<br><strong>注意：查询的时候要用ls或者rs的差！！</strong><br>询问：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">LL tmp;</div><div class="line">inline void query(int t1,int t2,int l,int r,int num)</div><div class="line">&#123;</div><div class="line">	if(!num)	return;</div><div class="line">	if(tr[t2].sz-tr[t1].sz&lt;=num)&#123;</div><div class="line">		tmp+=tr[t2].sum-tr[t1].sum;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	if(l==r)&#123;</div><div class="line">		tmp+=1ll*num*l;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	int mid=l+(r-l)/2,t=tr[tr[t2].rs].sz-tr[tr[t1].rs].sz;</div><div class="line">	if(num&lt;=t)	query(tr[t1].rs,tr[t2].rs,mid+1,r,num);</div><div class="line">	else&#123;</div><div class="line">		tmp+=tr[tr[t2].rs].sum-tr[tr[t1].rs].sum;</div><div class="line">		query(tr[t1].ls,tr[t2].ls,l,mid,num-t);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>清空主席树：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tot=0;</div><div class="line">//rt[]和tr[]里的东西都会重新加</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/【学习笔记】fx treap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/08/【学习笔记】fx treap/" itemprop="url">【学习笔记】fx treap</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T10:30:16+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>treap有点难写啊<br>fx treap好！（<strong>没有引用</strong>！）<br>那么<strong>常数大</strong>也没什么办法。。</p>
+<p>fx treap的主体：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int rt,tot;</div><div class="line">struct node&#123;</div><div class="line">	int ls,rs,val,pri,sz;</div><div class="line">&#125;fx[N];</div></pre></td></tr></table></figure></p>
+<p>（假如要写多颗平衡树，把这个东西封装一下就好了）<br>rt：这颗树的根的编号<br>tot：总点数（删除的点不会消失，只是它的编号不再被使用了）<br>ls：左孩子<br>rs：右孩子<br>val：关键码（平衡树存的值）<br>pri：随机的优先级比较值<br>sz：点数（相同的值并没有合并到一起）</p>
+<p>加入一个新的点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">int seed=233;</div><div class="line">inline int ra()//可以不重复的生成1~INT_MAX-1的每一个数</div><div class="line">&#123;</div><div class="line">	seed=48271ll*seed%INT_MAX;</div><div class="line">	return seed;</div><div class="line">&#125;</div><div class="line">inline int new_node(int x)</div><div class="line">&#123;</div><div class="line">	++tot;</div><div class="line">	fx[tot].sz=1;</div><div class="line">	fx[tot].val=x;</div><div class="line">	fx[tot].pri=ra();</div><div class="line">	fx[tot].ls=fx[tot].rs=0;</div><div class="line">	return tot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>更新节点的信息：（更改了树的结构的时候需要更新，fx treap需要在merge和split的时候更新）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">inline void pushup(int x)</div><div class="line">&#123;</div><div class="line">	fx[x].sz=fx[fx[x].ls].sz+fx[fx[x].rs].sz+1;</div><div class="line">	/* more */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>合并(merge)两颗fx，要求左边的fx的每个点的关键码小于右边的fx的每个点的关键码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">inline int merge(int x,int y)</div><div class="line">&#123;</div><div class="line">	if(!x||!y)	return x+y;</div><div class="line">	if(fx[x].pri&lt;fx[y].pri)&#123;</div><div class="line">		fx[x].rs=merge(fx[x].rs,y);</div><div class="line">		pushup(x);</div><div class="line">		return x;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		fx[y].ls=merge(x,fx[y].ls);</div><div class="line">		pushup(y);</div><div class="line">		return y;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>分裂(split)一颗fx，可以按值分裂，也可以按排名分裂，这里将键值&lt;=x的分成左树，其余分成右树<br>split操作会得到两个值，rt_l表示左树的根的编号，rt_r表示右树的根的编号（这样写没有返回值，注意这两个值的变化，要即时的把值存下来，每次split之后他们的值就变了）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">int rt_l,rt_r;</div><div class="line">inline void split(int rt,int x)</div><div class="line">&#123;</div><div class="line">	if(!rt)&#123;</div><div class="line">		rt_l=rt_r=0;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	if(fx[rt].val&gt;x)&#123;</div><div class="line">		split(fx[rt].ls,x);</div><div class="line">		fx[rt].ls=rt_r;</div><div class="line">		rt_r=rt;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		split(fx[rt].rs,x);</div><div class="line">		fx[rt].rs=rt_l;</div><div class="line">		rt_l=rt;</div><div class="line">	&#125;</div><div class="line">	pushup(rt);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>拥有了merge和split的fx treap，仍然拥有treap的一切性质，仍然可以使用treap的一切函数<br>fx treap独特之处在于，它抛弃了旋转操作，那么treap的insert和delete就不适用于fx treap了（只有这两个操作是需要zag和zig的）<br>插入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">inline void inser(int x)</div><div class="line">&#123;</div><div class="line">	split(rt,x);</div><div class="line">	rt=merge(merge(rt_l,new_node(x)),rt_r);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>删除：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">inline void delet(int x)</div><div class="line">&#123;</div><div class="line">	split(rt,x);</div><div class="line">	int tmp=rt_r;</div><div class="line">	split(rt_l,x-1);</div><div class="line">	rt=merge(merge(rt_l,merge(fx[rt_r].ls,fx[rt_r].rs)),tmp);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>短小精悍，那么其他操作也可以考虑用fx特有的merge和split来完成（<strong>常数大</strong>）<br>求键值为x的最小排名（相同的不算）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">inline int rank(int x)//rank在c++11中是关键字</div><div class="line">&#123;</div><div class="line">	split(rt,x-1);</div><div class="line">	int ans=fx[rt_l].sz+1;</div><div class="line">	rt=merge(rt_l,rt_r);</div><div class="line">	return ans;	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>求排名第k的键值：//并不能优化这个过程。。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">inline int kth(int rt,int k)</div><div class="line">&#123;</div><div class="line">	if(k&gt;fx[rt].sz)	return -1;</div><div class="line">	while(1)&#123;</div><div class="line">		if(k==fx[fx[rt].ls].sz+1)	return rt;</div><div class="line">		if(k&lt;=fx[fx[rt].ls].sz)&#123;</div><div class="line">			rt=fx[rt].ls;</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			k-=fx[fx[rt].ls].sz+1;</div><div class="line">			rt=fx[rt].rs;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>求前驱后继：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">inline int get_pre(int x)</div><div class="line">&#123;</div><div class="line">	int ans;</div><div class="line">	split(rt,x-1);</div><div class="line">	if(!rt_l)&#123;</div><div class="line">		ans=-INT_MAX;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		ans=fx[kth(rt_l,fx[rt_l].sz)].val;</div><div class="line">	&#125;</div><div class="line">	rt=merge(rt_l,rt_r);</div><div class="line">	return ans;</div><div class="line">&#125;</div><div class="line">inline int get_nxt(int x)</div><div class="line">&#123;</div><div class="line">	int ans;</div><div class="line">	split(rt,x);</div><div class="line">	if(!rt_r)&#123;</div><div class="line">		ans=INT_MAX;</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		ans=fx[kth(rt_r,1)].val;</div><div class="line">	&#125;</div><div class="line">	rt=merge(rt_l,rt_r);</div><div class="line">	return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>清空：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rt=tot=0;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/18-10-23学校模拟赛/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/23/18-10-23学校模拟赛/" itemprop="url">未命名</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T23:30:25+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>18-10-23学校模拟赛<br>orz djq<br>第一题<br>101是4位循环的<br>因为9999是101的倍数<br>10000=1(mod 101)<br>满足gcd(x,10)=1的数都有这样的循环<br>因为10^phi(x)=1(mod x)<br>最小的循环要枚举phi(x)的因数<br>求phi(x)是根号的（直接暴力从2到sqrt，每个地方都不停的除即可</p>
+<p>本题dp[i][j][p][q]表示区间[i,j]内模101为p位数模4为q的子序列个数<br>注意初始情况，长度为1和有两个相同的为1<br>转移要小小的容斥一下<br>dp[i][j][p][q]+=dp[i+1][j][p][q]+dp[i][j-1][p][q]-dp[i+1][j-1][p][q]<br>还是有点弱啊（初始情况和转移容斥）</p>
+<p>第二题<br>不考虑是x的多少倍<br>只考虑它是x的倍数<br>那就按模x的值来搞<br>连边变成01bfs</p>
+<p>01bfs暑假zr讲了啊（可是我没听啊<br>连0的边就加到队头<br>连1的边就加到队尾<br>队列时刻都不会超过2种值（x和x+1或者只有x）<br>每个点最多入队两次（先1再0的情况）<br>且永远是用最小值先来更新<br>可以不用记录出现最小值的vis数组（类似dijk的vis）</p>
+<p>第三题<br>维护树上并查集<br>不知道为什么80.。<br>LL写成int<br>把变量改成LL以后要查全文！！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/图论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/27/图论/" itemprop="url">图论</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T08:32:20+08:00">
+                2018-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>求割边求错了QWQ<br>写一篇跟tarjan有关的总结</p>
+<p>有向图：<br>求强连通分量：重边、自环都不影响求解，记录fa，要写栈<br>求割边：未定义割边，要根据题目转化成无向图做（可能吧）<br>求割点：未定义割点，要根据题目转化成无向图做（可能吧）</p>
+<p>无向图：<br>求割边：自环无影响，重边有影响，要记录是从哪条边来的，而不是记录fa，不要写栈<br>dfn[x]&lt;low[x]，所以不能用fa更新<br>求割点：自环、重边无影响，不用记录fa，不要写栈。注意根节点。<br>dfn[x]&lt;=low[x]，所以可以用fa更新</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/树上背包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/树上背包/" itemprop="url">树上背包</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T14:20:42+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在树上找k条点不相交的路径使得权值和最大（一个点算一条退化的路径）<br>不能只用0/1表示（0表示不能往上，1表示能往上），有坑，合并的时候不知道上面的0有没有算一条路径！！ </p>
+<p>用0/1/2写，将0/1/2的max存到0中，这是错的，调用0的时候会挂（数据弱拿了50/60）<br>中途瞎改改对了。。（把t[1][0]赋初值-inf而不是0，选一个单点的情况认为向孩子连了2条边）（但是并没有迅速调对是因为前面把0/1/2全部取max并到0了，题解误导啊！）<br>$f[x][j][0/1/2]$表示在x及其子树中选了j条路径，x向它的孩子连出0/1/2条边，e[i].f是边权<br>y是x的一个孩子，$t[j][0/1/2]$表示当前合并的子树<br>$f[][][]=-inf,f[x][0][0]=f[x][1][1]=f[x][1][2]=0$<br>$t[][]=-inf,t[0][0]=t[1][1]=t[1][2]=0$<br>$t[j][0]=max(t[j][0],f[x][j-p][0]+max(f[y][p][0],f[y][p][1],f[y][p][2]))$<br>$t[j][1]=max(t[j][1],f[x][j-p][1]+max(f[y][p][0],f[y][p][1],f[y][p][2]),f[x][j-p][0]+f[y][p][1]+e[i].f)$<br>$t[j][2]=max(t[j][2],f[x][j-p][2]+max(f[y][p][0],f[y][p][1],f[y][p][2]),f[x][j-p][1]+f[y][p][1]+e[i].f)$</p>
+<p>嘤嘤嘤嘤这题不太一样<br>不要求路径个数<br>所以只需要0/1表示跟有没有选<br>可以通过sum巧妙的转移到1<br>而确定路径数量的就不好这么做（不能控制sum选了多少，可能还需要一个背包）</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/19/18-9-18学校模拟赛/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -698,832 +1515,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/luogu2120 [ZJOI2007]仓库建设/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/17/luogu2120 [ZJOI2007]仓库建设/" itemprop="url">luogu2120 [ZJOI2007]仓库建设</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T21:30:28+08:00">
-                2018-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>做特别行动队的时候发现这题的题解还没写<br>这才是第一道斜率优化啊<br>当时懵懵懂懂对着题解写的<br>现在明白了</p>
-<p>想想全tm是套路<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/17/luogu2120 [ZJOI2007]仓库建设/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/luogu3628 [APIO2010]特别行动队/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/17/luogu3628 [APIO2010]特别行动队/" itemprop="url">luogu3628 [APIO2010]特别行动队</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T21:11:42+08:00">
-                2018-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>斜率优化真是套路</p>
-<p>$f[i]=min(a[i]*b[j]+c[j]+d[i])$</p>
-<p>看到这种带当前i和转移j的二次项的，就是斜率优化了<br>d[i]最后加可以不管，去掉min，然后整理成y=kx+b的形式</p>
-<p>$c[j]=-a[i]*b[j]+f[i]$</p>
-<p>k为-a[i]，b为f[i]，(x,y)为(b[j],c[j])<br>要最大化f[i]，就是维护上凸壳<br>要最小化f[i]，就是维护下凸壳<br>注意起点在哪个位置（一般是(0,0)</p>
-<p>还可以考虑比较法<br>考虑1&lt;=k&lt;j&lt;i<br>假如j的转移更优要满足的条件<br>然后推一波式子发现和上面的是一样的</p>
-<p>然后是重点（敲黑板<br>如果b[i]随i有单调性（单调递增最好，如果是单调递减可以提负号好理解</p>
-<ul>
-<li>a[i]有单调性，分成两种单调性，一种随着凸壳往后而往后，一种只会停在第一个点（这种情况几乎不会有吧<br>复杂度是O(n)</li>
-<li>a[i]没有单调性，那么要二分，复杂度O(nlogn)。以下引用：<br>二分做法：假设你要在上凸包上二分找斜率为k的切线。取中间的mid号点，如果mid+1存在且与mid点的斜率小于k，则l=mid+1；如果mid−1存在且与mid点的斜率大于k，则r=mid−1；如果上面两条都不满足，则mid就是切点。<a href="http://www.cnblogs.com/MashiroSky/p/6009685.html" target="_blank" rel="external">一个很好的斜率优化讲解</a></li>
-</ul>
-<p>如果b[i]没有单调性（糟糕要动态维护凸包）<br>那么考虑set/手写平衡树/cdq分治，复杂度O(nlogn)<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/17/luogu3628 [APIO2010]特别行动队/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/bzoj2819 Nim/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/bzoj2819 Nim/" itemprop="url">bzoj2819 Nim</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T23:15:21+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>裸树剖+线段树<br>码码码<br>挂了<br>查了好久<br>发现dfs2挂了<br>伤心欲绝以为我一直以来的板子都是错的<br>开始吐槽过去a掉的题目数据水<br>然后发现<br>只有套线段树才会挂<br>因为没有先dfs重孩子（原来我写的都是求lca吗。</p>
-<p>正解是在dfs序上搞<br>发现答案是两点到根的异或和再异或lca<br>一个点只对子树有贡献<br>然后<br>我跑去写手写栈<br>其实是第一次写<br>入栈的时候处理一个点的信息<br>全部处理完出栈<br>出栈时处理对父亲的贡献<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/16/bzoj2819 Nim/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/luogu2046 [NOI2010]海拔/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/luogu2046 [NOI2010]海拔/" itemprop="url">luogu2046 [NOI2010]海拔</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T23:07:53+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>一眼——要么0要么1<br>最小割！<br>码码码<br>90分（dinic<br>滚去写正解<br>还好就是建图有点烦<br>挂了一次是写成大根堆（这tm能过样例。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/16/luogu2046 [NOI2010]海拔/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/bzoj2115 [Wc2011] Xor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/bzoj2115 [Wc2011] Xor/" itemprop="url">bzoj2115 [Wc2011] Xor</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T23:02:24+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>线性基最基本的题目了吧<br>边有权值<br>图中任意的环都可以走出来（先到环上一点，绕一圈，再回去）<br>先随便找一条1到n的路径<br>把环做线性基<br>错了一次在于某个地方的LL写成int<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/16/bzoj2115 [Wc2011] Xor/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/luogu2568 GCD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/luogu2568 GCD/" itemprop="url">luogu2568 GCD</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T14:57:47+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>简单题<br>考虑枚举gcd，剩下的两个东西互质<br>想到线性筛欧拉函数<br>没有注意内存<br>开了1e7的LL+2·1e7的int+1e7的bool居然没有mle<br>注意最小的质数是2<br>欧拉函数只需要到1e7/2即可<br>这样就不会mle<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/16/luogu2568 GCD/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/bzoj2964 Boss单挑战/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/bzoj2964 Boss单挑战/" itemprop="url">bzoj2964 Boss单挑战</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T14:54:16+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>相当繁琐的背包<br>dp_mp[i][j]表示用i回合还剩j点mp能打出的max伤害<br>f_mp[i]表示i回合用mp能打出的max伤害<br>转移比较简单，按题目说的做即可<br>sp同理<br>然后求出最小需要mini回合能打死boss<br>dp_hp[i][j]表示第i轮我执行完还剩j血能空出的max回合数<br>如果存在i，使得dp_hp[i][j]&gt;=mini则yes<br>否则如果dp_hp[n+1][j]合法，表明我活过前n轮，tie<br>再否则no</p>
-<p>错了一次是因为边界，f应该从0开始，可以不使用<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/16/bzoj2964 Boss单挑战/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1573,7 +1564,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1586,7 +1577,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1628,7 +1619,7 @@
         ﻿<div class="copyright" >
   
   &copy;  2002 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

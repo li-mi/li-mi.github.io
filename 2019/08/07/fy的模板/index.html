@@ -1,0 +1,1078 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="from 23forever 数据结构并查集:1234567891011121314151617181920212223struct Ufs &amp;#123;  int n, fa[MAXN + 5], rk[MAXN + 5];  void operator() (const int _n) &amp;#123;    n = _n;    for (int i = 1; i &amp;lt;= n; ++i) &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小明的阁楼">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/fy的模板/index.html">
+<meta property="og:site_name" content="小明的阁楼">
+<meta property="og:description" content="from 23forever 数据结构并查集:1234567891011121314151617181920212223struct Ufs &amp;#123;  int n, fa[MAXN + 5], rk[MAXN + 5];  void operator() (const int _n) &amp;#123;    n = _n;    for (int i = 1; i &amp;lt;= n; ++i) &amp;">
+<meta property="og:updated_time" content="2019-08-07T14:54:53.987Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小明的阁楼">
+<meta name="twitter:description" content="from 23forever 数据结构并查集:1234567891011121314151617181920212223struct Ufs &amp;#123;  int n, fa[MAXN + 5], rk[MAXN + 5];  void operator() (const int _n) &amp;#123;    n = _n;    for (int i = 1; i &amp;lt;= n; ++i) &amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/fy的模板/"/>
+
+
+
+
+
+  <title> | 小明的阁楼</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小明的阁楼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">故事再美  结局还是再见</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/fy的模板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline"></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T22:54:53+08:00">
+                2019-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>from 23forever</p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集:"></a>并查集:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">struct Ufs &#123;</div><div class="line">  int n, fa[MAXN + 5], rk[MAXN + 5];</div><div class="line">  void operator() (const int _n) &#123;</div><div class="line">    n = _n;</div><div class="line">    for (int i = 1; i &lt;= n; ++i) &#123;</div><div class="line">      fa[i] = i;</div><div class="line">      rk[i] = 1;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  int find(int x) &#123;</div><div class="line">    return fa[x] == x ? fa[x] : fa[x] = find(fa[x]);</div><div class="line">  &#125;</div><div class="line">  void unionSet(int x, int y) &#123;</div><div class="line">    int p = find(x), q = find(y);</div><div class="line">    if (p == q) return;</div><div class="line">    if (rk[p] &lt; rk[q]) &#123;</div><div class="line">      fa[p] = q;</div><div class="line">    &#125; else &#123;</div><div class="line">      if (rk[p] == rk[q]) ++rk[q];</div><div class="line">      fa[q] = p;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;DSU;</div></pre></td></tr></table></figure>
+<h3 id="字符串hash"><a href="#字符串hash" class="headerlink" title="字符串hash:"></a>字符串hash:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ULL getHsh(char *s) &#123;</div><div class="line">  int len = strlen(s);</div><div class="line">  ULL ret = 0;</div><div class="line">  for (int i = 0; i &lt; len; ++i) ret = ret * P + s[i];</div><div class="line">  return ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">struct BinaryIndexTree &#123;</div><div class="line">  int n, c[MAXN + 5];</div><div class="line">  void operator() (int _n) &#123;</div><div class="line">    n = _n;</div><div class="line">    memset(c, 0, sizeof(c));</div><div class="line">  &#125;</div><div class="line">  int lowbit(int x) &#123;</div><div class="line">    return x &amp; (-x);</div><div class="line">  &#125;</div><div class="line">  void modify(int x, int v) &#123;</div><div class="line">    for (; x &lt;= n; x += lowbit(x)) c[x] += v;</div><div class="line">  &#125;</div><div class="line">  int getSum(int x) &#123;</div><div class="line">    int ret = 0;</div><div class="line">    for (; x; x -= lowbit(x)) ret += c[x];</div><div class="line">    return ret;</div><div class="line">  &#125;</div><div class="line">&#125; Bit;</div></pre></td></tr></table></figure>
+<h3 id="ST表："><a href="#ST表：" class="headerlink" title="ST表："></a>ST表：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">void init() &#123;</div><div class="line">  n = read();</div><div class="line">  m = read();</div><div class="line">  for (int i = 1; i &lt;= n; ++i) a[i] = read();</div><div class="line">  for (int i = 1; i &lt;= n; ++i) st[i][0] = a[i];</div><div class="line">  for (int j = 1; (1 &lt;&lt; j) &lt;= n; ++j) &#123;</div><div class="line">    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i) &#123;</div><div class="line">      int a = st[i][j - 1], b = st[i + (1 &lt;&lt; (j - 1))][j - 1];</div><div class="line">      st[i][j] = max(a, b);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">inline int query(int x, int y) &#123;</div><div class="line">  int k = log2(y - x + 1);</div><div class="line">  int a = st[x][k], b = st[y - (1 &lt;&lt; k) + 1][k];</div><div class="line">  return max(a, b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="KMP："><a href="#KMP：" class="headerlink" title="KMP："></a>KMP：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">void getFail() &#123;</div><div class="line">  fail[0] = 0;</div><div class="line">  fail[1] = 0;</div><div class="line">  for (int i = 1; i &lt;= m; ++i) &#123;</div><div class="line">    int j = fail[i];</div><div class="line">    while (j &amp;&amp; p[i] != p[j]) j = fail[j];</div><div class="line">    fail[i + 1] = p[i] == p[j] ? j + 1 : 0;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">void calc() &#123;</div><div class="line">  int j = 0;</div><div class="line">  for (int i = 0; i &lt;= n; ++i) &#123;</div><div class="line">    while (j &amp;&amp; t[i] != p[j]) j = fail[j];</div><div class="line">    if (t[i] == p[j]) ++j;</div><div class="line">    if (j == m) printf(&quot;%d\n&quot;, i - m + 2);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="manacher："><a href="#manacher：" class="headerlink" title="manacher："></a>manacher：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">int manacher() &#123;</div><div class="line">  int ret = 0;</div><div class="line">  s[n++] = &apos;$&apos;;</div><div class="line">  s[n++] = &apos;#&apos;;</div><div class="line">  for (int i = 0; i &lt; len; ++i) &#123;</div><div class="line">    s[n++] = a[i];</div><div class="line">    s[n++] = &apos;#&apos;;</div><div class="line">  &#125;</div><div class="line">  for (int i = 0; i &lt; n; ++i) &#123;</div><div class="line">    f[i] = i &lt; mx ? min(f[2 * id - i], mx - i) : 1;</div><div class="line">    while (s[i + f[i]] == s[i - f[i]]) ++f[i];</div><div class="line">    if (f[i] + i &gt; mx) &#123;</div><div class="line">      mx = f[i] + i;</div><div class="line">      id = i;</div><div class="line">    &#125;</div><div class="line">    ret = max(ret, f[i]);</div><div class="line">  &#125;</div><div class="line">  return --ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="线段树："><a href="#线段树：" class="headerlink" title="线段树："></a>线段树：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">struct SegmentTree &#123;</div><div class="line">  struct Node &#123;</div><div class="line">    LL delta, mul, sum;</div><div class="line">  &#125;s[MAXN * 4 + 5];</div><div class="line">  SegmentTree() &#123;&#125;</div><div class="line">  #define lson p &lt;&lt; 1</div><div class="line">  #define rson p &lt;&lt; 1 | 1</div><div class="line">  void add(int p, int len, LL v) &#123;</div><div class="line">    s[p].delta = (s[p].delta + v) % mod;</div><div class="line">    s[p].sum = (s[p].sum + v * len) % mod;</div><div class="line">  &#125;</div><div class="line">  void mul(int p, LL v) &#123;</div><div class="line">    s[p].mul = s[p].mul * v % mod;</div><div class="line">    s[p].delta = s[p].delta * v % mod;</div><div class="line">    s[p].sum = s[p].sum * v % mod;</div><div class="line">  &#125;</div><div class="line">  void pd(int p, int len) &#123;</div><div class="line">    if (s[p].mul != 1) &#123;</div><div class="line">      mul(lson, s[p].mul);</div><div class="line">      mul(rson, s[p].mul);</div><div class="line">      s[p].mul = 1;</div><div class="line">    &#125;</div><div class="line">    if (s[p].delta) &#123;</div><div class="line">      add(lson, len - len / 2, s[p].delta);</div><div class="line">      add(rson, len / 2, s[p].delta);</div><div class="line">      s[p].delta = 0;</div><div class="line">    &#125; </div><div class="line">  &#125;</div><div class="line">  void upd(int p) &#123;</div><div class="line">    s[p].sum = (s[lson].sum + s[rson].sum) % mod;</div><div class="line">  &#125;</div><div class="line">  void build(int p, int l, int r) &#123;</div><div class="line">    s[p].mul = 1;</div><div class="line">    if (l == r) &#123;</div><div class="line">      s[p].sum = a[l];</div><div class="line">      return;</div><div class="line">    &#125;</div><div class="line">    int mid = (l + r) &gt;&gt; 1;</div><div class="line">    build(lson, l, mid);</div><div class="line">    build(rson, mid + 1, r);</div><div class="line">    upd(p);</div><div class="line">  &#125;</div><div class="line">  void modify(int p, int l, int r, int x, int y, LL v) &#123;</div><div class="line">    if (x &lt;= l &amp;&amp; y &gt;= r) &#123;</div><div class="line">      add(p, r - l + 1, v);</div><div class="line">      return;</div><div class="line">    &#125;</div><div class="line">    pd(p, r - l + 1);</div><div class="line">    int mid = (l + r) &gt;&gt; 1;</div><div class="line">    if (x &lt;= mid) modify(lson, l, mid, x, y, v);</div><div class="line">    if (y &gt; mid) modify(rson, mid + 1, r, x, y, v);</div><div class="line">    upd(p);</div><div class="line">  &#125;</div><div class="line">  void update(int p, int l, int r, int x, int y, LL v) &#123;</div><div class="line">    if (x &lt;= l &amp;&amp; y &gt;= r) &#123;</div><div class="line">      mul(p, v);</div><div class="line">      return;</div><div class="line">    &#125;</div><div class="line">    pd(p, r - l + 1);</div><div class="line">    int mid = (l + r) &gt;&gt; 1;</div><div class="line">    if (x &lt;= mid) update(lson, l, mid, x, y, v);</div><div class="line">    if (y &gt; mid) update(rson, mid + 1, r, x, y, v);</div><div class="line">    upd(p);</div><div class="line">  &#125;</div><div class="line">  LL query(int p, int l, int r, int x, int y) &#123;</div><div class="line">    if (x &lt;= l &amp;&amp; y &gt;= r) return s[p].sum % mod;</div><div class="line">    pd(p, r - l + 1);</div><div class="line">    int mid = (l + r) &gt;&gt; 1;</div><div class="line">    LL ret = 0;</div><div class="line">    if (x &lt;= mid) ret = query(lson, l, mid, x, y);</div><div class="line">    if (y &gt; mid) ret = (ret + query(rson, mid + 1, r, x, y)) % mod;</div><div class="line">    return ret;</div><div class="line">  &#125;</div><div class="line">&#125;Sgt;</div></pre></td></tr></table></figure>
+<h3 id="AC自动机："><a href="#AC自动机：" class="headerlink" title="AC自动机："></a>AC自动机：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">struct ACAutomaton &#123;</div><div class="line">  int tot, trie[MAXN + 5][CS], cnt[MAXN + 5];</div><div class="line">  int fail[MAXN + 5], val[MAXN + 5];</div><div class="line">  queue&lt;int&gt; que;</div><div class="line">  ACAutomaton() &#123;&#125;</div><div class="line">  void init() &#123;</div><div class="line">    tot = 0;</div><div class="line">    memset(fail, 0, sizeof(fail));</div><div class="line">    memset(cnt, 0, sizeof(cnt));</div><div class="line">    memset(val, 0, sizeof(val));</div><div class="line">    memset(trie, 0, sizeof(trie));</div><div class="line">  &#125;</div><div class="line">  void insert(char *p, int id) &#123;</div><div class="line">    int m = strlen(p), now = 0;</div><div class="line">    for (int i = 0; i &lt; m; ++i) &#123;</div><div class="line">      int c = p[i] - &apos;a&apos;;</div><div class="line">      if (!trie[now][c]) trie[now][c] = ++tot;</div><div class="line">      now = trie[now][c];</div><div class="line">    &#125;</div><div class="line">    val[now] = id;</div><div class="line">  &#125;</div><div class="line">  void getFail() &#123;</div><div class="line">    for (int i = 0; i &lt; CS; ++i) &#123;</div><div class="line">      int u = trie[0][i];</div><div class="line">      if (u) &#123;</div><div class="line">        fail[u] = 0;</div><div class="line">        que.push(u);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    while (!que.empty()) &#123;</div><div class="line">      int cur = que.front();</div><div class="line">      que.pop();</div><div class="line">      for (int i = 0; i &lt; CS; ++i) &#123;</div><div class="line">        int u = trie[cur][i];</div><div class="line">        if (u) &#123;</div><div class="line">          fail[u] = trie[fail[cur]][i];</div><div class="line">          que.push(u);</div><div class="line">        &#125; else &#123;</div><div class="line">          trie[cur][i] = trie[fail[cur]][i];</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  void query(char *t) &#123;</div><div class="line">    int n = strlen(t), now = 0;</div><div class="line">    for (int i = 0; i &lt; n; ++i) &#123;</div><div class="line">      now = trie[now][t[i] - &apos;a&apos;];</div><div class="line">      int j = now;</div><div class="line">      while (j) &#123;</div><div class="line">        if (val[j]) ++cnt[val[j]];</div><div class="line">        j = fail[j];</div><div class="line">      &#125;</div><div class="line">    &#125; </div><div class="line">    int mx = 0;</div><div class="line">    for (int i = 1; i &lt;= n; ++i) mx = max(mx, cnt[i]);</div><div class="line">    printf(&quot;%d\n&quot;, mx);</div><div class="line">    for (int i = 1; i &lt;= n; ++i) &#123;</div><div class="line">      if (cnt[i] == mx) puts(p[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;AC;</div></pre></td></tr></table></figure>
+<h3 id="线性基："><a href="#线性基：" class="headerlink" title="线性基："></a>线性基：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">struct LinearBasis &#123;</div><div class="line">  LL b[MAXL + 5];</div><div class="line">  void insert(LL x) &#123;</div><div class="line">    for (int i = MAXL; ~i; --i) &#123;</div><div class="line">      if (x &amp; (1LL &lt;&lt; i)) &#123;</div><div class="line">        if (!b[i]) &#123;</div><div class="line">          b[i] = x;</div><div class="line">          return;</div><div class="line">        &#125; else &#123;</div><div class="line">          x ^= b[i];</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  LL query() &#123;</div><div class="line">    LL ret = 0;</div><div class="line">    for (int i = MAXL; ~i; --i) ret = max(ret, (b[i] ^ ret));</div><div class="line">    return ret;</div><div class="line">  &#125;</div><div class="line">&#125;LB;</div></pre></td></tr></table></figure>
+<h3 id="左偏树："><a href="#左偏树：" class="headerlink" title="左偏树："></a>左偏树：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">struct Heap &#123;</div><div class="line">  int ls, rs, val, fa, dis;</div><div class="line">&#125;h[MAXN + 5];</div><div class="line">struct LeftistHeap &#123;</div><div class="line">  #define u h[x]</div><div class="line">  #define uls h[u.ls]</div><div class="line">  #define urs h[u.rs]</div><div class="line">  #define o h[y]</div><div class="line">  LeftistHeap() &#123;</div><div class="line">    h[0].val = -1;</div><div class="line">  &#125;</div><div class="line">  int find(int x) &#123;</div><div class="line">    return u.fa ? find(u.fa) : x;</div><div class="line">  &#125;</div><div class="line">  int merge(int x, int y) &#123;</div><div class="line">    if (!x || !y) return x + y;</div><div class="line">    if (u.val &gt; o.val || (u.val == o.val &amp;&amp; x &gt; y)) swap(x, y);</div><div class="line">    u.rs = merge(u.rs, y);</div><div class="line">    urs.fa = x;</div><div class="line">    if (uls.dis &lt; urs.dis) swap(u.ls, u.rs);</div><div class="line">    u.dis = urs.dis + 1;</div><div class="line">    return x;</div><div class="line">  &#125;</div><div class="line">  void delNode(int x) &#123;</div><div class="line">    u.val = -1;</div><div class="line">    uls.fa = 0;</div><div class="line">    urs.fa = 0;</div><div class="line">  &#125;</div><div class="line">  int top(int x) &#123;</div><div class="line">    return u.val;</div><div class="line">  &#125;</div><div class="line">  void del(int x) &#123;</div><div class="line">    delNode(x);</div><div class="line">    merge(u.ls, u.rs);  </div><div class="line">  &#125;</div><div class="line">  void build(int x, int v) &#123;</div><div class="line">    u.val = v;</div><div class="line">  &#125;</div><div class="line">&#125;SH;</div></pre></td></tr></table></figure>
+<h3 id="非旋treap"><a href="#非旋treap" class="headerlink" title="非旋treap"></a>非旋treap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">struct Treap &#123;</div><div class="line">  int ls, rs, sz, key, val;</div><div class="line">  bool rev;</div><div class="line">  Treap() &#123;&#125;</div><div class="line">&#125;t[MAXN + 5];</div><div class="line">struct FhqTreap &#123;</div><div class="line">  int tot;</div><div class="line">  #define u t[x]</div><div class="line">  #define uls t[u.ls]</div><div class="line">  #define urs t[u.rs]</div><div class="line">  #define o t[y]</div><div class="line">  #define ols t[o.ls]</div><div class="line">  #define ors t[o.rs]</div><div class="line">  FhqTreap() &#123;&#125;</div><div class="line">  void createNode(int x) &#123;</div><div class="line">    t[++tot].val = x;</div><div class="line">    t[tot].sz = 1;</div><div class="line">    t[tot].key = rand();</div><div class="line">  &#125;</div><div class="line">  void upd(int x) &#123;</div><div class="line">    u.sz = uls.sz + urs.sz + 1;</div><div class="line">  &#125;</div><div class="line">  void rev(int x) &#123;</div><div class="line">    u.rev ^= 1;</div><div class="line">  &#125;</div><div class="line">  void pd(int x) &#123;</div><div class="line">    if (u.rev) &#123;</div><div class="line">      if (u.ls) rev(u.ls);</div><div class="line">      if (u.rs) rev(u.rs);</div><div class="line">      swap(u.ls, u.rs);</div><div class="line">      u.rev ^= 1;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  pii split(int x, int n) &#123;</div><div class="line">    if (!n) return mp(0, x);</div><div class="line">    pd(x);</div><div class="line">    int m = uls.sz;</div><div class="line">    if (n == m) &#123;</div><div class="line">      int tmp = u.ls;</div><div class="line">      u.ls = 0;</div><div class="line">      upd(x);</div><div class="line">      return mp(tmp, x);</div><div class="line">    &#125; else if (n == m + 1) &#123;</div><div class="line">      int tmp = u.rs;</div><div class="line">      u.rs = 0;</div><div class="line">      upd(x);</div><div class="line">      return mp(x, tmp);</div><div class="line">    &#125; else if (n &lt; m) &#123;</div><div class="line">      pii tmp = split(u.ls, n);</div><div class="line">      u.ls = tmp.se;</div><div class="line">      upd(x);</div><div class="line">      return mp(tmp.fi, x);</div><div class="line">    &#125;</div><div class="line">    pii tmp = split(u.rs, n - m - 1);</div><div class="line">    u.rs = tmp.fi;</div><div class="line">    upd(x);</div><div class="line">    return mp(x, tmp.se);</div><div class="line">  &#125;</div><div class="line">  int merge(int x, int y) &#123;</div><div class="line">    if (!x || !y) return x + y;</div><div class="line">    if (u.key &lt; o.key) &#123;</div><div class="line">      pd(x);</div><div class="line">      u.rs = merge(u.rs, y);</div><div class="line">      upd(x);</div><div class="line">      return x;</div><div class="line">    &#125; else &#123;</div><div class="line">      pd(y);</div><div class="line">      o.ls = merge(x, o.ls);</div><div class="line">      upd(y);</div><div class="line">      return y;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  void insert(int k, int x) &#123;</div><div class="line">    pii tmp = split(rt, k - 1);</div><div class="line">    createNode(x);</div><div class="line">    rt = merge(tmp.fi, merge(tot, tmp.se));</div><div class="line">  &#125;</div><div class="line">  void rever(int x, int y) &#123;</div><div class="line">    pii tmp1 = split(rt, x - 1), tmp2 = split(tmp1.se, y - x + 1);</div><div class="line">    t[tmp2.fi].rev ^= 1;</div><div class="line">    rt = merge(merge(tmp1.fi, tmp2.fi), tmp2.se);</div><div class="line">  &#125;</div><div class="line">  void print(int x) &#123;</div><div class="line">    if (!x) return;</div><div class="line">    pd(x);</div><div class="line">    print(u.ls);</div><div class="line">    printf(&quot;%d &quot;, u.val);</div><div class="line">    print(u.rs);</div><div class="line">  &#125;</div><div class="line">&#125;T;</div></pre></td></tr></table></figure>
+<h3 id="主席树："><a href="#主席树：" class="headerlink" title="主席树："></a>主席树：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">struct ChairTree &#123;</div><div class="line">  struct Node &#123;</div><div class="line">    int ls, rs, sz;</div><div class="line">  &#125;s[MAXN * 60 + 5];</div><div class="line">  int tot;</div><div class="line">  #define lson s[p].ls</div><div class="line">  #define rson s[p].rs</div><div class="line">  ChairTree() &#123;&#125; </div><div class="line">  void insert(int &amp;p, int l, int r, int x) &#123;</div><div class="line">    s[++tot] = s[p];</div><div class="line">    p = tot;</div><div class="line">    ++s[p].sz;</div><div class="line">    if (l == r) return; </div><div class="line">    int mid = (l + r) &gt;&gt; 1;</div><div class="line">    if (x &lt;= mid) &#123;</div><div class="line">      insert(lson, l, mid, x);</div><div class="line">    &#125; else &#123;</div><div class="line">      insert(rson, mid + 1, r, x);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  int query(int rtl, int rtr, int l, int r, int k) &#123;</div><div class="line">    if (l == r) return l;</div><div class="line">    int sz = s[s[rtr].ls].sz - s[s[rtl].ls].sz;</div><div class="line">    int mid = (l + r) &gt;&gt; 1;</div><div class="line">    if (k &lt;= sz) &#123;</div><div class="line">      return query(s[rtl].ls, s[rtr].ls, l, mid, k);</div><div class="line">    &#125; else &#123;</div><div class="line">      return query(s[rtl].rs, s[rtr].rs, mid + 1, r, k - sz);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;CT;</div></pre></td></tr></table></figure>
+<h3 id="LCT："><a href="#LCT：" class="headerlink" title="LCT："></a>LCT：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">struct LinkCutTree &#123;</div><div class="line">  struct Node &#123;</div><div class="line">    int ch[2], fa;</div><div class="line">    bool rev;</div><div class="line">  &#125;s[MAXN + 5];</div><div class="line">  #define ls ch[0]</div><div class="line">  #define rs ch[1]</div><div class="line">  #define u s[x]</div><div class="line">  #define uls s[u.ls]</div><div class="line">  #define urs s[u.rs]</div><div class="line">  #define ufa s[u.fa]</div><div class="line">  #define o s[y]</div><div class="line">  #define ols s[s[y].ls]</div><div class="line">  #define ors s[s[y].rs]</div><div class="line">  #define ofa s[s[z].fa]</div><div class="line">  #define v s[z]</div><div class="line">  #define vls s[s[z].ls]</div><div class="line">  #define vrs s[s[z].rs]</div><div class="line">  int top, st[MAXN + 5];</div><div class="line">  void pd(int x) &#123;</div><div class="line">    if (u.rev) &#123;</div><div class="line">      u.rev ^= 1;</div><div class="line">      uls.rev ^= 1;</div><div class="line">      urs.rev ^= 1;</div><div class="line">      swap(u.ls, u.rs);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  bool isRoot(int x) &#123;</div><div class="line">    return ufa.ls != x &amp;&amp; ufa.rs != x;</div><div class="line">  &#125; </div><div class="line">  void rotate(int x) &#123;</div><div class="line">    int y = u.fa, z = o.fa, l, r;</div><div class="line">    if (o.ls == x) &#123;</div><div class="line">      l = 0;</div><div class="line">    &#125; else &#123;</div><div class="line">      l = 1;</div><div class="line">    &#125;</div><div class="line">    r = l ^ 1;</div><div class="line">    if (!isRoot(y)) &#123;</div><div class="line">      if (v.ls == y) &#123;</div><div class="line">        v.ls = x;</div><div class="line">      &#125; else &#123;</div><div class="line">        v.rs = x;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    u.fa = z;</div><div class="line">    o.fa = x;</div><div class="line">    s[u.ch[r]].fa = y;</div><div class="line">    o.ch[l] = u.ch[r];</div><div class="line">    u.ch[r] = y;</div><div class="line">  &#125;</div><div class="line">  void splay(int x) &#123;</div><div class="line">    top = 0;</div><div class="line">    st[++top] = x;</div><div class="line">    for (int i = x; !isRoot(i); i = s[i].fa) &#123;</div><div class="line">      st[++top] = s[i].fa;</div><div class="line">    &#125;</div><div class="line">    for (int i = top; i; --i) pd(st[i]);</div><div class="line">    while (!isRoot(x)) &#123;</div><div class="line">      int y = u.fa, z = o.fa;</div><div class="line">      if (!isRoot(y)) &#123;</div><div class="line">        if (v.ls == y ^ o.ls == x) &#123;</div><div class="line">          rotate(x);</div><div class="line">        &#125; else &#123;</div><div class="line">          rotate(y);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      rotate(x);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  void access(int x) &#123;</div><div class="line">    for (int last = 0; x; last = x, x = u.fa) &#123;</div><div class="line">      splay(x);</div><div class="line">      u.rs = last;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  void makeRoot(int x) &#123;</div><div class="line">    access(x);</div><div class="line">    splay(x);</div><div class="line">    u.rev ^= 1;</div><div class="line">  &#125;</div><div class="line">  void link(int x, int y) &#123;</div><div class="line">    makeRoot(x); </div><div class="line">    u.fa = y;</div><div class="line">  &#125;</div><div class="line">&#125;LCT;</div></pre></td></tr></table></figure>
+<h3 id="后缀数组："><a href="#后缀数组：" class="headerlink" title="后缀数组："></a>后缀数组：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">bool cmp(int i, int j, int k) &#123;</div><div class="line">  return y[i] == y[j] &amp;&amp; y[i + k] == y[j + k];</div><div class="line">&#125;</div><div class="line">void getSA(int m) &#123;</div><div class="line">  for (int i = 1; i &lt;= m; ++i) b[i] = 0;</div><div class="line">  for (int i = 1; i &lt;= n; ++i) ++b[x[i] = r[i]];</div><div class="line">  for (int i = 1; i &lt;= m; ++i) b[i] += b[i - 1];</div><div class="line">  for (int i = n; i; --i) sa[b[x[i]]--] = i;</div><div class="line">  for (int k = 1; k &lt;= n; k &lt;&lt;= 1) &#123;</div><div class="line">    int p = 0;</div><div class="line">    for (int i = n - k + 1; i &lt;= n; ++i) y[++p] = i;</div><div class="line">    for (int i = 1; i &lt;= n; ++i) if (sa[i] &gt; k) y[++p] = sa[i] - k;</div><div class="line">    for (int i = 1; i &lt;= m; ++i) b[i] = 0;</div><div class="line">    for (int i = 1; i &lt;= n; ++i) ++b[x[y[i]]];</div><div class="line">    for (int i = 1; i &lt;= m; ++i) b[i] += b[i - 1];</div><div class="line">    for (int i = n; i; --i) sa[b[x[y[i]]]--] = y[i];</div><div class="line">    swap(x, y);</div><div class="line">    p = 1, x[sa[1]] = 1;</div><div class="line">    for (int i = 2; i &lt;= n; ++i) x[sa[i]] = cmp(sa[i], sa[i - 1], k) ? p : ++p;</div><div class="line">    m = p;</div><div class="line">    if (m == n) break;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">void getHeight() &#123;</div><div class="line">  int k = 0;</div><div class="line">  for (int i = 1; i &lt;= n; ++i) rk[sa[i]] = i;</div><div class="line">  for (int i = 1; i &lt;= n; ++i) &#123;</div><div class="line">    if (k) --k;</div><div class="line">    int j = sa[rk[i] - 1];</div><div class="line">    while (r[i + k] == r[j + k]) ++k;</div><div class="line">    height[rk[i]] = k;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="后缀自动机"><a href="#后缀自动机" class="headerlink" title="后缀自动机:"></a>后缀自动机:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">struct SuffixAutomaton &#123;</div><div class="line">  int last, tot;</div><div class="line">  int trans[MAXN + 5][CS], link[MAXN + 5], len[MAXN + 5], sz[MAXN + 5];</div><div class="line">  int id[MAXN + 5], pre[MAXN + 5];</div><div class="line">  SuffixAutomaton() : last(1), tot(1) &#123;&#125;</div><div class="line">  void extend(int x) &#123;</div><div class="line">    int c = x - &apos;a&apos;, cur = ++tot, p = last;</div><div class="line">    len[cur] = len[last] + 1;</div><div class="line">    while (p &amp;&amp; !trans[p][c]) &#123;</div><div class="line">      trans[p][c] = cur;</div><div class="line">      p = link[p];</div><div class="line">    &#125;</div><div class="line">    if (!p) &#123;</div><div class="line">      link[cur] = 1;</div><div class="line">    &#125; else &#123;</div><div class="line">      int q = trans[p][c];</div><div class="line">      if (len[p] + 1 == len[q]) &#123;</div><div class="line">        link[cur] = q;</div><div class="line">      &#125; else &#123;</div><div class="line">        int nq = ++tot;</div><div class="line">        len[nq] = len[p] + 1;</div><div class="line">        memcpy(trans[nq], trans[q], sizeof(trans[q]));</div><div class="line">        while (p &amp;&amp; trans[p][c] == q) &#123;</div><div class="line">          trans[p][c] = nq;</div><div class="line">          p = link[p];</div><div class="line">        &#125;</div><div class="line">        link[nq] = link[q];</div><div class="line">        link[q] = nq;</div><div class="line">        link[cur] = nq;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    sz[cur] = 1;</div><div class="line">    last = cur;</div><div class="line">  &#125;</div><div class="line">&#125;SAM;</div></pre></td></tr></table></figure>
+<h3 id="树链剖分"><a href="#树链剖分" class="headerlink" title="树链剖分:"></a>树链剖分:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">void buildTree(int u) &#123;</div><div class="line">  depth[u] = depth[fa[u]] + 1;</div><div class="line">  sz[u] = 1;</div><div class="line">  for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">    int v = edge[i].to;</div><div class="line">    if (v != fa[u]) &#123;</div><div class="line">      fa[v] = u;</div><div class="line">      buildTree(v);</div><div class="line">      sz[u] += sz[v];</div><div class="line">      if (sz[son[u]] &lt; sz[v]) son[u] = v;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">void buildChain(int u, int topf) &#123;</div><div class="line">  top[u] = topf;</div><div class="line">  id[u] = ++cnt;</div><div class="line">  mp[id[u]] = u;</div><div class="line">  if (!son[u]) return;</div><div class="line">  buildChain(son[u], topf);</div><div class="line">  for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">    int v = edge[i].to;</div><div class="line">    if (v != fa[u] &amp;&amp; v != son[u]) buildChain(v, v);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h2><h3 id="spfa："><a href="#spfa：" class="headerlink" title="spfa："></a>spfa：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">void spfa(const int s) &#123;</div><div class="line">  memset(d, 0x3f, sizeof(d));</div><div class="line">  que.push(s);</div><div class="line">  d[s] = 0;</div><div class="line">  in_que[s] = true;</div><div class="line">  while (!que.empty()) &#123;</div><div class="line">    int u = que.front();</div><div class="line">    que.pop();</div><div class="line">    in_que[u] = false;</div><div class="line">    for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">      int v = edge[i].to, w = edge[i].w;</div><div class="line">      if (d[u] + w &lt; d[v]) &#123;</div><div class="line">        d[v] = d[u] + w;</div><div class="line">        if (!in_que[v]) &#123;</div><div class="line">          in_que[v] = true;</div><div class="line">          que.push(v);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="dijkstra："><a href="#dijkstra：" class="headerlink" title="dijkstra："></a>dijkstra：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">void dijkstra(const int s) &#123;</div><div class="line">  memset(d, 0x3f, sizeof(d));</div><div class="line">  Q.push(Node(s, 0));</div><div class="line">  d[s] = 0;</div><div class="line">  while (!Q.empty()) &#123;</div><div class="line">    int u = Q.top().u;</div><div class="line">    Q.pop();</div><div class="line">    if (vis[u]) continue;</div><div class="line">    for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">      int v = edge[i].to, w = edge[i].w;</div><div class="line">      if (d[u] + w &lt; d[v]) &#123;</div><div class="line">        d[v] = d[u] + w;</div><div class="line">        if (!vis[v]) Q.push(Node(v, d[v]));</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    vis[u] = true;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="prim："><a href="#prim：" class="headerlink" title="prim："></a>prim：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">int prim(const int s) &#123;</div><div class="line">  memset(d, 0x3f, sizeof(d));</div><div class="line">  Q.push(HeapNode(s, 0));</div><div class="line">  d[s] = 0;</div><div class="line">  int cnt = 0, ret = 0;</div><div class="line">  while (!Q.empty()) &#123;</div><div class="line">    int u = Q.top().u;</div><div class="line">    Q.pop();</div><div class="line">    if (vis[u]) continue;</div><div class="line">    ++cnt;</div><div class="line">    ret += d[u];</div><div class="line">    for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">      int v = edge[i].to, w = edge[i].w;</div><div class="line">      if (d[v] &gt; w) &#123;</div><div class="line">        d[v] = w;</div><div class="line">        if (!vis[v]) Q.push(HeapNode(v, w));</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    vis[u] = true;</div><div class="line">  &#125;</div><div class="line">  return cnt &lt; n ? -1 : ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="kruskal："><a href="#kruskal：" class="headerlink" title="kruskal："></a>kruskal：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">int kruskal() &#123;</div><div class="line">  sort(e + 1, e + 1 + m);</div><div class="line">  int ret = 0, cnt = n;</div><div class="line">  for (int i = 1; i &lt;= m; ++i) &#123;</div><div class="line">    int u = e[i].u, v = e[i].v, w = e[i].w;</div><div class="line">    if (DSU.find(u) != DSU.find(v)) &#123;</div><div class="line">      DSU.unionSet(u, v);</div><div class="line">      ret += w;</div><div class="line">      --cnt;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return cnt == 1 ? ret : -1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="倍增求LCA："><a href="#倍增求LCA：" class="headerlink" title="倍增求LCA："></a>倍增求LCA：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">void buildTree(int u, int fa) &#123;</div><div class="line">  an[u][0] = fa;</div><div class="line">  depth[u] = depth[fa] + 1;</div><div class="line">  for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">    int v = edge[i].to;</div><div class="line">    if (v == fa) continue;</div><div class="line">    buildTree(v, u);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">int LCA(int u, int v) &#123;</div><div class="line">  if (depth[u] &lt; depth[v]) swap(u, v);</div><div class="line">  int k = depth[u] - depth[v];</div><div class="line">  for (int i = 0; (1 &lt;&lt; i) &lt;= k; ++i) &#123;</div><div class="line">    if (k &amp; (1 &lt;&lt; i)) u = an[u][i];</div><div class="line">  &#125;</div><div class="line">  if (u == v) return u;</div><div class="line">  for (int i = MAXL - 1; ~i; --i) &#123;</div><div class="line">    if (an[u][i] != an[v][i]) &#123;</div><div class="line">      u = an[u][i];</div><div class="line">      v = an[v][i];</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return an[u][0];</div><div class="line">&#125;</div><div class="line">void init() &#123;</div><div class="line">  //enableFileIO();</div><div class="line">  tot = 0;</div><div class="line">  memset(head, -1, sizeof(head));</div><div class="line">  n = read();</div><div class="line">  m = read();</div><div class="line">  rt = read();</div><div class="line">  for (int i = 1; i &lt; n; ++i) &#123;</div><div class="line">    int u = read(), v = read();</div><div class="line">    add(u, v);</div><div class="line">  &#125;</div><div class="line">  buildTree(rt, 0);</div><div class="line">  for (int i = 1; i &lt; MAXL; ++i) &#123;</div><div class="line">    for (int u = 1; u &lt;= n; ++u) &#123;</div><div class="line">      an[u][i] = an[an[u][i - 1]][i - 1];</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二分图匹配"><a href="#二分图匹配" class="headerlink" title="二分图匹配:"></a>二分图匹配:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">bool hungary(int u) &#123;</div><div class="line">  for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">    int v = edge[i].to;</div><div class="line">    if (!vis[v]) &#123;</div><div class="line">      vis[v] = true;</div><div class="line">      if (!res[v] || hungary(res[v])) &#123;</div><div class="line">        res[v] = u;</div><div class="line">        return true;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="求无向图割点："><a href="#求无向图割点：" class="headerlink" title="求无向图割点："></a>求无向图割点：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">void tarjan(int u) &#123;</div><div class="line">  dfn[u] = low[u] = ++ind;</div><div class="line">  int sum = 0;</div><div class="line">  for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">    int v = edge[i].to;</div><div class="line">    if (!dfn[v]) &#123;</div><div class="line">      tarjan(v);</div><div class="line">      low[u] = min(low[u], low[v]);</div><div class="line">      if (dfn[u] &lt;= low[v]) &#123;</div><div class="line">        ++sum;</div><div class="line">        if (u != rt || sum &gt; 1) is_cut[u] = true;</div><div class="line">      &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">      low[u] = min(low[u], dfn[v]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="spfa判负环："><a href="#spfa判负环：" class="headerlink" title="spfa判负环："></a>spfa判负环：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">bool spfa(const int s) &#123;</div><div class="line">  memset(d, 0x3f, sizeof(d));</div><div class="line">  memset(in_que, false, sizeof(in_que));</div><div class="line">  memset(cnt, 0, sizeof(cnt));</div><div class="line">  que.push(s);</div><div class="line">  in_que[s] = true;</div><div class="line">  d[s] = 0;</div><div class="line">  while (!que.empty()) &#123;</div><div class="line">    int u = que.front();</div><div class="line">    que.pop();</div><div class="line">    in_que[u] = false;</div><div class="line">    for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">      int v = edge[i].to, w = edge[i].w;</div><div class="line">      if (d[u] + w &lt; d[v]) &#123;</div><div class="line">        d[v] = d[u] + w;</div><div class="line">        cnt[v] = cnt[u] + 1;</div><div class="line">        if (cnt[v] &gt;= n) return false;</div><div class="line">        if (!in_que[v]) &#123;</div><div class="line">          que.push(v);</div><div class="line">          in_que[v] = true;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return true;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="tarjan缩点："><a href="#tarjan缩点：" class="headerlink" title="tarjan缩点："></a>tarjan缩点：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">void tarjan(int u) &#123;</div><div class="line">  dfn[u] = low[u] = ++ind;</div><div class="line">  sta.push(u);</div><div class="line">  in_sta[u] = true;</div><div class="line">  for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">    int v = edge[i].to;</div><div class="line">    if (!dfn[v]) &#123;</div><div class="line">      tarjan(v);</div><div class="line">      low[u] = min(low[u], low[v]);</div><div class="line">    &#125; else if (in_sta[v]) &#123;</div><div class="line">      low[u] = min(low[u], dfn[v]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  if (low[u] == dfn[u]) &#123;</div><div class="line">    int k;</div><div class="line">    sum[++scc_num] = 0;</div><div class="line">    do &#123;</div><div class="line">      k = sta.top();</div><div class="line">      belong[k] = scc_num;</div><div class="line">      sum[scc_num] += val[k];</div><div class="line">      in_sta[k] = false;</div><div class="line">      sta.pop();</div><div class="line">    &#125; while (k != u);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="拓扑排序："><a href="#拓扑排序：" class="headerlink" title="拓扑排序："></a>拓扑排序：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">void topsort() &#123;</div><div class="line">  for (int i = 1; i &lt;= scc_num; ++i) &#123; </div><div class="line">    if (!in[i]) &#123;</div><div class="line">      d[i] = sum[i];</div><div class="line">      que.push(i);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  while (!que.empty()) &#123;</div><div class="line">    int u = que.front();</div><div class="line">    que.pop();</div><div class="line">    for (int i = h[u]; ~i; i = e[i].nxt) &#123;</div><div class="line">      int v = e[i].to;</div><div class="line">      d[v] = max(d[v], d[u] + sum[v]);</div><div class="line">      if (!--in[v]) que.push(v);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="dinic求最大流："><a href="#dinic求最大流：" class="headerlink" title="dinic求最大流："></a>dinic求最大流：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">struct Dinic &#123;</div><div class="line">  int level[MAXN + 5], cur[MAXN + 5];</div><div class="line">  queue&lt;int&gt; que;</div><div class="line">  bool makeLevelGraph(const int s, const int t) &#123;</div><div class="line">    memset(level, 0, sizeof(level));</div><div class="line">    while (!que.empty()) que.pop();</div><div class="line">    que.push(s);</div><div class="line">    level[s] = 1;</div><div class="line">    while (!que.empty()) &#123;</div><div class="line">      int u = que.front();</div><div class="line">      que.pop();</div><div class="line">      for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">        int v = edge[i].to, cap = edge[i].cap;</div><div class="line">        if (cap &amp;&amp; !level[v]) &#123;</div><div class="line">          level[v] = level[u] + 1;</div><div class="line">          que.push(v);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      if (level[t]) return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">  int findAugPath(int u, int t, int flow) &#123;</div><div class="line">    if (u == t || !flow) return flow;</div><div class="line">    int used = 0;</div><div class="line">    for (int &amp;i = cur[u]; ~i &amp;&amp; used &lt; flow; i = edge[i].nxt) &#123;</div><div class="line">      int v = edge[i].to, &amp;cap = edge[i].cap, &amp;rcap = edge[i ^ 1].cap;</div><div class="line">      if (cap &amp;&amp; level[v] == level[u] + 1) &#123;</div><div class="line">        int d = findAugPath(v, t, min(flow - used, cap));</div><div class="line">        if (d) &#123;</div><div class="line">          used += d;</div><div class="line">          rcap += d;</div><div class="line">          cap -= d;</div><div class="line">          return d;</div><div class="line">        &#125; else &#123;</div><div class="line">          level[v] = -INF;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">  &#125;</div><div class="line">  int operator()(const int s, const int t) &#123;</div><div class="line">    int ret = 0, f;</div><div class="line">    while (makeLevelGraph(s, t)) &#123;</div><div class="line">      memcpy(cur, head, sizeof(head));</div><div class="line">      while (f = findAugPath(s, t, INF)) ret += f;</div><div class="line">    &#125;</div><div class="line">    return ret;</div><div class="line">  &#125;</div><div class="line">&#125;dinic;</div></pre></td></tr></table></figure>
+<h3 id="最小费用最大流："><a href="#最小费用最大流：" class="headerlink" title="最小费用最大流："></a>最小费用最大流：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">struct Mfmc &#123;</div><div class="line">  int d[MAXN + 5], pre[MAXN + 5], id[MAXN + 5];</div><div class="line">  queue&lt;int&gt; que;</div><div class="line">  bool in_que[MAXN + 5];</div><div class="line">  bool spfa(const int s, const int t) &#123;</div><div class="line">    memset(d, 0x3f, sizeof(d));</div><div class="line">    memset(pre, -1, sizeof(pre));</div><div class="line">    que.push(s);</div><div class="line">    d[s] = 0;</div><div class="line">    pre[s] = 0;</div><div class="line">    in_que[s] = true;</div><div class="line">    while (!que.empty()) &#123;</div><div class="line">      int u = que.front();</div><div class="line">      que.pop();</div><div class="line">      in_que[u] = false;</div><div class="line">      for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">        int v = edge[i].to, cap = edge[i].cap, cost = edge[i].cost;</div><div class="line">        if (cap &amp;&amp; d[u] + cost &lt; d[v]) &#123;</div><div class="line">          d[v] = d[u] + cost;</div><div class="line">          pre[v] = u;</div><div class="line">          id[v] = i;</div><div class="line">          if (!in_que[v]) &#123;</div><div class="line">            in_que[v] = true;</div><div class="line">            que.push(v);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return ~pre[t];</div><div class="line">  &#125;</div><div class="line">  pii operator()(const int s, const int t) &#123;</div><div class="line">    int min_cost = 0, max_flow = 0;</div><div class="line">    while (spfa(s, t)) &#123;</div><div class="line">      int f = INF;</div><div class="line">      for (int u = t; u != s; u = pre[u]) f = min(f, edge[id[u]].cap);</div><div class="line">      for (int u = t; u != s; u = pre[u]) &#123;</div><div class="line">        edge[id[u]].cap -= f;</div><div class="line">        edge[id[u] ^ 1].cap += f;</div><div class="line">      &#125;</div><div class="line">      max_flow += f;</div><div class="line">      min_cost += f * d[t];</div><div class="line">    &#125;</div><div class="line">    return mp(max_flow, min_cost);</div><div class="line">  &#125;</div><div class="line">&#125;mfmc;</div></pre></td></tr></table></figure>
+<h3 id="2-sat："><a href="#2-sat：" class="headerlink" title="2-sat："></a>2-sat：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">stack&lt;int&gt; sta;</div><div class="line">bool in_sta[MAXN + 5];</div><div class="line">int dfn[MAXN + 5], low[MAXN + 5], idx, scc_num, belong[MAXN + 5];</div><div class="line">void tarjan(int u) &#123;</div><div class="line">  dfn[u] = low[u] = ++idx;</div><div class="line">  sta.push(u);</div><div class="line">  in_sta[u] = true;</div><div class="line">  for (int i = head[u]; ~i; i = edge[i].nxt) &#123;</div><div class="line">    int v = edge[i].to;</div><div class="line">    if (!dfn[v]) &#123;</div><div class="line">      tarjan(v);</div><div class="line">      low[u] = min(low[u], low[v]);</div><div class="line">    &#125; else if (in_sta[v]) &#123;</div><div class="line">      low[u] = min(low[u], dfn[v]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  if (dfn[u] == low[u]) &#123;</div><div class="line">    int k;</div><div class="line">    ++scc_num;</div><div class="line">    do &#123;</div><div class="line">      k = sta.top();</div><div class="line">      belong[k] = scc_num;</div><div class="line">      in_sta[k] = false;</div><div class="line">      sta.pop();</div><div class="line">    &#125; while (k != u);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">int n, m;</div><div class="line">void init() &#123;</div><div class="line">  //enableFileIO();</div><div class="line">  tot = 0;</div><div class="line">  memset(head, -1, sizeof(head));</div><div class="line">  n = read();</div><div class="line">  m = read();</div><div class="line">  for (int i = 1; i &lt;= m; ++i) &#123;</div><div class="line">    int u = read(), a = read(), v = read(), b = read();</div><div class="line">    if (a &amp;&amp; b) &#123;</div><div class="line">      add(u + n, v);</div><div class="line">      add(v + n, u);</div><div class="line">    &#125; else if (!a &amp;&amp; b) &#123;</div><div class="line">      add(v + n, u + n);</div><div class="line">      add(u, v);</div><div class="line">    &#125; else if (a &amp;&amp; !b) &#123;</div><div class="line">      add(u + n, v + n);</div><div class="line">      add(v, u);</div><div class="line">    &#125; else &#123;</div><div class="line">      add(u, v + n);</div><div class="line">      add(v, u + n);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">int main() &#123;</div><div class="line">  init();</div><div class="line">  for (int i = 1; i &lt;= 2 * n; ++i) &#123;</div><div class="line">    if (!dfn[i]) tarjan(i);</div><div class="line">  &#125;</div><div class="line">  for (int i = 1; i &lt;= n; ++i) &#123;</div><div class="line">    if (belong[i] == belong[i + n]) &#123;</div><div class="line">      puts(&quot;IMPOSSIBLE&quot;);</div><div class="line">      return 0;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  puts(&quot;POSSIBLE&quot;);</div><div class="line">  for (int i = 1; i &lt;= n; ++i) &#123;</div><div class="line">    printf(&quot;%d &quot;, belong[i] &lt; belong[i + n]);</div><div class="line">  &#125;</div><div class="line">  printf(&quot;\n&quot;);</div><div class="line">  return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><h3 id="快速幂："><a href="#快速幂：" class="headerlink" title="快速幂："></a>快速幂：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">LL fastPow(LL b, LL p, LL m) &#123;</div><div class="line">  LL ret = 1;</div><div class="line">  b %= m;</div><div class="line">  while (p) &#123;</div><div class="line">    if (p &amp; 1) ret = ret % m * b % m;</div><div class="line">    b = b % m * b % m;</div><div class="line">    p &gt;&gt;= 1;</div><div class="line">  &#125;</div><div class="line">  return ret % m;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="埃氏筛："><a href="#埃氏筛：" class="headerlink" title="埃氏筛："></a>埃氏筛：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (int i = 2; i &lt;= n; ++i) &#123;</div><div class="line">    if (c[i]) continue;</div><div class="line">    for (int j = i; j &lt;= n / i; ++j) &#123;</div><div class="line">      c[i * j] = true;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="求1-n的phi值"><a href="#求1-n的phi值" class="headerlink" title="求1-n的phi值"></a>求1-n的phi值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">for (int i = 2; i &lt;= n; ++i) phi[i] = i;</div><div class="line">for (int i = 2; i &lt;= n; ++i) &#123;</div><div class="line">  if (phi[i] == i) &#123;</div><div class="line">    for (int j = i; j &lt;= n; j += i) &#123;</div><div class="line">      phi[j] = phi[j] / i * (i - 1);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="求1-n的所有约数"><a href="#求1-n的所有约数" class="headerlink" title="求1-n的所有约数"></a>求1-n的所有约数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for (int i = 1; i &lt;= n; ++i) &#123;</div><div class="line">  for (int j = 1; j &lt;= n / i; ++j) &#123;</div><div class="line">    fac[i * j].push_back(i);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="矩阵快速幂："><a href="#矩阵快速幂：" class="headerlink" title="矩阵快速幂："></a>矩阵快速幂：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">struct Matrix &#123;</div><div class="line">  LL a[MAXN + 5][MAXN + 5];</div><div class="line">  int n, m;</div><div class="line">  Matrix() &#123;&#125;</div><div class="line">  Matrix(int _n, int _m) : n(_n), m(_m) &#123;</div><div class="line">    memset(a, 0, sizeof(a));</div><div class="line">  &#125;</div><div class="line">  void operator() (int _n, int _m) &#123;</div><div class="line">    n = _n;</div><div class="line">    m = _m;</div><div class="line">    memset(a, 0, sizeof(a));</div><div class="line">  &#125;</div><div class="line">  void init() &#123;</div><div class="line">    memset(a, 0, sizeof(a));</div><div class="line">    for (int i = 1; i &lt;= n; ++i) a[i][i] = 1;</div><div class="line">  &#125;</div><div class="line">  Matrix operator * (const Matrix &amp;mat) &#123;</div><div class="line">    Matrix ret(n, m);</div><div class="line">    for (int i = 1; i &lt;= n; ++i) &#123;</div><div class="line">      for (int j = 1; j &lt;= m; ++j) &#123;</div><div class="line">        for (int k = 1; k &lt;= mat.n; ++k) &#123;</div><div class="line">          ret.a[i][j] = (ret.a[i][j] + a[i][k] * mat.a[k][j]) % MOD;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return ret;</div><div class="line">  &#125;</div><div class="line">&#125;a;</div><div class="line">Matrix fastPow(Matrix mat, LL k) &#123;</div><div class="line">  Matrix ret(mat.n, mat.m);</div><div class="line">  ret.init();</div><div class="line">  while (k) &#123;</div><div class="line">    if (k &amp; 1) ret = ret * mat;</div><div class="line">    mat = mat * mat;</div><div class="line">    k &gt;&gt;= 1;</div><div class="line">  &#125;</div><div class="line">  return ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="线性求逆元："><a href="#线性求逆元：" class="headerlink" title="线性求逆元："></a>线性求逆元：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int main() &#123;</div><div class="line">  init();</div><div class="line">  ans[1] = 1;</div><div class="line">  for (int i = 2; i &lt;= n; ++i) ans[i] = 1LL * (p - p / i) * ans[p % i] % p;</div><div class="line">  for (int i = 1; i &lt;= n; ++i) printf(&quot;%d\n&quot;, ans[i]);</div><div class="line">  return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="快速乘："><a href="#快速乘：" class="headerlink" title="快速乘："></a>快速乘：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">LL fastMul(LL b, LL p, LL m) &#123;</div><div class="line">  LL ret = 0;</div><div class="line">  while (p) &#123;</div><div class="line">    if (p &amp; 1) ret = (ret + b) % m;</div><div class="line">    b = (b + b) % m;</div><div class="line">    p &gt;&gt;= 1;</div><div class="line">  &#125;</div><div class="line">  return ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="拓展欧几里得："><a href="#拓展欧几里得：" class="headerlink" title="拓展欧几里得："></a>拓展欧几里得：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">LL exgcd(LL a, LL b, LL &amp;x, LL &amp;y) &#123;</div><div class="line">  if (!b) &#123;</div><div class="line">    x = 1, y = 0;</div><div class="line">    return a;</div><div class="line">  &#125;</div><div class="line">  LL g = exgcd(b, a % b, x, y), tmp = x;</div><div class="line">  x = y, y = tmp - a / b * y;</div><div class="line">  return g;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="拓展中国剩余定理："><a href="#拓展中国剩余定理：" class="headerlink" title="拓展中国剩余定理："></a>拓展中国剩余定理：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">LL excrt(LL *a, LL *m) &#123;</div><div class="line">  LL ret = m[1], lcm = a[1], x, y;</div><div class="line">  for (int i = 2; i &lt;= n; ++i) &#123;</div><div class="line">    m[i] = (m[i] - ret % a[i] + a[i]) % a[i];</div><div class="line">    LL g = exgcd(lcm, a[i], x, y);</div><div class="line">    if (m[i] % g) return -1;</div><div class="line">    LL k = fastMul(x, m[i] / g, a[i]); //x * m[i] / g % a[i];</div><div class="line">    ret += k * lcm;</div><div class="line">    lcm = lcm / g * a[i];</div><div class="line">    ret = (ret % lcm + lcm) % lcm;</div><div class="line">  &#125;</div><div class="line">  return ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/05/bzoj1913 [Apio2010]signaling 信号覆盖/" rel="next" title="bzoj1913 [Apio2010]signaling 信号覆盖">
+                <i class="fa fa-chevron-left"></i> bzoj1913 [Apio2010]signaling 信号覆盖
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="littleming" />
+          <p class="site-author-name" itemprop="name">littleming</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#并查集"><span class="nav-number">1.1.</span> <span class="nav-text">并查集:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串hash"><span class="nav-number">1.2.</span> <span class="nav-text">字符串hash:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树状数组"><span class="nav-number">1.3.</span> <span class="nav-text">树状数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ST表："><span class="nav-number">1.4.</span> <span class="nav-text">ST表：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP："><span class="nav-number">1.5.</span> <span class="nav-text">KMP：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manacher："><span class="nav-number">1.6.</span> <span class="nav-text">manacher：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线段树："><span class="nav-number">1.7.</span> <span class="nav-text">线段树：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AC自动机："><span class="nav-number">1.8.</span> <span class="nav-text">AC自动机：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性基："><span class="nav-number">1.9.</span> <span class="nav-text">线性基：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左偏树："><span class="nav-number">1.10.</span> <span class="nav-text">左偏树：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非旋treap"><span class="nav-number">1.11.</span> <span class="nav-text">非旋treap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主席树："><span class="nav-number">1.12.</span> <span class="nav-text">主席树：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LCT："><span class="nav-number">1.13.</span> <span class="nav-text">LCT：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后缀数组："><span class="nav-number">1.14.</span> <span class="nav-text">后缀数组：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后缀自动机"><span class="nav-number">1.15.</span> <span class="nav-text">后缀自动机:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树链剖分"><span class="nav-number">1.16.</span> <span class="nav-text">树链剖分:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图论"><span class="nav-number">2.</span> <span class="nav-text">图论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spfa："><span class="nav-number">2.1.</span> <span class="nav-text">spfa：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dijkstra："><span class="nav-number">2.2.</span> <span class="nav-text">dijkstra：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prim："><span class="nav-number">2.3.</span> <span class="nav-text">prim：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kruskal："><span class="nav-number">2.4.</span> <span class="nav-text">kruskal：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#倍增求LCA："><span class="nav-number">2.5.</span> <span class="nav-text">倍增求LCA：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分图匹配"><span class="nav-number">2.6.</span> <span class="nav-text">二分图匹配:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求无向图割点："><span class="nav-number">2.7.</span> <span class="nav-text">求无向图割点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spfa判负环："><span class="nav-number">2.8.</span> <span class="nav-text">spfa判负环：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tarjan缩点："><span class="nav-number">2.9.</span> <span class="nav-text">tarjan缩点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓扑排序："><span class="nav-number">2.10.</span> <span class="nav-text">拓扑排序：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dinic求最大流："><span class="nav-number">2.11.</span> <span class="nav-text">dinic求最大流：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小费用最大流："><span class="nav-number">2.12.</span> <span class="nav-text">最小费用最大流：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-sat："><span class="nav-number">2.13.</span> <span class="nav-text">2-sat：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数论"><span class="nav-number">3.</span> <span class="nav-text">数论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速幂："><span class="nav-number">3.1.</span> <span class="nav-text">快速幂：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#埃氏筛："><span class="nav-number">3.2.</span> <span class="nav-text">埃氏筛：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求1-n的phi值"><span class="nav-number">3.3.</span> <span class="nav-text">求1-n的phi值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求1-n的所有约数"><span class="nav-number">3.4.</span> <span class="nav-text">求1-n的所有约数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵快速幂："><span class="nav-number">3.5.</span> <span class="nav-text">矩阵快速幂：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性求逆元："><span class="nav-number">3.6.</span> <span class="nav-text">线性求逆元：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速乘："><span class="nav-number">3.7.</span> <span class="nav-text">快速乘：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展欧几里得："><span class="nav-number">3.8.</span> <span class="nav-text">拓展欧几里得：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展中国剩余定理："><span class="nav-number">3.9.</span> <span class="nav-text">拓展中国剩余定理：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright" >
+  
+  &copy;  2002 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">littleming</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">  Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

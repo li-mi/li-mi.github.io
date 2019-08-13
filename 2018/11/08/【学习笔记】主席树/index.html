@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more*/&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf的">
+<meta name="description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more */&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf">
 <meta name="keywords" content="主席树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【学习笔记】主席树">
 <meta property="og:url" content="http://yoursite.com/2018/11/08/【学习笔记】主席树/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more*/&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf的">
-<meta property="og:updated_time" content="2018-11-08T05:44:37.460Z">
+<meta property="og:description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more */&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf">
+<meta property="og:updated_time" content="2018-12-11T07:17:55.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【学习笔记】主席树">
-<meta name="twitter:description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more*/&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf的">
+<meta name="twitter:description" content="主席树的时间复杂度：O(nlogn)主席树的空间复杂度：O(nlogn)（开2logn比较好）主席树的插入要用引用！ 主席树的主体：123456int rt[N],tot;struct president_tree&amp;#123;	int ls,rs,sz;	LL sum;	/* more */&amp;#125;tr[N*150];//能开多大开多大 主席树是动态开点权值线段树，注意上下界的设置（注意inf">
 
 
 
@@ -353,9 +353,9 @@
 
       
         <p>主席树的时间复杂度：O(nlogn)<br>主席树的空间复杂度：O(nlogn)（开<strong>2logn</strong>比较好）<br>主席树的插入要用<strong>引用</strong>！</p>
-<p>主席树的主体：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int rt[N],tot;</div><div class="line">struct president_tree&#123;</div><div class="line">	int ls,rs,sz;</div><div class="line">	LL sum;</div><div class="line">	/* more*/</div><div class="line">&#125;tr[N*150];//能开多大开多大</div></pre></td></tr></table></figure></p>
+<p>主席树的主体：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int rt[N],tot;</div><div class="line">struct president_tree&#123;</div><div class="line">	int ls,rs,sz;</div><div class="line">	LL sum;</div><div class="line">	/* more */</div><div class="line">&#125;tr[N*150];//能开多大开多大</div></pre></td></tr></table></figure></p>
 <p>主席树是动态开点权值线段树，注意上下界的设置（注意inf的设置和0/1的设置）<br>因为主席树是不支持修改的，所以一般都是一开始就把树建好<br>插入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">inline void update(int &amp;t,int l,int r,int val)</div><div class="line">&#123;</div><div class="line">	tr[++tot]=tr[t];</div><div class="line">	++tr[tot].sz;</div><div class="line">	tr[tot].sum+=val;//先产生一个新点</div><div class="line">	t=tot;//再赋值</div><div class="line">	if(l==r)	return;</div><div class="line">	int mid=l+(r-l)/2;//可能会爆int</div><div class="line">	if(val&lt;=mid)	update(tr[t].ls,l,mid,val);</div><div class="line">	else	update(tr[t].rs,mid+1,r,val);</div><div class="line">&#125;</div><div class="line">for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">	rt[i]=rt[i-1];</div><div class="line">	update(rt[i],1,inf,a[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>询问函数可以有返回值，也可以没有，而使用一个全局变量记录答案<br>询问：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">LL tmp;</div><div class="line">inline void query(int t1,int t2,int l,int r,int num)</div><div class="line">&#123;</div><div class="line">	if(!num)	return;</div><div class="line">	if(tr[t2].sz-tr[t1].sz&lt;=num)&#123;</div><div class="line">		tmp+=tr[t2].sum-tr[t1].sum;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	if(l==r)&#123;</div><div class="line">		tmp+=1ll*num*l;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	int mid=l+(r-l)/2,t=tr[tr[t2].rs].sz-tr[tr[t1].rs].sz;</div><div class="line">	if(num&lt;=t)	query(tr[t1].rs,tr[t2].rs,mid+1,r,num);</div><div class="line">	else&#123;</div><div class="line">		tmp+=tr[tr[t2].rs].sum-tr[tr[t1].rs].sum;</div><div class="line">		query(tr[t1].ls,tr[t2].ls,l,mid,num-t);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>询问函数可以有返回值，也可以没有，而使用一个全局变量记录答案<br><strong>注意：查询的时候要用ls或者rs的差！！</strong><br>询问：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">LL tmp;</div><div class="line">inline void query(int t1,int t2,int l,int r,int num)</div><div class="line">&#123;</div><div class="line">	if(!num)	return;</div><div class="line">	if(tr[t2].sz-tr[t1].sz&lt;=num)&#123;</div><div class="line">		tmp+=tr[t2].sum-tr[t1].sum;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	if(l==r)&#123;</div><div class="line">		tmp+=1ll*num*l;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	int mid=l+(r-l)/2,t=tr[tr[t2].rs].sz-tr[tr[t1].rs].sz;</div><div class="line">	if(num&lt;=t)	query(tr[t1].rs,tr[t2].rs,mid+1,r,num);</div><div class="line">	else&#123;</div><div class="line">		tmp+=tr[tr[t2].rs].sum-tr[tr[t1].rs].sum;</div><div class="line">		query(tr[t1].ls,tr[t2].ls,l,mid,num-t);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>清空主席树：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tot=0;</div><div class="line">//rt[]和tr[]里的东西都会重新加</div></pre></td></tr></table></figure></p>
 
       
@@ -474,7 +474,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">103</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -487,7 +487,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -529,7 +529,7 @@
         ﻿<div class="copyright" >
   
   &copy;  2002 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
