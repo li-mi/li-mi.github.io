@@ -288,6 +288,119 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/原根、阶相关/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littleming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小明的阁楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/原根、阶相关/" itemprop="url">原根、阶相关</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-11T11:36:50+08:00">
+                2018-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>设a,m是正整数<br>阶：<br>如果(a,m)=1，对于$a^n \equiv 1 (mod~{p})$的最小的n，叫做a模p的阶。（阶|ϕ(m)）<br>原根：<br>若a模m的阶等于ϕ(m)，则称a为模m的一个原根。</p>
+<p>求阶：bsgs<br>求原根：（原根都不大，一般不超过50）<br>检查$a^{(m/pi)}=1(mod~p)$，pi是m的质因子（因为假如存在更小的阶，一定有模不为1的值）<br>复杂度$O(原根大小<em>logn</em>logn+sqrt(n)（质因数分解）)$</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/杨氏矩阵&钩子公式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1332,197 +1445,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/zr模拟赛/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="littleming">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小明的阁楼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/04/zr模拟赛/" itemprop="url">zr模拟赛</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T08:26:00+08:00">
-                2018-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>考试的首要目标：得高分！<br>不写对拍的话，一半概率会炸。</p>
-<h1 id="提高r1"><a href="#提高r1" class="headerlink" title="提高r1"></a>提高r1</h1><p>第一题找规律，40min完成<br>第二题基环内向树，写了挺久，建了反向边dfs。其实拓扑或者tarjan都行。1.5h才写完<br>第三题没什么思路，打了暴力。<br>期望100+100+50=250<br>实际100+100+40=240<br>第三题应该是n&gt;20是特判，结果写成n&gt;100，有10分t了。</p>
-<p>t3正解：<br>应该想到区间dp，但是很难想到维护什么<br>因为很杂乱<br>首先要枚举出是哪个字符串p，复杂度 $\sum_{len|n}(n-len+1)$</p>
-<p>dp[i][j]表示</p>
-<ul>
-<li>若j-i+1是len的倍数，则dp[i][j]=[能否消完]</li>
-<li>若j-i+1不是len的倍数，则dp[i][j]=[是否能消成p的前缀]，注意到这个前缀是固定的，可以通过长度算<br>转移：</li>
-<li>考虑往区间后面加一个字符，$dp[i][j]=dp[i][j-1]&amp;s[j]==prefix((j-i)%len+1)$</li>
-<li>考虑往区间前面加一段字符，$dp[i][j]=dp[i][j-k<em>len]&amp;dp[j-k</em>len+1][j]$</li>
-</ul>
-<p>这样就可以考虑到所有的情况，向后加一段可以通过一个一个加得到，向前加一个可以通过改变i得到。<br>注意初始化：dp[i][i-1]=1，其他为0</p>
-<h1 id="提高r5-18-9-22"><a href="#提高r5-18-9-22" class="headerlink" title="提高r5 18-9-22"></a>提高r5 18-9-22</h1><p>找规律真有趣</p>
-<h1 id="提高r7-18-10-13"><a href="#提高r7-18-10-13" class="headerlink" title="提高r7 18-10-13"></a>提高r7 18-10-13</h1><p>第一题<br>相当于01覆盖问题<br>然而这个问题并不可做<br>但是n&gt;=m^2且数据随机<br>所以可以认为图是连通的。。<br>卡了2h。。</p>
-<p>第二题<br>树上随机游走+树上最长路<br>最可做的一题吧<br>考完试1minac</p>
-<p>第三题<br>数学+推式子<br>不是很擅长啊<br>看完题解觉得挺简单的<br>暴力写炸了<br>心态爆炸加写炸<br>对1和2的状态写错了（小状态一定要写对啊，那大状态的程序跑一下也行啊。。）<br>还有tarjan写的丑<br>st和ins什么的最好都清空！！<br>数组不要只开大1！！（sta[ta+1]!=x，这样爆了！！）</p>
-<h1 id="提高r8-18-10-20"><a href="#提高r8-18-10-20" class="headerlink" title="提高r8 18-10-20"></a>提高r8 18-10-20</h1><p>心态不能崩，暴力不能挂‘<br>打好暴力就rk10了！！</p>
-<p>第一题暴力挂+第二题暴力挂<br>艹</p>
-<p>第一题<br>a[i]写成i</p>
-<p>第二题<br>递归的变量和全局变量重了</p>
-<p>wtf!<br>这种错误静态查错应该能查出来的！！<br>以后模拟赛不管怎样都要静态查错，包括暴力！！</p>
-<h1 id="提高r9-18-10-27"><a href="#提高r9-18-10-27" class="headerlink" title="提高r9 18-10-27"></a>提高r9 18-10-27</h1><p>第一题<br>还是逻辑不够严谨<br>证明的东西还是要写下来才严谨啊<br>在cpp开头写倒是不错</p>
-<p>第二题<br>容斥<br>（我容斥好差啊</p>
-<p>第三题<br>毒瘤题<br>好好读题，不要被长题面吓到了</p>
-<h1 id="普转提r1-18-9-9"><a href="#普转提r1-18-9-9" class="headerlink" title="普转提r1 18-9-9"></a>普转提r1 18-9-9</h1><p>第一题<br>二分加滑动窗口<br>被精度卡到死<br>对拍了好久<br>不停的调eps<br>实际上什么都没卡。。</p>
-<p>第二题<br>贪心<br>dp<br>随便<br>dp：记录每个左端点最近的右端点，f[r[i]]=max(f[r[i]],f[i]+1),f[i+1]=max(f[i+1],f[i])<br>贪心：</p>
-<ul>
-<li>遇到一个右端点，假如这个区间还有效，++ans，将目前遇到的所有区间置为无效</li>
-<li>遇到一个左端点，使这个区间有效</li>
-</ul>
-<p>第四题<br>心中有边的时候（就是你知道应该访问哪些点的时候）<br>可以不建边，节约时间空间<br>把这题暴力*掉。</p>
-<p>正解是优化建图（你胡思乱想哪些倍增有甚么用）<br>把每个点的高度再作为1维<br>变成n^3的点数和边数，上dijk就行</p>
-<h1 id="普转提r2-18-9-16"><a href="#普转提r2-18-9-16" class="headerlink" title="普转提r2 18-9-16"></a>普转提r2 18-9-16</h1><p>第一题<br>注意到交换两个数之和左右两边就分开了<br>按区间考虑<br>一旦区间的左右位置确定了，区间中有哪些数就确定了<br>这样就可以dp[l][r]表示将[l,r]排成递增的顺序有多少种方法<br>枚举中间的转移点就可以了<br>记忆化搜索<br>判断转移合法的方式（也就是[l,i]中恰好含有[l,i]）：<br>用cnt[i]记录从l到i有多少个数在[l,i]<br>合法&lt;=&gt;cnt[i]==i-1&amp;&amp;((cnt[i+1]==i&amp;&amp;a[i]!=l+i)||(cnt[i+1]==i+1&amp;&amp;a[i]==l+i))<br>O(n^3)</p>
-<p>第二题<br>有2^(R+C)的贡献<br>相当于每个子集有1的贡献<br>相当于求每个集合被多少个集合包含<br>先枚举包含的行列数，令$t=i<em>m+j</em>n-i*j$<br>相当于长度为n的格子，往里面填m个数，再选择k个数，使得前t个格子被选中</p>
-<p>$ans=\sum<em>{i=0}^{n}\sum</em>{j=0}^{m}C_n^i<em>C_m^j</em>F$<br>其中F表示满足i行j列的概率<br>$$F=\frac{A<em>m^{n^2}*C</em>{m-k}^{k-t}}{A<em>m^{n^2}*C</em>{m}^{k}}$$<br>分母表示总方案数<br>分子表示满足条件的方案数<br>总体考虑分子（而不是对某种选完k个数的方案进行考虑）<br>对某个排列，它可以对应的方案数是$C_{m-k}^{k-t}$<br>或者暴力的算<br>先钦定选数和t个数，再算上排列<br>$$C<em>m^t*C</em>{m-k}^{k-t}<em>t!</em>A_{m-t}^{n^2-t}=A<em>m^{n^2}*C</em>{m-k}^{k-t}$$</p>
-<p>第三题<br>相当于中序遍历的序列单调上升<br>最小化修改次数相当于最大化不修改数（重要的思想：补集！！）<br>注意到lis<br>但是两个数中间不一定能放下这么多数<br>如果是求单调不降的序列就比较简单，直接求原序列的单调不降的序列<br>但是单调不降和单调上升还是很容易转化的<br>让a[i]-=i即可<br>（其实也可以理解为在严格单增问题中能拓展的条件为$a[i]-a[k]\geq i-k$那么也就是$a[i]-i\geq a[k]-k$）</p>
-<p>第四题<br>显然ak是区间的最小值且其他数都是它的倍数<br>找l，r即可</p>
-<h1 id="普转提r3-18-9-23"><a href="#普转提r3-18-9-23" class="headerlink" title="普转提r3 18-9-23"></a>普转提r3 18-9-23</h1><p>第一题<br>思维题<br>好好观察题目性质</p>
-<p>第二题<br>发现桥的板子是写假了。<br>不能记fa，因为有重边！！<br>其实建图也假了<br>要正反各跑一遍dijk</p>
-<p>第三题<br>数位的题目<br>要以二进制的眼光看数<br>加一个数就是在每位加0或1<br>fi,j表示处理到第i位（从右往左的第i位以左已经处理完），第i-1位有j个数进位了<br>考虑第i位加的是0还是1，O1转移<br><img src="zr18-9-23t3.png" alt="巨佬的题解"></p>
-<p>第四题<br>n^2logn应该要想到<br>然后要注意到可以拿当前值先判一下，这个剪枝很强，可以直接a掉<br>某奇怪性质：</p>
-<ul>
-<li>随机序列的lis的长度的期望是2sqrt(n)的（有论文）</li>
-<li>长度为n2+1的排列至少有一个长为n+1的上升子序列或下降子序列（证明：dp是说以每个数结尾的最长上升子序列长度和最长下降子序列长度 对于两个数而言两者不能都一样 所以要是都在1-n就最多有n2个数 from ytl）</li>
-<li>长度为n的排列，设它的最长上升子序列长度为a，最长下降子序列长度为b，则ab&gt;=n（证明：这n个位置的dp值都不一样，在二维坐标系下表示这些点，ab最小的时候一定是这些点围成一个矩形，矩形的长乘宽就是ab，所以ab&gt;=b）</li>
-<li>随机序列的不同前缀最大值个数是（调和级数）ln(n)的（证明：因为第i个数有1/i概率比之前的都大 所以根据期望的线性性加起来就是ln）</li>
-</ul>
-<p>将顺序随机一下，只有log个位置需要进去二分，其他位置只要判掉就行<br>复杂度O(n^2+nlognlogn)</p>
-<h1 id="普转提r4-18-9-30"><a href="#普转提r4-18-9-30" class="headerlink" title="普转提r4 18-9-30"></a>普转提r4 18-9-30</h1><p>第一题<br>数学<br>线性筛因数个数（暴力卡时过。。）</p>
-<p>第二题<br>分类讨论<br>knight’s tour：<br>n<em>n中，n&gt;=5存在哈密尔顿路径，n&gt;=6且n为偶数存在哈密尔顿回路（证明见wiki）<br>n</em>m中，只要min(n,m)&gt;=5则存在哈密尔顿路径，无证明（搜索证明。。</p>
-<p>第三题<br>暴力加最优性剪枝暴艹正解<br>正解二分+扫描线+set</p>
-<p>第四题<br>暴力r和m打错。。<br>常用变量名还是不要乱动。。<br>转对偶图+并查集</p>
-<h1 id="普及r3-18-9-29"><a href="#普及r3-18-9-29" class="headerlink" title="普及r3 18-9-29"></a>普及r3 18-9-29</h1><p>你oi比赛当然要好好检查啊    from fizzydavid</p>
-<p>第一题<br>sb题<br>sb题也要仔细做！！<br>想清楚再写！！</p>
-<p>第二题<br>人眼查错<br>不是用眼睛查错<br>是用脑子查错！！</p>
-<p>这才是优秀的写法<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">Calc</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (x == <span class="number">4</span>) <span class="keyword">return</span> s[x];</div><div class="line">	<span class="keyword">if</span> (f[x] &lt;= <span class="number">2</span>) &#123;</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">1</span>) s[x + <span class="number">1</span>] *= s[x];</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">2</span>) s[x + <span class="number">1</span>] = s[x] / s[x + <span class="number">1</span>];</div><div class="line">		<span class="keyword">return</span> Calc(x + <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">3</span>) <span class="keyword">return</span> s[x] + Calc(x + <span class="number">1</span>);</div><div class="line">		<span class="keyword">if</span> (f[x] == <span class="number">4</span>) <span class="keyword">return</span> s[x] - Calc(x + <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>round：取离自己最近的整数（四舍五入），0.5的话取远离0的值<br>trunc：舍弃小数<br>floor：小于等于的最大整数<br>ceil：大于等于的最小整数<br>int()和LL()这种强制类型转换等同于trunc<br>判断x是否是整数：fabs(x-round(x))<eps fabs可以用="" abs(int)可以用="" abs(ll)最好自己写="" <figure="" class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* round vs floor vs ceil vs trunc */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;      /* printf */</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;       /* round, floor, ceil, trunc */</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">const</span> <span class="keyword">char</span> * format = <span class="string">"%.1f \t%.1f \t%.1f \t%.1f \t%.1f\n"</span>;</div><div class="line">  <span class="built_in">printf</span> (<span class="string">"value\tround\tfloor\tceil\ttrunc\n"</span>);</div><div class="line">  <span class="built_in">printf</span> (<span class="string">"-----\t-----\t-----\t----\t-----\n"</span>);</div><div class="line">  <span class="built_in">printf</span> (format, <span class="number">2.3</span>,round( <span class="number">2.3</span>),<span class="built_in">floor</span>( <span class="number">2.3</span>),<span class="built_in">ceil</span>( <span class="number">2.3</span>),trunc( <span class="number">2.3</span>));</div><div class="line">  <span class="built_in">printf</span> (format, <span class="number">3.8</span>,round( <span class="number">3.8</span>),<span class="built_in">floor</span>( <span class="number">3.8</span>),<span class="built_in">ceil</span>( <span class="number">3.8</span>),trunc( <span class="number">3.8</span>));</div><div class="line">  <span class="built_in">printf</span> (format, <span class="number">5.5</span>,round( <span class="number">5.5</span>),<span class="built_in">floor</span>( <span class="number">5.5</span>),<span class="built_in">ceil</span>( <span class="number">5.5</span>),trunc( <span class="number">5.5</span>));</div><div class="line">  <span class="built_in">printf</span> (format,<span class="number">-2.3</span>,round(<span class="number">-2.3</span>),<span class="built_in">floor</span>(<span class="number">-2.3</span>),<span class="built_in">ceil</span>(<span class="number">-2.3</span>),trunc(<span class="number">-2.3</span>));</div><div class="line">  <span class="built_in">printf</span> (format,<span class="number">-3.8</span>,round(<span class="number">-3.8</span>),<span class="built_in">floor</span>(<span class="number">-3.8</span>),<span class="built_in">ceil</span>(<span class="number">-3.8</span>),trunc(<span class="number">-3.8</span>));</div><div class="line">  <span class="built_in">printf</span> (format,<span class="number">-5.5</span>,round(<span class="number">-5.5</span>),<span class="built_in">floor</span>(<span class="number">-5.5</span>),<span class="built_in">ceil</span>(<span class="number">-5.5</span>),trunc(<span class="number">-5.5</span>));</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line">value   round   <span class="built_in">floor</span>   <span class="built_in">ceil</span>    trunc</div><div class="line">-----   -----   -----   ----    -----</div><div class="line"><span class="number">2.3</span>     <span class="number">2.0</span>     <span class="number">2.0</span>     <span class="number">3.0</span>     <span class="number">2.0</span></div><div class="line"><span class="number">3.8</span>     <span class="number">4.0</span>     <span class="number">3.0</span>     <span class="number">4.0</span>     <span class="number">3.0</span></div><div class="line"><span class="number">5.5</span>     <span class="number">6.0</span>     <span class="number">5.0</span>     <span class="number">6.0</span>     <span class="number">5.0</span></div><div class="line"><span class="number">-2.3</span>    <span class="number">-2.0</span>    <span class="number">-3.0</span>    <span class="number">-2.0</span>    <span class="number">-2.0</span></div><div class="line"><span class="number">-3.8</span>    <span class="number">-4.0</span>    <span class="number">-4.0</span>    <span class="number">-3.0</span>    <span class="number">-3.0</span></div><div class="line"><span class="number">-5.5</span>    <span class="number">-6.0</span>    <span class="number">-6.0</span>    <span class="number">-5.0</span>    <span class="number">-5.0</span></div></pre></td></tr></table></eps></p>
-<p>第三题<br>推推性质</p>
-<p>第四题<br>有点坑的模拟<br>t4…你想清楚再写….也不会错的那么离谱啊 from fizzydavid<br>一开始没注意到只有弹音符的时候才会调音量<br>然后循环中的8打成n（这个错误调了很久。。以后出错了请先静态查错！！）<br>最后时刻发下来的大样例炸了<br>考完发现是一个变量名打错了（脑子不清爽，这个时候重开一个cpp，把调试代码删掉，一部分一部分看）</p>
-<h1 id="十一r1-18-10-2"><a href="#十一r1-18-10-2" class="headerlink" title="十一r1 18-10-2"></a>十一r1 18-10-2</h1><p>第一题<br>数学题（17年之后的模拟赛t1都是要动脑筋的数学题了？）<br>推推推 拍拍拍</p>
-<p>第二题<br>挺好想的<br>就是卡空间卡时间<br>发现最多只有深度大小，可以优化空间（空间优化的同时也优化了时间）<br>vector的resize是个好东西<br>卡成90差评。。（输入较大且卡常的时候考虑fread！！）</p>
-<p>第三题<br>暴力没有memset<br>就算是暴力也不能随便应付<br>要仔细写<br>（没事了不要浪好好检查，又想起了“你oi比赛当然要好好检查啊”    from fizzydavid）</p>
-<p>期望得分：100+100+20=220<br>实际得分：100+90+0=190</p>
-<h1 id="十一r2-18-10-4"><a href="#十一r2-18-10-4" class="headerlink" title="十一r2 18-10-4"></a>十一r2 18-10-4</h1><p>第二题<br>（打表都不开O2吗 from dls）<br>（打表要早跑啊    from dls）<br>n&lt;=5的点n=1的写错了，然而数据就是1..</p>
-<p>爆搜无标号的树（爆搜树形态），不可写。</p>
-<p>有根树和无根树就是*/n</p>
-<p>有标号树和无标号树？</p>
-<p>第三题<br>不要的点是独立集！！（没有抽象出这个结论）<br>二分图的最大权独立集等于总权值-最大权匹配（最小割/最大流）</p>
-<h1 id="停课训练r6-18-10-22"><a href="#停课训练r6-18-10-22" class="headerlink" title="停课训练r6 18-10-22"></a>停课训练r6 18-10-22</h1><p>第一题<br>我的贪心想的是假的。。<br>反例：<br>20<br>acabcccccacccbccccaa<br>bababcbcabcbbccaccbb<br>正确的做法：<br>逐位确定<br>字符串A和字符串B相当于一个匹配<br>只要网络流能跑满流就是有解<br>判断这个网络流能跑满可以O(字符集大小k)判<br>s1[0]&lt;=s2[1]+…+s2[k] &lt;=&gt; s1[0]&lt;=len-s2[0]<br>s1[1]&lt;=len-s2[1]<br>…<br>s1[k]&lt;=len-s2[k]<br>hall定理可以证明以上 或 网络流最小割证明<br>维护s1[i]+s2[i]，复杂度O(nk+klogk)</p>
-<p>第二题<br>改成gcd恐怕就不可做了<br>改成异或可以nloglog</p>
-<p>$\frac{P}{N}\times N+P\times(2\ln N-\ln P)$</p>
-<h1 id="A-new-start-前面的坑无限期拖延"><a href="#A-new-start-前面的坑无限期拖延" class="headerlink" title="A new start! 前面的坑无限期拖延"></a>A new start! 前面的坑无限期拖延</h1><h1 id="省选r1-18-12-2"><a href="#省选r1-18-12-2" class="headerlink" title="省选r1 18-12-2"></a>省选r1 18-12-2</h1><p>上来就开t3是不是很错误呢。。<br>还是应该三题都先看<br>（不过t3好像最好写<br>t1不会<br>t2不会<br>t3不会<br>做题顺序出锅了吧。。<br>t1公式写错。。（调了好久<br>t2强行凑样例得10分（<del>不凑能得15分</del>）<br>t3阶乘求小了（涉及求值的注意数组下标的范围啊！！）</p>
-<p>t1转化成求凸包很妙啊<br>get求凸包新方法：求上下凸壳（排序更好写）<br>cross&lt;eps就弹掉（否则会有很多重复的点，可能会爆数组）<br>排序用atan2就会很慢<br>x相同按y排序，叉积为0也要弹栈</p>
-<p>双调路径也很妙啊（n^2），这需要确定一个点在环上</p>
-<p>t2差分之后贪心+dp</p>
-<p>t3前缀和的迭代，每个值的贡献是组合数！（终于知道了，卡了我好久）<br>然后就是组合数的展开！（暴力展开n^3）</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1567,7 +1494,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-count">111</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
