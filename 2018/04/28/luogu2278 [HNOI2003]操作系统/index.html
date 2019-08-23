@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="12345678好久没写重载了less需要重载小于号greater需要重载大于号stl中使用结构体会使成员变量变成private，导致只可访问，不可修改所以成员函数要加const以及priority_queue的大小于判断和sort/set是相反的priority_queue：为1就交换sort/set：为1不交换">
+<meta name="description" content="12345678好久没写重载了less需要重载小于号greater需要重载大于号stl中使用结构体会使成员变量变成private，导致只可访问，不可修改所以成员函数要加constpriority_queue：从小到大排序后每次取最后一个sort/set：从小到大排序">
 <meta name="keywords" content="堆">
 <meta property="og:type" content="article">
 <meta property="og:title" content="luogu2278 [HNOI2003]操作系统">
 <meta property="og:url" content="http://yoursite.com/2018/04/28/luogu2278 [HNOI2003]操作系统/index.html">
 <meta property="og:site_name" content="小明的阁楼">
-<meta property="og:description" content="12345678好久没写重载了less需要重载小于号greater需要重载大于号stl中使用结构体会使成员变量变成private，导致只可访问，不可修改所以成员函数要加const以及priority_queue的大小于判断和sort/set是相反的priority_queue：为1就交换sort/set：为1不交换">
-<meta property="og:updated_time" content="2018-04-28T06:53:04.830Z">
+<meta property="og:description" content="12345678好久没写重载了less需要重载小于号greater需要重载大于号stl中使用结构体会使成员变量变成private，导致只可访问，不可修改所以成员函数要加constpriority_queue：从小到大排序后每次取最后一个sort/set：从小到大排序">
+<meta property="og:updated_time" content="2019-08-21T07:15:43.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="luogu2278 [HNOI2003]操作系统">
-<meta name="twitter:description" content="12345678好久没写重载了less需要重载小于号greater需要重载大于号stl中使用结构体会使成员变量变成private，导致只可访问，不可修改所以成员函数要加const以及priority_queue的大小于判断和sort/set是相反的priority_queue：为1就交换sort/set：为1不交换">
+<meta name="twitter:description" content="12345678好久没写重载了less需要重载小于号greater需要重载大于号stl中使用结构体会使成员变量变成private，导致只可访问，不可修改所以成员函数要加constpriority_queue：从小到大排序后每次取最后一个sort/set：从小到大排序">
 
 
 
@@ -352,7 +352,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">好久没写重载了</div><div class="line">less需要重载小于号</div><div class="line">greater需要重载大于号</div><div class="line">stl中使用结构体会使成员变量变成private，导致只可访问，不可修改</div><div class="line">所以成员函数要加const</div><div class="line">以及priority_queue的大小于判断和sort/set是相反的</div><div class="line">priority_queue：为1就交换</div><div class="line">sort/set：为1不交换</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">好久没写重载了</div><div class="line">less需要重载小于号</div><div class="line">greater需要重载大于号</div><div class="line">stl中使用结构体会使成员变量变成private，导致只可访问，不可修改</div><div class="line">所以成员函数要加const</div><div class="line"></div><div class="line">priority_queue：从小到大排序后每次取最后一个</div><div class="line">sort/set：从小到大排序</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">#define mp make_pair</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef long long LL;</div><div class="line">typedef pair&lt;int,int&gt; PII;</div><div class="line">inline LL read()</div><div class="line">&#123;</div><div class="line">	LL x=0,f=1;char ch=getchar();</div><div class="line">	while(ch&lt;&apos;0&apos;||ch&gt;&apos;9&apos;)&#123;if(ch==&apos;-&apos;)f=-1;ch=getchar();&#125;</div><div class="line">	while(ch&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48);ch=getchar();&#125;</div><div class="line">	return x*f;</div><div class="line">&#125;</div><div class="line">int id,t1,t2,a,pre;</div><div class="line">struct node&#123;</div><div class="line">	int x,y,z;</div><div class="line">	inline bool operator &lt; (const node &amp;a) const&#123;</div><div class="line">		if(x!=a.x)	return x&lt;a.x;</div><div class="line">		return y&gt;a.y;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">priority_queue&lt;node&gt; q;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	while(scanf(&quot;%d&quot;,&amp;id)!=EOF)&#123;</div><div class="line">		t1=read();t2=read();a=read();</div><div class="line">		if(q.empty())&#123;</div><div class="line">			q.push((node)&#123;a,id,t2&#125;);</div><div class="line">			pre=t1;</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			while(!q.empty()&amp;&amp;pre+q.top().z&lt;=t1)&#123;</div><div class="line">				pre+=q.top().z;</div><div class="line">				printf(&quot;%d %d\n&quot;,q.top().y,pre);</div><div class="line">				q.pop();</div><div class="line">			&#125;</div><div class="line">			if(!q.empty()&amp;&amp;pre&lt;t1)&#123;</div><div class="line">				node t=q.top();</div><div class="line">				q.pop(); </div><div class="line">				t.z-=t1-pre;</div><div class="line">				q.push(t); </div><div class="line">			&#125;</div><div class="line">			q.push((node)&#123;a,id,t2&#125;);</div><div class="line">			pre=t1;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	while(!q.empty())&#123;</div><div class="line">		pre+=q.top().z;</div><div class="line">		printf(&quot;%d %d\n&quot;,q.top().y,pre);</div><div class="line">		q.pop();</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
@@ -471,7 +471,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">111</span>
+                <span class="site-state-item-count">112</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -484,7 +484,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
